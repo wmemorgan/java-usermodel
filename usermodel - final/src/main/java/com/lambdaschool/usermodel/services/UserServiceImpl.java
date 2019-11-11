@@ -25,6 +25,9 @@ public class UserServiceImpl implements UserService
     @Autowired
     private RoleRepository rolerepos;
 
+    @Autowired
+    private UserAuditing userAuditing;
+
     public User findUserById(long id) throws EntityNotFoundException
     {
         return userrepos.findById(id)
@@ -187,7 +190,8 @@ public class UserServiceImpl implements UserService
                                           roleid)
                      .getCount() <= 0)
         {
-            rolerepos.insertUserRoles(userid,
+            rolerepos.insertUserRoles(userAuditing.getCurrentAuditor().get(),
+                                      userid,
                                       roleid);
         } else
         {

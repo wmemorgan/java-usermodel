@@ -1,7 +1,11 @@
 package com.lambdaschool.usermodel.controllers;
 
+import com.lambdaschool.usermodel.handlers.RestExceptionHandler;
+import com.lambdaschool.usermodel.logging.Loggable;
 import com.lambdaschool.usermodel.models.User;
 import com.lambdaschool.usermodel.services.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -9,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -16,8 +21,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
+@Loggable
 public class UserController
 {
+    private static final Logger logger = LoggerFactory.getLogger(RestExceptionHandler.class);
 
     @Autowired
     private UserService userService;
@@ -25,8 +32,11 @@ public class UserController
     // http://localhost:2019/users/users
     @GetMapping(value = "/users",
                 produces = {"application/json"})
-    public ResponseEntity<?> listAllUsers()
+    public ResponseEntity<?> listAllUsers(HttpServletRequest request)
     {
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
         List<User> myUsers = userService.findAll();
         return new ResponseEntity<>(myUsers,
                                     HttpStatus.OK);
@@ -36,10 +46,13 @@ public class UserController
     // http://localhost:2019/users/user/7
     @GetMapping(value = "/user/{userId}",
                 produces = {"application/json"})
-    public ResponseEntity<?> getUserById(
-            @PathVariable
-                    Long userId)
+    public ResponseEntity<?> getUserById(HttpServletRequest request,
+                                         @PathVariable
+                                                 Long userId)
     {
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
         User u = userService.findUserById(userId);
         return new ResponseEntity<>(u,
                                     HttpStatus.OK);
@@ -48,10 +61,13 @@ public class UserController
     // http://localhost:2019/users/user/name/cinnamon
     @GetMapping(value = "/user/name/{userName}",
                 produces = {"application/json"})
-    public ResponseEntity<?> getUserByName(
-            @PathVariable
-                    String userName)
+    public ResponseEntity<?> getUserByName(HttpServletRequest request,
+                                           @PathVariable
+                                                   String userName)
     {
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
         User u = userService.findByName(userName);
         return new ResponseEntity<>(u,
                                     HttpStatus.OK);
@@ -60,10 +76,13 @@ public class UserController
     // http://localhost:2019/users/user/name/like/da
     @GetMapping(value = "/user/name/like/{userName}",
                 produces = {"application/json"})
-    public ResponseEntity<?> getUserLikeName(
-            @PathVariable
-                    String userName)
+    public ResponseEntity<?> getUserLikeName(HttpServletRequest request,
+                                             @PathVariable
+                                                     String userName)
     {
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
         List<User> u = userService.findByNameContaining(userName);
         return new ResponseEntity<>(u,
                                     HttpStatus.OK);
@@ -99,10 +118,14 @@ public class UserController
      */
     @PostMapping(value = "/user",
                  consumes = {"application/json"})
-    public ResponseEntity<?> addNewUser(@Valid
+    public ResponseEntity<?> addNewUser(HttpServletRequest request,
+                                        @Valid
                                         @RequestBody
                                                 User newuser) throws URISyntaxException
     {
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
         newuser = userService.save(newuser);
 
         // set the location header for the newly created resource
@@ -141,12 +164,15 @@ public class UserController
 */
     @PutMapping(value = "/user/{id}",
                 consumes = {"application/json"})
-    public ResponseEntity<?> updateUser(
-            @RequestBody
-                    User updateUser,
-            @PathVariable
-                    long id)
+    public ResponseEntity<?> updateUser(HttpServletRequest request,
+                                        @RequestBody
+                                                User updateUser,
+                                        @PathVariable
+                                                long id)
     {
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
         userService.update(updateUser,
                            id);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -155,10 +181,13 @@ public class UserController
 
     // http://localhost:2019/users/user/14
     @DeleteMapping(value = "/user/{id}")
-    public ResponseEntity<?> deleteUserById(
-            @PathVariable
-                    long id)
+    public ResponseEntity<?> deleteUserById(HttpServletRequest request,
+                                            @PathVariable
+                                                    long id)
     {
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
         userService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
@@ -166,12 +195,15 @@ public class UserController
 
     // http://localhost:2019/users/user/7/role/2
     @DeleteMapping(value = "/user/{userid}/role/{roleid}")
-    public ResponseEntity<?> deleteUserRoleByIds(
-            @PathVariable
-                    long userid,
-            @PathVariable
-                    long roleid)
+    public ResponseEntity<?> deleteUserRoleByIds(HttpServletRequest request,
+                                                 @PathVariable
+                                                         long userid,
+                                                 @PathVariable
+                                                         long roleid)
     {
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
         userService.deleteUserRole(userid,
                                    roleid);
 
@@ -181,12 +213,15 @@ public class UserController
 
     // http://localhost:2019/users/user/15/role/2
     @PostMapping(value = "/user/{userid}/role/{roleid}")
-    public ResponseEntity<?> postUserRoleByIds(
-            @PathVariable
-                    long userid,
-            @PathVariable
-                    long roleid)
+    public ResponseEntity<?> postUserRoleByIds(HttpServletRequest request,
+                                               @PathVariable
+                                                       long userid,
+                                               @PathVariable
+                                                       long roleid)
     {
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
         userService.addUserRole(userid,
                                 roleid);
 
@@ -196,8 +231,11 @@ public class UserController
     // http://localhost:2019/users/user/email/count
     @GetMapping(value = "/user/email/count",
                 produces = {"application/json"})
-    public ResponseEntity<?> getNumUserEmails()
+    public ResponseEntity<?> getNumUserEmails(HttpServletRequest request)
     {
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
         return new ResponseEntity<>(userService.getCountUserEmails(),
                                     HttpStatus.OK);
     }

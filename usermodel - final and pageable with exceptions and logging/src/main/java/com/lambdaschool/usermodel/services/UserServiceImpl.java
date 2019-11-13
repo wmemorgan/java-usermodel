@@ -15,7 +15,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +30,7 @@ public class UserServiceImpl implements UserService
     @Autowired
     private RoleRepository rolerepos;
 
-    public User findUserById(long id) throws EntityNotFoundException
+    public User findUserById(long id) throws ResourceNotFoundException
     {
         return userrepos.findById(id)
                         .orElseThrow(() -> new ResourceNotFoundException("User id " + id + " not found!"));
@@ -187,9 +186,9 @@ public class UserServiceImpl implements UserService
                             long roleid)
     {
         userrepos.findById(userid)
-                 .orElseThrow(() -> new EntityNotFoundException("User id " + userid + " not found!"));
+                 .orElseThrow(() -> new ResourceNotFoundException("User id " + userid + " not found!"));
         rolerepos.findById(roleid)
-                 .orElseThrow(() -> new EntityNotFoundException("Role id " + roleid + " not found!"));
+                 .orElseThrow(() -> new ResourceNotFoundException("Role id " + roleid + " not found!"));
 
         if (rolerepos.checkUserRolesCombo(userid,
                                           roleid)
@@ -201,7 +200,7 @@ public class UserServiceImpl implements UserService
                                       roleid);
         } else
         {
-            throw new EntityNotFoundException("Role and User Combination Already Exists");
+            throw new ResourceFoundException("Role and User Combination Already Exists");
         }
     }
 

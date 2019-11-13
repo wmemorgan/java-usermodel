@@ -7,6 +7,7 @@ import com.lambdaschool.usermodel.logging.Loggable;
 import com.lambdaschool.usermodel.models.ErrorDetail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.ConversionNotSupportedException;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
@@ -14,15 +15,23 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.transaction.TransactionSystemException;
+import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
+import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingPathVariableException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
+import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.context.request.async.AsyncRequestTimeoutException;
+import org.springframework.web.multipart.support.MissingServletRequestPartException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
@@ -38,7 +47,7 @@ import java.util.List;
 @Loggable
 // bean shared across controller classes
 @Order(Ordered.HIGHEST_PRECEDENCE)
-@ControllerAdvice
+@RestControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler
 {
     private static final Logger logger = LoggerFactory.getLogger(RestExceptionHandler.class);
@@ -49,9 +58,8 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler
     }
 
 
-    @ExceptionHandler({ResourceNotFoundException.class, EntityNotFoundException.class})
-    public ResponseEntity<?> handleResourceNotFoundException(ResourceNotFoundException rnfe,
-                                                             HttpServletRequest request)
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<?> handleResourceNotFoundException(ResourceNotFoundException rnfe)
     {
         ErrorDetail errorDetail = new ErrorDetail();
         errorDetail.setTimestamp(new Date().getTime());
@@ -66,10 +74,24 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler
                                     HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<?> handleEntityNotFoundException(EntityNotFoundException rnfe)
+    {
+        ErrorDetail errorDetail = new ErrorDetail();
+        errorDetail.setTimestamp(new Date().getTime());
+        errorDetail.setStatus(HttpStatus.NOT_FOUND.value());
+        errorDetail.setTitle("Resource Not Found");
+        errorDetail.setDetail(rnfe.getMessage());
+        errorDetail.setDeveloperMessage(rnfe.getClass()
+                                            .getName());
 
-    @ExceptionHandler({ResourceFoundException.class})
-    public ResponseEntity<?> handleResourceFoundException(ResourceFoundException rfe,
-                                                          HttpServletRequest request)
+        return new ResponseEntity<>(errorDetail,
+                                    null,
+                                    HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(ResourceFoundException.class)
+    public ResponseEntity<?> handleResourceFoundException(ResourceFoundException rfe)
     {
         ErrorDetail errorDetail = new ErrorDetail();
         errorDetail.setTimestamp(new Date().getTime());
@@ -94,7 +116,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler
         ErrorDetail errorDetail = new ErrorDetail();
         errorDetail.setTimestamp(new Date().getTime());
         errorDetail.setStatus(HttpStatus.BAD_REQUEST.value());
-        errorDetail.setTitle(ex.getPropertyName() + " Parameter Type Mismatch");
+        errorDetail.setTitle("Parameter Type Mismatch");
         errorDetail.setDetail(ex.getMessage());
         errorDetail.setDeveloperMessage(request.getDescription(true));
 
@@ -266,8 +288,159 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler
                                     HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @Override
+    protected ResponseEntity<Object> handleHttpMediaTypeNotAcceptable(HttpMediaTypeNotAcceptableException ex,
+                                                                      HttpHeaders headers,
+                                                                      HttpStatus status,
+                                                                      WebRequest request)
+    {
+        ErrorDetail errorDetail = new ErrorDetail();
+        errorDetail.setTimestamp(new Date().getTime());
+        errorDetail.setStatus(HttpStatus.BAD_REQUEST.value());
+        errorDetail.setTitle("Media Type Not Acceptable");
+        errorDetail.setDetail(ex.getMessage());
+        errorDetail.setDeveloperMessage(ex.getClass()
+                                          .getName());
 
-    @ExceptionHandler({Exception.class})
+        return new ResponseEntity<>(errorDetail,
+                                    null,
+                                    HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleMissingServletRequestParameter(MissingServletRequestParameterException ex,
+                                                                          HttpHeaders headers,
+                                                                          HttpStatus status,
+                                                                          WebRequest request)
+    {
+        ErrorDetail errorDetail = new ErrorDetail();
+        errorDetail.setTimestamp(new Date().getTime());
+        errorDetail.setStatus(HttpStatus.BAD_REQUEST.value());
+        errorDetail.setTitle("Missing Servlet Request Parameter");
+        errorDetail.setDetail(ex.getMessage());
+        errorDetail.setDeveloperMessage(ex.getClass()
+                                          .getName());
+
+        return new ResponseEntity<>(errorDetail,
+                                    null,
+                                    HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleServletRequestBindingException(ServletRequestBindingException ex,
+                                                                          HttpHeaders headers,
+                                                                          HttpStatus status,
+                                                                          WebRequest request)
+    {
+        ErrorDetail errorDetail = new ErrorDetail();
+        errorDetail.setTimestamp(new Date().getTime());
+        errorDetail.setStatus(HttpStatus.BAD_REQUEST.value());
+        errorDetail.setTitle("Servlet Request Binding Exception");
+        errorDetail.setDetail(ex.getMessage());
+        errorDetail.setDeveloperMessage(ex.getClass()
+                                          .getName());
+
+        return new ResponseEntity<>(errorDetail,
+                                    null,
+                                    HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleConversionNotSupported(ConversionNotSupportedException ex,
+                                                                  HttpHeaders headers,
+                                                                  HttpStatus status,
+                                                                  WebRequest request)
+    {
+        ErrorDetail errorDetail = new ErrorDetail();
+        errorDetail.setTimestamp(new Date().getTime());
+        errorDetail.setStatus(HttpStatus.BAD_REQUEST.value());
+        errorDetail.setTitle("Conversion Not Supported");
+        errorDetail.setDetail(ex.getMessage());
+        errorDetail.setDeveloperMessage(ex.getClass()
+                                          .getName());
+
+        return new ResponseEntity<>(errorDetail,
+                                    null,
+                                    HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleHttpMessageNotWritable(HttpMessageNotWritableException ex,
+                                                                  HttpHeaders headers,
+                                                                  HttpStatus status,
+                                                                  WebRequest request)
+    {
+        ErrorDetail errorDetail = new ErrorDetail();
+        errorDetail.setTimestamp(new Date().getTime());
+        errorDetail.setStatus(HttpStatus.BAD_REQUEST.value());
+        errorDetail.setTitle("Message Not Writable");
+        errorDetail.setDetail(ex.getMessage());
+        errorDetail.setDeveloperMessage(ex.getClass()
+                                          .getName());
+
+        return new ResponseEntity<>(errorDetail,
+                                    null,
+                                    HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleMissingServletRequestPart(MissingServletRequestPartException ex,
+                                                                     HttpHeaders headers,
+                                                                     HttpStatus status,
+                                                                     WebRequest request)
+    {
+        ErrorDetail errorDetail = new ErrorDetail();
+        errorDetail.setTimestamp(new Date().getTime());
+        errorDetail.setStatus(HttpStatus.BAD_REQUEST.value());
+        errorDetail.setTitle("Missing Servlet Request");
+        errorDetail.setDetail(ex.getMessage());
+        errorDetail.setDeveloperMessage(ex.getClass()
+                                          .getName());
+
+        return new ResponseEntity<>(errorDetail,
+                                    null,
+                                    HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleBindException(BindException ex,
+                                                         HttpHeaders headers,
+                                                         HttpStatus status,
+                                                         WebRequest request)
+    {
+        ErrorDetail errorDetail = new ErrorDetail();
+        errorDetail.setTimestamp(new Date().getTime());
+        errorDetail.setStatus(HttpStatus.BAD_REQUEST.value());
+        errorDetail.setTitle("Bind Exception");
+        errorDetail.setDetail(ex.getMessage());
+        errorDetail.setDeveloperMessage(ex.getClass()
+                                          .getName());
+
+        return new ResponseEntity<>(errorDetail,
+                                    null,
+                                    HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleAsyncRequestTimeoutException(AsyncRequestTimeoutException ex,
+                                                                        HttpHeaders headers,
+                                                                        HttpStatus status,
+                                                                        WebRequest webRequest)
+    {
+        ErrorDetail errorDetail = new ErrorDetail();
+        errorDetail.setTimestamp(new Date().getTime());
+        errorDetail.setStatus(HttpStatus.REQUEST_TIMEOUT.value());
+        errorDetail.setTitle("Async Request Timeout");
+        errorDetail.setDetail(ex.getMessage());
+        errorDetail.setDeveloperMessage(ex.getClass()
+                                          .getName());
+
+        return new ResponseEntity<>(errorDetail,
+                                    null,
+                                    HttpStatus.REQUEST_TIMEOUT);
+    }
+
+    @ExceptionHandler(Exception.class)
     protected ResponseEntity<?> handleAllOtherExceptions(Exception ex,
                                                          HttpServletRequest request)
     {

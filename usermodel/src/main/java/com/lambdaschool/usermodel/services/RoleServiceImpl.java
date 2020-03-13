@@ -7,29 +7,44 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Transactional
 @Service(value = "roleService")
 public class RoleServiceImpl implements RoleService
 {
+    /**
+     * Connects this service to the Role Model
+     */
     @Autowired
-    RoleRepository rolerepos;
+    private RoleRepository rolerepos;
 
+    /**
+     * Connects this service to the User Model
+     */
     @Autowired
-    UserRepository userrepos;
+    private UserRepository userrepos;
 
+    /**
+     * Connects this service to the auditing service in order to get current user name
+     */
     @Autowired
-    UserAuditing userAuditing;
+    private UserAuditing userAuditing;
 
     @Override
     public List<Role> findAll()
     {
         List<Role> list = new ArrayList<>();
+        /*
+         * findAll returns an iterator set.
+         * iterate over the iterator set and add each element to an array list.
+         */
         rolerepos.findAll()
-                 .iterator()
-                 .forEachRemaining(list::add);
+            .iterator()
+            .forEachRemaining(list::add);
         return list;
     }
 
@@ -38,7 +53,7 @@ public class RoleServiceImpl implements RoleService
     public Role findRoleById(long id)
     {
         return rolerepos.findById(id)
-                        .orElseThrow(() -> new EntityNotFoundException("Role id " + id + " not found!"));
+            .orElseThrow(() -> new EntityNotFoundException("Role id " + id + " not found!"));
     }
 
     @Override
@@ -57,51 +72,55 @@ public class RoleServiceImpl implements RoleService
 
     @Transactional
     @Override
-    public void delete(long id)
+    public Role save(Role role)
     {
-        rolerepos.findById(id)
-                 .orElseThrow(() -> new EntityNotFoundException("Role id " + id + " not found!"));
-        rolerepos.deleteById(id);
+        if (role.getUsers()
+            .size() > 0)
+        {
+            throw new EntityExistsException("User Roles are not updated through Role.");
+        }
+
+        return rolerepos.save(role);
     }
 
+    /*
+     *
+     * The following are new from initial
+     *
+     */
 
     @Transactional
     @Override
-    public Role update(long id,
-                       Role role)
+    public void delete(long id)
+    {
+        rolerepos.findById(id)
+            .orElseThrow(() -> new EntityNotFoundException("Role id " + id + " not found!"));
+        rolerepos.deleteById(id);
+    }
+
+    @Transactional
+    @Override
+    public Role update(
+        long id,
+        Role role)
     {
         if (role.getName() == null)
         {
             throw new EntityNotFoundException("No role name found to update!");
         }
 
-        if (role.getUserroles()
-                .size() > 0)
+        if (role.getUsers()
+            .size() > 0)
         {
-            throw new EntityNotFoundException("User Roles are not updated through Role. See endpoint POST: users/user/{userid}/role/{roleid}");
+            throw new EntityExistsException("User Roles are not updated through Role. See endpoint POST: users/user/{userid}/role/{roleid}");
         }
 
         Role newRole = findRoleById(id); // see if id exists
 
-        rolerepos.updateRoleName(userAuditing.getCurrentAuditor().get(),
-                                 id,
-                                 role.getName());
+        rolerepos.updateRoleName(userAuditing.getCurrentAuditor()
+                .get(),
+            id,
+            role.getName());
         return findRoleById(id);
-    }
-
-
-    @Transactional
-    @Override
-    public Role save(Role role)
-    {
-        Role newRole = new Role();
-        newRole.setName(role.getName());
-        if (role.getUserroles()
-                .size() > 0)
-        {
-            throw new EntityNotFoundException("User Roles are not updated through Role. See endpoint POST: users/user/{userid}/role/{roleid}");
-        }
-
-        return rolerepos.save(role);
     }
 }

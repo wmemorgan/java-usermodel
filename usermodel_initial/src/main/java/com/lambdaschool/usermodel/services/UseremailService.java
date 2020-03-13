@@ -44,4 +44,15 @@ public interface UseremailService
     Useremail update(
         long useremailid,
         String emailaddress);
+
+    /**
+     * Add a new User Email combination
+     *
+     * @param userid       the userid of the new user email combination
+     * @param emailaddress the email address of the new user email combination
+     * @return the new user email combination
+     */
+    Useremail save(
+        long userid,
+        String emailaddress);
 }

@@ -112,6 +112,7 @@ public class UserController
      * @param newuser A complete new user to add including emails and roles.
      *                roles must already exist.
      * @return A location header with the URI to the newly created user and a status of CREATED
+     * @throws URISyntaxException Exception if something does not work in creating the location header
      * @see UserService#save(User) UserService.save(User)
      */
     @PostMapping(value = "/user",
@@ -140,7 +141,8 @@ public class UserController
     /**
      * Given a complete User Object
      * Given the user id, primary key, is in the User table,
-     * replace the User record, Useremail records, and user role records referenced by the given user id
+     * replace the User record and Useremail records.
+     * Roles are handled through different endpoints
      * <br> Example: <a href="http://localhost:2019/users/user/15">http://localhost:2019/users/user/15</a>
      *
      * @param updateUser A complete User including all emails and roles to be used to
@@ -166,8 +168,8 @@ public class UserController
 
     /**
      * Updates the user record associated with the given id with the provided data. Only the provided fields are affected.
-     * Just adds roles to this user. Roles must already exist. Deleting roles is a different method.
-     * Just adds new emails items to this user. Deleting emails items is a different method.
+     * Roles are handled through different endpoints
+     * If an email list is given, it replaces the original emai list.
      * <br> Example: <a href="http://localhost:2019/users/user/7">http://localhost:2019/users/user/7</a>
      *
      * @param updateUser An object containing values for just the fields that are being updated. All other fields are left NULL.

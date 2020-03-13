@@ -40,7 +40,8 @@ public class Useremail
     @ManyToOne
     @JoinColumn(name = "userid",
         nullable = false)
-    @JsonIgnoreProperties("useremails")
+    @JsonIgnoreProperties(value = "useremails",
+        allowSetters = true)
     private User user;
 
     /**

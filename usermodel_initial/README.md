@@ -6,15 +6,13 @@ This is a basic database scheme with users, user emails, and user roles. This Ja
 
 ### Database layout
 
-The table layouts are as follows
+The table layout are as follows
 
 * User is the driving table.
 * Useremails have a Many-To-One relationship with User. Each User has many user email combinations. Each user email combination has only one User.
 * Roles have a Many-To-Many relationship with Users.
 
 ![Image of Database Layout](usersdb.png)
-
-Two different applications exist
 
 Notice that this database layout is similar to the layout for the java-crudyrestaurants application.
 
@@ -153,11 +151,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 16,
-        "useremail": "qgmy80@gmail.com",
+        "useremail": "xskw18@gmail.com",
         "user": {
             "userid": 15,
-            "username": "matilda.yundt",
-            "primaryemail": "curt.buckridge@yahoo.com",
+            "username": "sherwood.hoeger",
+            "primaryemail": "israel.conroy@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -168,11 +166,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 18,
-        "useremail": "xlif03@gmail.com",
+        "useremail": "peel65@gmail.com",
         "user": {
             "userid": 17,
-            "username": "dave.rodriguez",
-            "primaryemail": "brent.mitchell@gmail.com",
+            "username": "graciela.stokes",
+            "primaryemail": "rolando.hahn@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -183,11 +181,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 20,
-        "useremail": "ntjd26@gmail.com",
+        "useremail": "jwsk46@gmail.com",
         "user": {
             "userid": 19,
-            "username": "denyse.crona",
-            "primaryemail": "shala.bahringer@gmail.com",
+            "username": "gilberto.stark",
+            "primaryemail": "carmina.franecki@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -198,11 +196,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 22,
-        "useremail": "exvp66@gmail.com",
+        "useremail": "lbja57@gmail.com",
         "user": {
             "userid": 21,
-            "username": "denis.ritchie",
-            "primaryemail": "patience.maggio@yahoo.com",
+            "username": "ronnie.toy",
+            "primaryemail": "neal.pfannerstill@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -213,11 +211,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 24,
-        "useremail": "rrfd13@gmail.com",
+        "useremail": "fqhs75@gmail.com",
         "user": {
             "userid": 23,
-            "username": "richard.rosenbaum",
-            "primaryemail": "humberto.dooley@yahoo.com",
+            "username": "booker.fritsch",
+            "primaryemail": "nelida.hilll@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -228,11 +226,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 26,
-        "useremail": "poov69@gmail.com",
+        "useremail": "pfpj36@gmail.com",
         "user": {
             "userid": 25,
-            "username": "clarence.turner",
-            "primaryemail": "edwardo.bashirian@yahoo.com",
+            "username": "clemencia.reinger",
+            "primaryemail": "wilson.volkman@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -243,11 +241,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 28,
-        "useremail": "mpig37@gmail.com",
+        "useremail": "oees90@gmail.com",
         "user": {
             "userid": 27,
-            "username": "leonel.gaylord",
-            "primaryemail": "samual.wisoky@hotmail.com",
+            "username": "isabel.satterfield",
+            "primaryemail": "michael.sporer@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -258,11 +256,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 30,
-        "useremail": "bysw47@gmail.com",
+        "useremail": "bqfh83@gmail.com",
         "user": {
             "userid": 29,
-            "username": "wayne.turcotte",
-            "primaryemail": "earline.oreilly@yahoo.com",
+            "username": "peggy.schaden",
+            "primaryemail": "ignacio.heidenreich@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -273,11 +271,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 32,
-        "useremail": "whkb12@gmail.com",
+        "useremail": "ayjg58@gmail.com",
         "user": {
             "userid": 31,
-            "username": "elizebeth.johnson",
-            "primaryemail": "saturnina.wintheiser@gmail.com",
+            "username": "ike.berge",
+            "primaryemail": "errol.lynch@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -288,11 +286,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 34,
-        "useremail": "fqlz02@gmail.com",
+        "useremail": "uias57@gmail.com",
         "user": {
             "userid": 33,
-            "username": "mavis.prohaska",
-            "primaryemail": "donovan.heller@yahoo.com",
+            "username": "wilfred.wolff",
+            "primaryemail": "kristofer.mosciski@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -303,11 +301,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 36,
-        "useremail": "ukig45@gmail.com",
+        "useremail": "lhvu67@gmail.com",
         "user": {
             "userid": 35,
-            "username": "josef.bode",
-            "primaryemail": "seymour.rempel@yahoo.com",
+            "username": "preston.langworth",
+            "primaryemail": "jesus.pfannerstill@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -318,11 +316,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 38,
-        "useremail": "wxjz52@gmail.com",
+        "useremail": "suuh50@gmail.com",
         "user": {
             "userid": 37,
-            "username": "jacqui.grady",
-            "primaryemail": "mattie.bashirian@gmail.com",
+            "username": "candida.harris",
+            "primaryemail": "mendy.runolfsson@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -333,11 +331,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 40,
-        "useremail": "bxko72@gmail.com",
+        "useremail": "cpte79@gmail.com",
         "user": {
             "userid": 39,
-            "username": "edwardo.mcdermott",
-            "primaryemail": "vicky.brown@yahoo.com",
+            "username": "douglas.kuhn",
+            "primaryemail": "gladis.boyle@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -348,11 +346,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 42,
-        "useremail": "etfy55@gmail.com",
+        "useremail": "eebw20@gmail.com",
         "user": {
             "userid": 41,
-            "username": "rigoberto.koelpin",
-            "primaryemail": "simon.heathcote@hotmail.com",
+            "username": "abbey.oreilly",
+            "primaryemail": "ina.zieme@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -363,11 +361,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 44,
-        "useremail": "ucph13@gmail.com",
+        "useremail": "yzzr06@gmail.com",
         "user": {
             "userid": 43,
-            "username": "celinda.spencer",
-            "primaryemail": "priscila.kirlin@yahoo.com",
+            "username": "eugene.prohaska",
+            "primaryemail": "lincoln.johns@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -378,11 +376,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 46,
-        "useremail": "dgtc18@gmail.com",
+        "useremail": "itah03@gmail.com",
         "user": {
             "userid": 45,
-            "username": "nicolette.baumbach",
-            "primaryemail": "garland.ankunding@gmail.com",
+            "username": "thaddeus.hermann",
+            "primaryemail": "maile.hickle@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -393,11 +391,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 48,
-        "useremail": "wrxx04@gmail.com",
+        "useremail": "luhs65@gmail.com",
         "user": {
             "userid": 47,
-            "username": "willis.rosenbaum",
-            "primaryemail": "leonie.kuhic@hotmail.com",
+            "username": "margarito.schultz",
+            "primaryemail": "marisha.schuster@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -408,11 +406,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 50,
-        "useremail": "dojj12@gmail.com",
+        "useremail": "fvdv73@gmail.com",
         "user": {
             "userid": 49,
-            "username": "jonas.ondricka",
-            "primaryemail": "chris.braun@yahoo.com",
+            "username": "hubert.hettinger",
+            "primaryemail": "rafael.prosacco@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -423,11 +421,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 52,
-        "useremail": "bdub60@gmail.com",
+        "useremail": "dqpv88@gmail.com",
         "user": {
             "userid": 51,
-            "username": "lanny.prosacco",
-            "primaryemail": "gerardo.okeefe@hotmail.com",
+            "username": "francis.osinski",
+            "primaryemail": "rolanda.kris@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -438,11 +436,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 54,
-        "useremail": "gkyt77@gmail.com",
+        "useremail": "ljxx97@gmail.com",
         "user": {
             "userid": 53,
-            "username": "lean.lang",
-            "primaryemail": "norene.mcglynn@yahoo.com",
+            "username": "korey.mckenzie",
+            "primaryemail": "linette.rau@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -453,11 +451,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 56,
-        "useremail": "itbs03@gmail.com",
+        "useremail": "aqso45@gmail.com",
         "user": {
             "userid": 55,
-            "username": "caryn.vonrueden",
-            "primaryemail": "deena.casper@gmail.com",
+            "username": "kelvin.windler",
+            "primaryemail": "ian.tremblay@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -468,11 +466,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 58,
-        "useremail": "xnpj32@gmail.com",
+        "useremail": "opee90@gmail.com",
         "user": {
             "userid": 57,
-            "username": "lavone.douglas",
-            "primaryemail": "gordon.pfannerstill@gmail.com",
+            "username": "shan.tremblay",
+            "primaryemail": "holley.schumm@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -483,11 +481,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 60,
-        "useremail": "qxdz57@gmail.com",
+        "useremail": "qmwa99@gmail.com",
         "user": {
             "userid": 59,
-            "username": "norbert.gislason",
-            "primaryemail": "gaynelle.hintz@hotmail.com",
+            "username": "michal.ortiz",
+            "primaryemail": "chance.okuneva@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -498,11 +496,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 62,
-        "useremail": "rtqc42@gmail.com",
+        "useremail": "slvj39@gmail.com",
         "user": {
             "userid": 61,
-            "username": "evon.gottlieb",
-            "primaryemail": "shera.botsford@gmail.com",
+            "username": "richie.hahn",
+            "primaryemail": "lana.kiehn@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -513,11 +511,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 64,
-        "useremail": "msim50@gmail.com",
+        "useremail": "tbhv00@gmail.com",
         "user": {
             "userid": 63,
-            "username": "deon.damore",
-            "primaryemail": "xiao.ratke@gmail.com",
+            "username": "hyo.kemmer",
+            "primaryemail": "monique.ziemann@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -528,11 +526,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 66,
-        "useremail": "mdum96@gmail.com",
+        "useremail": "ijic62@gmail.com",
         "user": {
             "userid": 65,
-            "username": "gaylord.kemmer",
-            "primaryemail": "bennie.fay@hotmail.com",
+            "username": "jeromy.blanda",
+            "primaryemail": "danyel.klein@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -543,11 +541,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 68,
-        "useremail": "npfn93@gmail.com",
+        "useremail": "cauz68@gmail.com",
         "user": {
             "userid": 67,
-            "username": "rick.donnelly",
-            "primaryemail": "jana.grimes@yahoo.com",
+            "username": "major.deckow",
+            "primaryemail": "lee.breitenberg@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -558,11 +556,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 70,
-        "useremail": "zwoa10@gmail.com",
+        "useremail": "pcrz93@gmail.com",
         "user": {
             "userid": 69,
-            "username": "regenia.gislason",
-            "primaryemail": "kittie.kub@hotmail.com",
+            "username": "ileana.von",
+            "primaryemail": "pamela.cruickshank@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -573,11 +571,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 72,
-        "useremail": "mgru08@gmail.com",
+        "useremail": "tkwi17@gmail.com",
         "user": {
             "userid": 71,
-            "username": "keturah.hirthe",
-            "primaryemail": "madelyn.cummerata@yahoo.com",
+            "username": "liliana.schoen",
+            "primaryemail": "bessie.kertzmann@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -588,11 +586,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 74,
-        "useremail": "afpj96@gmail.com",
+        "useremail": "syda00@gmail.com",
         "user": {
             "userid": 73,
-            "username": "marylyn.schmitt",
-            "primaryemail": "wiley.shields@gmail.com",
+            "username": "kylee.koch",
+            "primaryemail": "jerrell.senger@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -603,11 +601,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 76,
-        "useremail": "oziz06@gmail.com",
+        "useremail": "rdcr08@gmail.com",
         "user": {
             "userid": 75,
-            "username": "dacia.cole",
-            "primaryemail": "gearldine.effertz@yahoo.com",
+            "username": "willian.lubowitz",
+            "primaryemail": "cesar.wolff@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -618,11 +616,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 78,
-        "useremail": "zchl69@gmail.com",
+        "useremail": "njjk01@gmail.com",
         "user": {
             "userid": 77,
-            "username": "sherita.powlowski",
-            "primaryemail": "dallas.quitzon@yahoo.com",
+            "username": "jolynn.leuschke",
+            "primaryemail": "hong.ritchie@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -633,11 +631,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 80,
-        "useremail": "omiz30@gmail.com",
+        "useremail": "xonh59@gmail.com",
         "user": {
             "userid": 79,
-            "username": "iola.nitzsche",
-            "primaryemail": "adriene.heathcote@yahoo.com",
+            "username": "herbert.connelly",
+            "primaryemail": "russel.weimann@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -648,11 +646,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 82,
-        "useremail": "xvcg63@gmail.com",
+        "useremail": "sylg17@gmail.com",
         "user": {
             "userid": 81,
-            "username": "marcelo.shields",
-            "primaryemail": "verlie.macgyver@gmail.com",
+            "username": "alix.shields",
+            "primaryemail": "pedro.wyman@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -663,11 +661,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 84,
-        "useremail": "yssh13@gmail.com",
+        "useremail": "vjsa32@gmail.com",
         "user": {
             "userid": 83,
-            "username": "dirk.jacobson",
-            "primaryemail": "gail.sauer@gmail.com",
+            "username": "maryetta.mcclure",
+            "primaryemail": "elden.wolf@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -678,11 +676,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 86,
-        "useremail": "ppbf70@gmail.com",
+        "useremail": "nbdj44@gmail.com",
         "user": {
             "userid": 85,
-            "username": "glinda.bogisich",
-            "primaryemail": "susan.altenwerth@gmail.com",
+            "username": "deon.klocko",
+            "primaryemail": "monica.brown@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -693,11 +691,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 88,
-        "useremail": "qzhg91@gmail.com",
+        "useremail": "hlos69@gmail.com",
         "user": {
             "userid": 87,
-            "username": "marry.kling",
-            "primaryemail": "porter.pacocha@hotmail.com",
+            "username": "louie.harvey",
+            "primaryemail": "jordon.mertz@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -708,11 +706,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 90,
-        "useremail": "olwn04@gmail.com",
+        "useremail": "nijw86@gmail.com",
         "user": {
             "userid": 89,
-            "username": "socorro.connelly",
-            "primaryemail": "suzan.osinski@hotmail.com",
+            "username": "mohammed.west",
+            "primaryemail": "dotty.torphy@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -723,11 +721,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 92,
-        "useremail": "osvf94@gmail.com",
+        "useremail": "qcrt31@gmail.com",
         "user": {
             "userid": 91,
-            "username": "edith.greenholt",
-            "primaryemail": "alaina.mayert@gmail.com",
+            "username": "rey.kris",
+            "primaryemail": "delaine.effertz@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -738,11 +736,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 94,
-        "useremail": "jnbm21@gmail.com",
+        "useremail": "dxxt37@gmail.com",
         "user": {
             "userid": 93,
-            "username": "jacinto.moen",
-            "primaryemail": "boyce.jakubowski@gmail.com",
+            "username": "tameika.hammes",
+            "primaryemail": "shawn.wuckert@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -753,11 +751,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 96,
-        "useremail": "hcas79@gmail.com",
+        "useremail": "mkvp09@gmail.com",
         "user": {
             "userid": 95,
-            "username": "del.gibson",
-            "primaryemail": "ronnie.metz@hotmail.com",
+            "username": "jacqui.swift",
+            "primaryemail": "domenic.quitzon@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -768,11 +766,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 98,
-        "useremail": "tuck65@gmail.com",
+        "useremail": "dtwi67@gmail.com",
         "user": {
             "userid": 97,
-            "username": "melvin.braun",
-            "primaryemail": "rory.jones@yahoo.com",
+            "username": "jeffie.lesch",
+            "primaryemail": "christian.baumbach@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -783,11 +781,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 100,
-        "useremail": "jzvg60@gmail.com",
+        "useremail": "mrxa63@gmail.com",
         "user": {
             "userid": 99,
-            "username": "tory.oreilly",
-            "primaryemail": "cody.watsica@hotmail.com",
+            "username": "cassi.kessler",
+            "primaryemail": "val.grimes@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -798,11 +796,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 102,
-        "useremail": "iugx85@gmail.com",
+        "useremail": "grej06@gmail.com",
         "user": {
             "userid": 101,
-            "username": "patria.walker",
-            "primaryemail": "claudette.zulauf@gmail.com",
+            "username": "nova.kreiger",
+            "primaryemail": "bettye.stehr@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -813,11 +811,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 104,
-        "useremail": "hnpq15@gmail.com",
+        "useremail": "pzug31@gmail.com",
         "user": {
             "userid": 103,
-            "username": "august.mante",
-            "primaryemail": "isidro.daniel@hotmail.com",
+            "username": "tracie.murazik",
+            "primaryemail": "libby.tillman@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -828,11 +826,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 106,
-        "useremail": "nwjb49@gmail.com",
+        "useremail": "tnwg50@gmail.com",
         "user": {
             "userid": 105,
-            "username": "lyndsey.ledner",
-            "primaryemail": "dominga.stoltenberg@yahoo.com",
+            "username": "melvin.white",
+            "primaryemail": "micheal.damore@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -843,11 +841,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 108,
-        "useremail": "wrzk27@gmail.com",
+        "useremail": "ytrt21@gmail.com",
         "user": {
             "userid": 107,
-            "username": "napoleon.farrell",
-            "primaryemail": "ashly.prosacco@gmail.com",
+            "username": "josh.jacobson",
+            "primaryemail": "sarina.krajcik@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -858,11 +856,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 110,
-        "useremail": "msxd77@gmail.com",
+        "useremail": "dlpn23@gmail.com",
         "user": {
             "userid": 109,
-            "username": "rigoberto.douglas",
-            "primaryemail": "emilio.rath@gmail.com",
+            "username": "bryan.johnston",
+            "primaryemail": "gerardo.buckridge@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -873,11 +871,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 112,
-        "useremail": "qttt00@gmail.com",
+        "useremail": "udmd59@gmail.com",
         "user": {
             "userid": 111,
-            "username": "william.stehr",
-            "primaryemail": "saul.bradtke@hotmail.com",
+            "username": "tai.nikolaus",
+            "primaryemail": "kendrick.swift@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -888,11 +886,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 114,
-        "useremail": "xfvn58@gmail.com",
+        "useremail": "wjvs47@gmail.com",
         "user": {
             "userid": 113,
-            "username": "ann.kilback",
-            "primaryemail": "gidget.bernier@gmail.com",
+            "username": "julee.leuschke",
+            "primaryemail": "katherine.lesch@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -903,11 +901,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 116,
-        "useremail": "wspo72@gmail.com",
+        "useremail": "sgid92@gmail.com",
         "user": {
             "userid": 115,
-            "username": "vania.ortiz",
-            "primaryemail": "roscoe.cartwright@hotmail.com",
+            "username": "leslie.grady",
+            "primaryemail": "nan.price@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -918,11 +916,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 118,
-        "useremail": "fgbc05@gmail.com",
+        "useremail": "rxdk99@gmail.com",
         "user": {
             "userid": 117,
-            "username": "shauna.walter",
-            "primaryemail": "paris.parker@hotmail.com",
+            "username": "michale.streich",
+            "primaryemail": "murray.treutel@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -933,11 +931,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 120,
-        "useremail": "ekai96@gmail.com",
+        "useremail": "xhpt15@gmail.com",
         "user": {
             "userid": 119,
-            "username": "rosamond.douglas",
-            "primaryemail": "lynwood.schuster@hotmail.com",
+            "username": "cole.champlin",
+            "primaryemail": "monique.okon@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -948,11 +946,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 122,
-        "useremail": "ffkd22@gmail.com",
+        "useremail": "zufz39@gmail.com",
         "user": {
             "userid": 121,
-            "username": "angela.wintheiser",
-            "primaryemail": "sylvie.anderson@yahoo.com",
+            "username": "kyle.nolan",
+            "primaryemail": "jean.thiel@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -963,11 +961,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 124,
-        "useremail": "htfj65@gmail.com",
+        "useremail": "chbn40@gmail.com",
         "user": {
             "userid": 123,
-            "username": "dulce.koss",
-            "primaryemail": "noah.runolfsdottir@hotmail.com",
+            "username": "leonardo.mayert",
+            "primaryemail": "jamar.nikolaus@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -978,11 +976,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 126,
-        "useremail": "gefm82@gmail.com",
+        "useremail": "rwiu57@gmail.com",
         "user": {
             "userid": 125,
-            "username": "christa.schmidt",
-            "primaryemail": "jordan.connelly@yahoo.com",
+            "username": "diego.wilderman",
+            "primaryemail": "columbus.dickens@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -993,11 +991,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 128,
-        "useremail": "hije89@gmail.com",
+        "useremail": "pvwh19@gmail.com",
         "user": {
             "userid": 127,
-            "username": "migdalia.ondricka",
-            "primaryemail": "davida.hilll@gmail.com",
+            "username": "rebecka.marvin",
+            "primaryemail": "jeanene.toy@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1008,11 +1006,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 130,
-        "useremail": "lkwm29@gmail.com",
+        "useremail": "fsrl60@gmail.com",
         "user": {
             "userid": 129,
-            "username": "blaine.kerluke",
-            "primaryemail": "easter.fisher@yahoo.com",
+            "username": "long.king",
+            "primaryemail": "shaneka.mohr@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1023,11 +1021,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 132,
-        "useremail": "affl03@gmail.com",
+        "useremail": "ianw78@gmail.com",
         "user": {
             "userid": 131,
-            "username": "williams.langosh",
-            "primaryemail": "vance.brown@yahoo.com",
+            "username": "jefferey.doyle",
+            "primaryemail": "brittany.medhurst@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1038,11 +1036,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 134,
-        "useremail": "ydij67@gmail.com",
+        "useremail": "ulhi69@gmail.com",
         "user": {
             "userid": 133,
-            "username": "agripina.ruecker",
-            "primaryemail": "dominga.gorczany@gmail.com",
+            "username": "mindi.kuvalis",
+            "primaryemail": "rosemarie.considine@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1053,11 +1051,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 136,
-        "useremail": "znpf34@gmail.com",
+        "useremail": "deih16@gmail.com",
         "user": {
             "userid": 135,
-            "username": "rosetta.mosciski",
-            "primaryemail": "jaclyn.williamson@gmail.com",
+            "username": "arnoldo.huels",
+            "primaryemail": "buck.luettgen@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1068,11 +1066,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 138,
-        "useremail": "ijlc86@gmail.com",
+        "useremail": "gyqu90@gmail.com",
         "user": {
             "userid": 137,
-            "username": "minh.pacocha",
-            "primaryemail": "dollie.bechtelar@yahoo.com",
+            "username": "jasper.stroman",
+            "primaryemail": "bari.oconner@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1083,11 +1081,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 140,
-        "useremail": "xtks93@gmail.com",
+        "useremail": "nfjf95@gmail.com",
         "user": {
             "userid": 139,
-            "username": "thu.vonrueden",
-            "primaryemail": "cherelle.hermiston@gmail.com",
+            "username": "deana.douglas",
+            "primaryemail": "vena.lebsack@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1098,11 +1096,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 142,
-        "useremail": "qilq50@gmail.com",
+        "useremail": "urmp38@gmail.com",
         "user": {
             "userid": 141,
-            "username": "ranee.glover",
-            "primaryemail": "daryl.brakus@yahoo.com",
+            "username": "ligia.funk",
+            "primaryemail": "irving.oconnell@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1113,11 +1111,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 144,
-        "useremail": "olsh71@gmail.com",
+        "useremail": "mrxn34@gmail.com",
         "user": {
             "userid": 143,
-            "username": "cody.green",
-            "primaryemail": "genna.schuster@gmail.com",
+            "username": "nicky.bartell",
+            "primaryemail": "rod.okeefe@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1128,11 +1126,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 146,
-        "useremail": "sgtd73@gmail.com",
+        "useremail": "zuhe79@gmail.com",
         "user": {
             "userid": 145,
-            "username": "dewitt.wehner",
-            "primaryemail": "treva.von@gmail.com",
+            "username": "carmelia.grant",
+            "primaryemail": "rita.mcclure@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1143,11 +1141,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 148,
-        "useremail": "wrjq40@gmail.com",
+        "useremail": "hzsx15@gmail.com",
         "user": {
             "userid": 147,
-            "username": "santos.grant",
-            "primaryemail": "yi.hahn@gmail.com",
+            "username": "starla.russel",
+            "primaryemail": "johnny.homenick@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1158,11 +1156,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 150,
-        "useremail": "dzpo34@gmail.com",
+        "useremail": "nwya10@gmail.com",
         "user": {
             "userid": 149,
-            "username": "harris.ohara",
-            "primaryemail": "ricardo.dubuque@yahoo.com",
+            "username": "lawerence.collier",
+            "primaryemail": "walton.cole@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1173,11 +1171,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 152,
-        "useremail": "exyg13@gmail.com",
+        "useremail": "ewxp13@gmail.com",
         "user": {
             "userid": 151,
-            "username": "eustolia.blanda",
-            "primaryemail": "scotty.bashirian@hotmail.com",
+            "username": "nu.labadie",
+            "primaryemail": "darius.satterfield@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1188,11 +1186,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 154,
-        "useremail": "klfs87@gmail.com",
+        "useremail": "nwdw59@gmail.com",
         "user": {
             "userid": 153,
-            "username": "theodora.gulgowski",
-            "primaryemail": "alphonso.quigley@hotmail.com",
+            "username": "jamaal.feil",
+            "primaryemail": "lucius.mueller@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1203,11 +1201,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 156,
-        "useremail": "ugmd90@gmail.com",
+        "useremail": "cmio28@gmail.com",
         "user": {
             "userid": 155,
-            "username": "terrell.heller",
-            "primaryemail": "milford.batz@hotmail.com",
+            "username": "prince.champlin",
+            "primaryemail": "willis.blanda@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1218,11 +1216,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 158,
-        "useremail": "pzat24@gmail.com",
+        "useremail": "vosz66@gmail.com",
         "user": {
             "userid": 157,
-            "username": "aleshia.kub",
-            "primaryemail": "augustine.krajcik@hotmail.com",
+            "username": "roscoe.stroman",
+            "primaryemail": "hilaria.stamm@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1233,11 +1231,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 160,
-        "useremail": "rwza71@gmail.com",
+        "useremail": "niiy05@gmail.com",
         "user": {
             "userid": 159,
-            "username": "carlo.bruen",
-            "primaryemail": "ambrose.lockman@hotmail.com",
+            "username": "valentine.altenwerth",
+            "primaryemail": "danilo.crona@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1248,11 +1246,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 162,
-        "useremail": "mmou49@gmail.com",
+        "useremail": "vwxs01@gmail.com",
         "user": {
             "userid": 161,
-            "username": "eli.langworth",
-            "primaryemail": "king.bernhard@hotmail.com",
+            "username": "wally.fahey",
+            "primaryemail": "tamekia.dibbert@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1263,11 +1261,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 164,
-        "useremail": "wrwv26@gmail.com",
+        "useremail": "cdtl75@gmail.com",
         "user": {
             "userid": 163,
-            "username": "christian.schroeder",
-            "primaryemail": "santana.stoltenberg@yahoo.com",
+            "username": "ozzie.renner",
+            "primaryemail": "clarence.bashirian@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1278,11 +1276,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 166,
-        "useremail": "agxm74@gmail.com",
+        "useremail": "uopv29@gmail.com",
         "user": {
             "userid": 165,
-            "username": "lowell.schoen",
-            "primaryemail": "evelyne.bechtelar@gmail.com",
+            "username": "layne.gibson",
+            "primaryemail": "coralie.morar@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1293,11 +1291,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 168,
-        "useremail": "kcrb38@gmail.com",
+        "useremail": "slvh34@gmail.com",
         "user": {
             "userid": 167,
-            "username": "marinda.hettinger",
-            "primaryemail": "rodrick.kirlin@gmail.com",
+            "username": "dominica.barrows",
+            "primaryemail": "carson.haley@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1308,11 +1306,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 170,
-        "useremail": "matj06@gmail.com",
+        "useremail": "hkbq09@gmail.com",
         "user": {
             "userid": 169,
-            "username": "gustavo.weber",
-            "primaryemail": "karine.luettgen@hotmail.com",
+            "username": "michale.quitzon",
+            "primaryemail": "zane.douglas@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1323,11 +1321,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 172,
-        "useremail": "ejgd15@gmail.com",
+        "useremail": "tjbq79@gmail.com",
         "user": {
             "userid": 171,
-            "username": "rory.jakubowski",
-            "primaryemail": "laureen.walsh@hotmail.com",
+            "username": "nenita.jacobi",
+            "primaryemail": "adolfo.mosciski@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1338,11 +1336,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 174,
-        "useremail": "ddyh01@gmail.com",
+        "useremail": "vune39@gmail.com",
         "user": {
             "userid": 173,
-            "username": "mitch.runte",
-            "primaryemail": "royal.schaden@hotmail.com",
+            "username": "elliott.wunsch",
+            "primaryemail": "pedro.hegmann@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1353,11 +1351,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 176,
-        "useremail": "rsxi82@gmail.com",
+        "useremail": "afsy02@gmail.com",
         "user": {
             "userid": 175,
-            "username": "elton.grady",
-            "primaryemail": "savanna.marks@yahoo.com",
+            "username": "karl.goyette",
+            "primaryemail": "leighann.dicki@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1368,11 +1366,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 178,
-        "useremail": "ezwt57@gmail.com",
+        "useremail": "xnzf62@gmail.com",
         "user": {
             "userid": 177,
-            "username": "cornell.deckow",
-            "primaryemail": "britt.hintz@yahoo.com",
+            "username": "brandon.lindgren",
+            "primaryemail": "conrad.mccullough@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1383,11 +1381,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 180,
-        "useremail": "hjvv93@gmail.com",
+        "useremail": "oabf43@gmail.com",
         "user": {
             "userid": 179,
-            "username": "carol.beier",
-            "primaryemail": "elsie.walsh@yahoo.com",
+            "username": "troy.okeefe",
+            "primaryemail": "glinda.gorczany@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1398,11 +1396,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 182,
-        "useremail": "xwrk46@gmail.com",
+        "useremail": "pnet77@gmail.com",
         "user": {
             "userid": 181,
-            "username": "octavia.heaney",
-            "primaryemail": "belia.parker@hotmail.com",
+            "username": "arletta.schmidt",
+            "primaryemail": "myrtie.haley@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1413,11 +1411,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 184,
-        "useremail": "ylnx08@gmail.com",
+        "useremail": "pbjv90@gmail.com",
         "user": {
             "userid": 183,
-            "username": "kraig.hand",
-            "primaryemail": "syreeta.satterfield@hotmail.com",
+            "username": "gracie.runolfsson",
+            "primaryemail": "quintin.christiansen@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1428,11 +1426,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 186,
-        "useremail": "qeqm63@gmail.com",
+        "useremail": "erah83@gmail.com",
         "user": {
             "userid": 185,
-            "username": "moses.hoppe",
-            "primaryemail": "brady.friesen@yahoo.com",
+            "username": "herbert.reichel",
+            "primaryemail": "victoria.rogahn@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1443,11 +1441,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 188,
-        "useremail": "rset43@gmail.com",
+        "useremail": "qvut28@gmail.com",
         "user": {
             "userid": 187,
-            "username": "ami.windler",
-            "primaryemail": "melvin.hudson@yahoo.com",
+            "username": "alvina.bartell",
+            "primaryemail": "shamika.dibbert@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1458,11 +1456,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 190,
-        "useremail": "icrz24@gmail.com",
+        "useremail": "sfpg58@gmail.com",
         "user": {
             "userid": 189,
-            "username": "andrew.prosacco",
-            "primaryemail": "milan.kautzer@hotmail.com",
+            "username": "leisa.lowe",
+            "primaryemail": "philip.weber@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1473,11 +1471,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 192,
-        "useremail": "wmkh03@gmail.com",
+        "useremail": "zesg59@gmail.com",
         "user": {
             "userid": 191,
-            "username": "audra.mills",
-            "primaryemail": "sarita.herzog@gmail.com",
+            "username": "julio.effertz",
+            "primaryemail": "irvin.mante@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1488,11 +1486,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 194,
-        "useremail": "hrjj76@gmail.com",
+        "useremail": "gioy45@gmail.com",
         "user": {
             "userid": 193,
-            "username": "melony.von",
-            "primaryemail": "fern.kautzer@yahoo.com",
+            "username": "dominque.witting",
+            "primaryemail": "rene.cassin@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1503,11 +1501,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 196,
-        "useremail": "doev22@gmail.com",
+        "useremail": "peom18@gmail.com",
         "user": {
             "userid": 195,
-            "username": "renaldo.klocko",
-            "primaryemail": "giovanni.beahan@hotmail.com",
+            "username": "daryl.rau",
+            "primaryemail": "clotilde.feest@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1518,11 +1516,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 198,
-        "useremail": "cnvx02@gmail.com",
+        "useremail": "ioma44@gmail.com",
         "user": {
             "userid": 197,
-            "username": "leroy.oconner",
-            "primaryemail": "willodean.schmidt@gmail.com",
+            "username": "edwina.ryan",
+            "primaryemail": "nickolas.abshire@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1533,11 +1531,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 200,
-        "useremail": "bvlt19@gmail.com",
+        "useremail": "xmqi34@gmail.com",
         "user": {
             "userid": 199,
-            "username": "justin.cassin",
-            "primaryemail": "tommy.fisher@hotmail.com",
+            "username": "graham.connelly",
+            "primaryemail": "jacquline.kassulke@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1548,11 +1546,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 202,
-        "useremail": "tbhv64@gmail.com",
+        "useremail": "kqzy04@gmail.com",
         "user": {
             "userid": 201,
-            "username": "earleen.braun",
-            "primaryemail": "genoveva.effertz@yahoo.com",
+            "username": "millard.stehr",
+            "primaryemail": "booker.hickle@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1563,11 +1561,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 204,
-        "useremail": "lmqv92@gmail.com",
+        "useremail": "gxul40@gmail.com",
         "user": {
             "userid": 203,
-            "username": "iraida.schuppe",
-            "primaryemail": "kacey.schaden@yahoo.com",
+            "username": "cordell.stark",
+            "primaryemail": "rutha.lesch@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1578,11 +1576,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 206,
-        "useremail": "oaej42@gmail.com",
+        "useremail": "ixxf48@gmail.com",
         "user": {
             "userid": 205,
-            "username": "deshawn.ledner",
-            "primaryemail": "veola.king@gmail.com",
+            "username": "diego.bradtke",
+            "primaryemail": "aimee.windler@yahoo.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1593,11 +1591,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 208,
-        "useremail": "ahma01@gmail.com",
+        "useremail": "xjeb51@gmail.com",
         "user": {
             "userid": 207,
-            "username": "regenia.cormier",
-            "primaryemail": "zachery.hyatt@yahoo.com",
+            "username": "johnathon.fritsch",
+            "primaryemail": "thao.cassin@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1608,11 +1606,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 210,
-        "useremail": "kwuk73@gmail.com",
+        "useremail": "opcw98@gmail.com",
         "user": {
             "userid": 209,
-            "username": "arletha.runte",
-            "primaryemail": "gerardo.torphy@gmail.com",
+            "username": "alfonzo.ondricka",
+            "primaryemail": "illa.grady@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1623,11 +1621,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 212,
-        "useremail": "hoyu63@gmail.com",
+        "useremail": "wtwu00@gmail.com",
         "user": {
             "userid": 211,
-            "username": "sterling.howe",
-            "primaryemail": "pete.spinka@gmail.com",
+            "username": "leslie.barrows",
+            "primaryemail": "sang.deckow@gmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1638,11 +1636,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 214,
-        "useremail": "gvsw20@gmail.com",
+        "useremail": "kvjb04@gmail.com",
         "user": {
             "userid": 213,
-            "username": "maybell.murray",
-            "primaryemail": "brittani.kassulke@gmail.com",
+            "username": "jarred.hahn",
+            "primaryemail": "jarrod.langosh@hotmail.com",
             "roles": [
                 {
                     "roleid": 2,
@@ -1687,11 +1685,11 @@ Using the provided seed data, expand each endpoint below to see the output it ge
 
 ```JSON
 {
-    "timestamp": "2020-03-05T23:45:36.861+0000",
+    "timestamp": "2020-03-12T19:35:54.598+0000",
     "status": 500,
     "error": "Internal Server Error",
     "message": "Useremail with id 8888 Not Found!",
-    "trace": "javax.persistence.EntityNotFoundException: Useremail with id 8888 Not Found!\n\tat com.lambdaschool.usermodel.services.UseremailServiceImpl.lambda$findUseremailById$0(UseremailServiceImpl.java:39)\n\tat java.base/java.util.Optional.orElseThrow(Optional.java:408)\n\tat com.lambdaschool.usermodel.services.UseremailServiceImpl.findUseremailById(UseremailServiceImpl.java:39)\n\tat com.lambdaschool.usermodel.controllers.UseremailController.getUserEmailById(UseremailController.java:55)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)\n\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:634)\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:741)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\n\tat java.base/java.lang.Thread.run(Thread.java:834)\n",
+    "trace": "javax.persistence.EntityNotFoundException: Useremail with id 8888 Not Found!\n\tat com.lambdaschool.usermodel.services.UseremailServiceImpl.lambda$findUseremailById$0(UseremailServiceImpl.java:48)\n\tat java.base/java.util.Optional.orElseThrow(Optional.java:408)\n\tat com.lambdaschool.usermodel.services.UseremailServiceImpl.findUseremailById(UseremailServiceImpl.java:48)\n\tat com.lambdaschool.usermodel.services.UseremailServiceImpl$$FastClassBySpringCGLIB$$f1b1885e.invoke(<generated>)\n\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)\n\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)\n\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)\n\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)\n\tat com.lambdaschool.usermodel.services.UseremailServiceImpl$$EnhancerBySpringCGLIB$$4e5b2394.findUseremailById(<generated>)\n\tat com.lambdaschool.usermodel.controllers.UseremailController.getUserEmailById(UseremailController.java:59)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)\n\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:634)\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:741)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\n\tat java.base/java.lang.Thread.run(Thread.java:834)\n",
     "path": "/useremails/useremail/8888"
 }
 ```
@@ -1719,6 +1717,20 @@ Status OK
 ```
 
 </details>
+
+<details>
+<summary>POST http://localhost:2019/useremails/user/15/email/favbun@hops.local</summary>
+
+```TEXT
+No Data
+
+Location Header: http://localhost:2019/useremails/useremail/215
+Status 201 Created
+```
+
+</details>
+
+---
 
 <details>
 <summary>http://localhost:2019/roles/roles</summary>
@@ -1805,1101 +1817,1105 @@ Status OK
             },
             {
                 "userid": 15,
-                "username": "matilda.yundt",
-                "primaryemail": "curt.buckridge@yahoo.com",
+                "username": "sherwood.hoeger",
+                "primaryemail": "israel.conroy@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 16,
-                        "useremail": "qgmy80@gmail.com"
+                        "useremail": "xskw18@gmail.com"
+                    },
+                    {
+                        "useremailid": 215,
+                        "useremail": "favbun@hops.local"
                     }
                 ]
             },
             {
                 "userid": 17,
-                "username": "dave.rodriguez",
-                "primaryemail": "brent.mitchell@gmail.com",
+                "username": "graciela.stokes",
+                "primaryemail": "rolando.hahn@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 18,
-                        "useremail": "xlif03@gmail.com"
+                        "useremail": "peel65@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 19,
-                "username": "denyse.crona",
-                "primaryemail": "shala.bahringer@gmail.com",
+                "username": "gilberto.stark",
+                "primaryemail": "carmina.franecki@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 20,
-                        "useremail": "ntjd26@gmail.com"
+                        "useremail": "jwsk46@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 21,
-                "username": "denis.ritchie",
-                "primaryemail": "patience.maggio@yahoo.com",
+                "username": "ronnie.toy",
+                "primaryemail": "neal.pfannerstill@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 22,
-                        "useremail": "exvp66@gmail.com"
+                        "useremail": "lbja57@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 23,
-                "username": "richard.rosenbaum",
-                "primaryemail": "humberto.dooley@yahoo.com",
+                "username": "booker.fritsch",
+                "primaryemail": "nelida.hilll@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 24,
-                        "useremail": "rrfd13@gmail.com"
+                        "useremail": "fqhs75@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 25,
-                "username": "clarence.turner",
-                "primaryemail": "edwardo.bashirian@yahoo.com",
+                "username": "clemencia.reinger",
+                "primaryemail": "wilson.volkman@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 26,
-                        "useremail": "poov69@gmail.com"
+                        "useremail": "pfpj36@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 27,
-                "username": "leonel.gaylord",
-                "primaryemail": "samual.wisoky@hotmail.com",
+                "username": "isabel.satterfield",
+                "primaryemail": "michael.sporer@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 28,
-                        "useremail": "mpig37@gmail.com"
+                        "useremail": "oees90@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 29,
-                "username": "wayne.turcotte",
-                "primaryemail": "earline.oreilly@yahoo.com",
+                "username": "peggy.schaden",
+                "primaryemail": "ignacio.heidenreich@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 30,
-                        "useremail": "bysw47@gmail.com"
+                        "useremail": "bqfh83@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 31,
-                "username": "elizebeth.johnson",
-                "primaryemail": "saturnina.wintheiser@gmail.com",
+                "username": "ike.berge",
+                "primaryemail": "errol.lynch@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 32,
-                        "useremail": "whkb12@gmail.com"
+                        "useremail": "ayjg58@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 33,
-                "username": "mavis.prohaska",
-                "primaryemail": "donovan.heller@yahoo.com",
+                "username": "wilfred.wolff",
+                "primaryemail": "kristofer.mosciski@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 34,
-                        "useremail": "fqlz02@gmail.com"
+                        "useremail": "uias57@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 35,
-                "username": "josef.bode",
-                "primaryemail": "seymour.rempel@yahoo.com",
+                "username": "preston.langworth",
+                "primaryemail": "jesus.pfannerstill@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 36,
-                        "useremail": "ukig45@gmail.com"
+                        "useremail": "lhvu67@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 37,
-                "username": "jacqui.grady",
-                "primaryemail": "mattie.bashirian@gmail.com",
+                "username": "candida.harris",
+                "primaryemail": "mendy.runolfsson@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 38,
-                        "useremail": "wxjz52@gmail.com"
+                        "useremail": "suuh50@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 39,
-                "username": "edwardo.mcdermott",
-                "primaryemail": "vicky.brown@yahoo.com",
+                "username": "douglas.kuhn",
+                "primaryemail": "gladis.boyle@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 40,
-                        "useremail": "bxko72@gmail.com"
+                        "useremail": "cpte79@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 41,
-                "username": "rigoberto.koelpin",
-                "primaryemail": "simon.heathcote@hotmail.com",
+                "username": "abbey.oreilly",
+                "primaryemail": "ina.zieme@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 42,
-                        "useremail": "etfy55@gmail.com"
+                        "useremail": "eebw20@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 43,
-                "username": "celinda.spencer",
-                "primaryemail": "priscila.kirlin@yahoo.com",
+                "username": "eugene.prohaska",
+                "primaryemail": "lincoln.johns@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 44,
-                        "useremail": "ucph13@gmail.com"
+                        "useremail": "yzzr06@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 45,
-                "username": "nicolette.baumbach",
-                "primaryemail": "garland.ankunding@gmail.com",
+                "username": "thaddeus.hermann",
+                "primaryemail": "maile.hickle@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 46,
-                        "useremail": "dgtc18@gmail.com"
+                        "useremail": "itah03@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 47,
-                "username": "willis.rosenbaum",
-                "primaryemail": "leonie.kuhic@hotmail.com",
+                "username": "margarito.schultz",
+                "primaryemail": "marisha.schuster@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 48,
-                        "useremail": "wrxx04@gmail.com"
+                        "useremail": "luhs65@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 49,
-                "username": "jonas.ondricka",
-                "primaryemail": "chris.braun@yahoo.com",
+                "username": "hubert.hettinger",
+                "primaryemail": "rafael.prosacco@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 50,
-                        "useremail": "dojj12@gmail.com"
+                        "useremail": "fvdv73@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 51,
-                "username": "lanny.prosacco",
-                "primaryemail": "gerardo.okeefe@hotmail.com",
+                "username": "francis.osinski",
+                "primaryemail": "rolanda.kris@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 52,
-                        "useremail": "bdub60@gmail.com"
+                        "useremail": "dqpv88@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 53,
-                "username": "lean.lang",
-                "primaryemail": "norene.mcglynn@yahoo.com",
+                "username": "korey.mckenzie",
+                "primaryemail": "linette.rau@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 54,
-                        "useremail": "gkyt77@gmail.com"
+                        "useremail": "ljxx97@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 55,
-                "username": "caryn.vonrueden",
-                "primaryemail": "deena.casper@gmail.com",
+                "username": "kelvin.windler",
+                "primaryemail": "ian.tremblay@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 56,
-                        "useremail": "itbs03@gmail.com"
+                        "useremail": "aqso45@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 57,
-                "username": "lavone.douglas",
-                "primaryemail": "gordon.pfannerstill@gmail.com",
+                "username": "shan.tremblay",
+                "primaryemail": "holley.schumm@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 58,
-                        "useremail": "xnpj32@gmail.com"
+                        "useremail": "opee90@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 59,
-                "username": "norbert.gislason",
-                "primaryemail": "gaynelle.hintz@hotmail.com",
+                "username": "michal.ortiz",
+                "primaryemail": "chance.okuneva@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 60,
-                        "useremail": "qxdz57@gmail.com"
+                        "useremail": "qmwa99@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 61,
-                "username": "evon.gottlieb",
-                "primaryemail": "shera.botsford@gmail.com",
+                "username": "richie.hahn",
+                "primaryemail": "lana.kiehn@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 62,
-                        "useremail": "rtqc42@gmail.com"
+                        "useremail": "slvj39@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 63,
-                "username": "deon.damore",
-                "primaryemail": "xiao.ratke@gmail.com",
+                "username": "hyo.kemmer",
+                "primaryemail": "monique.ziemann@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 64,
-                        "useremail": "msim50@gmail.com"
+                        "useremail": "tbhv00@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 65,
-                "username": "gaylord.kemmer",
-                "primaryemail": "bennie.fay@hotmail.com",
+                "username": "jeromy.blanda",
+                "primaryemail": "danyel.klein@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 66,
-                        "useremail": "mdum96@gmail.com"
+                        "useremail": "ijic62@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 67,
-                "username": "rick.donnelly",
-                "primaryemail": "jana.grimes@yahoo.com",
+                "username": "major.deckow",
+                "primaryemail": "lee.breitenberg@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 68,
-                        "useremail": "npfn93@gmail.com"
+                        "useremail": "cauz68@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 69,
-                "username": "regenia.gislason",
-                "primaryemail": "kittie.kub@hotmail.com",
+                "username": "ileana.von",
+                "primaryemail": "pamela.cruickshank@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 70,
-                        "useremail": "zwoa10@gmail.com"
+                        "useremail": "pcrz93@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 71,
-                "username": "keturah.hirthe",
-                "primaryemail": "madelyn.cummerata@yahoo.com",
+                "username": "liliana.schoen",
+                "primaryemail": "bessie.kertzmann@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 72,
-                        "useremail": "mgru08@gmail.com"
+                        "useremail": "tkwi17@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 73,
-                "username": "marylyn.schmitt",
-                "primaryemail": "wiley.shields@gmail.com",
+                "username": "kylee.koch",
+                "primaryemail": "jerrell.senger@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 74,
-                        "useremail": "afpj96@gmail.com"
+                        "useremail": "syda00@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 75,
-                "username": "dacia.cole",
-                "primaryemail": "gearldine.effertz@yahoo.com",
+                "username": "willian.lubowitz",
+                "primaryemail": "cesar.wolff@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 76,
-                        "useremail": "oziz06@gmail.com"
+                        "useremail": "rdcr08@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 77,
-                "username": "sherita.powlowski",
-                "primaryemail": "dallas.quitzon@yahoo.com",
+                "username": "jolynn.leuschke",
+                "primaryemail": "hong.ritchie@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 78,
-                        "useremail": "zchl69@gmail.com"
+                        "useremail": "njjk01@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 79,
-                "username": "iola.nitzsche",
-                "primaryemail": "adriene.heathcote@yahoo.com",
+                "username": "herbert.connelly",
+                "primaryemail": "russel.weimann@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 80,
-                        "useremail": "omiz30@gmail.com"
+                        "useremail": "xonh59@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 81,
-                "username": "marcelo.shields",
-                "primaryemail": "verlie.macgyver@gmail.com",
+                "username": "alix.shields",
+                "primaryemail": "pedro.wyman@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 82,
-                        "useremail": "xvcg63@gmail.com"
+                        "useremail": "sylg17@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 83,
-                "username": "dirk.jacobson",
-                "primaryemail": "gail.sauer@gmail.com",
+                "username": "maryetta.mcclure",
+                "primaryemail": "elden.wolf@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 84,
-                        "useremail": "yssh13@gmail.com"
+                        "useremail": "vjsa32@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 85,
-                "username": "glinda.bogisich",
-                "primaryemail": "susan.altenwerth@gmail.com",
+                "username": "deon.klocko",
+                "primaryemail": "monica.brown@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 86,
-                        "useremail": "ppbf70@gmail.com"
+                        "useremail": "nbdj44@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 87,
-                "username": "marry.kling",
-                "primaryemail": "porter.pacocha@hotmail.com",
+                "username": "louie.harvey",
+                "primaryemail": "jordon.mertz@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 88,
-                        "useremail": "qzhg91@gmail.com"
+                        "useremail": "hlos69@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 89,
-                "username": "socorro.connelly",
-                "primaryemail": "suzan.osinski@hotmail.com",
+                "username": "mohammed.west",
+                "primaryemail": "dotty.torphy@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 90,
-                        "useremail": "olwn04@gmail.com"
+                        "useremail": "nijw86@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 91,
-                "username": "edith.greenholt",
-                "primaryemail": "alaina.mayert@gmail.com",
+                "username": "rey.kris",
+                "primaryemail": "delaine.effertz@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 92,
-                        "useremail": "osvf94@gmail.com"
+                        "useremail": "qcrt31@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 93,
-                "username": "jacinto.moen",
-                "primaryemail": "boyce.jakubowski@gmail.com",
+                "username": "tameika.hammes",
+                "primaryemail": "shawn.wuckert@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 94,
-                        "useremail": "jnbm21@gmail.com"
+                        "useremail": "dxxt37@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 95,
-                "username": "del.gibson",
-                "primaryemail": "ronnie.metz@hotmail.com",
+                "username": "jacqui.swift",
+                "primaryemail": "domenic.quitzon@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 96,
-                        "useremail": "hcas79@gmail.com"
+                        "useremail": "mkvp09@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 97,
-                "username": "melvin.braun",
-                "primaryemail": "rory.jones@yahoo.com",
+                "username": "jeffie.lesch",
+                "primaryemail": "christian.baumbach@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 98,
-                        "useremail": "tuck65@gmail.com"
+                        "useremail": "dtwi67@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 99,
-                "username": "tory.oreilly",
-                "primaryemail": "cody.watsica@hotmail.com",
+                "username": "cassi.kessler",
+                "primaryemail": "val.grimes@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 100,
-                        "useremail": "jzvg60@gmail.com"
+                        "useremail": "mrxa63@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 101,
-                "username": "patria.walker",
-                "primaryemail": "claudette.zulauf@gmail.com",
+                "username": "nova.kreiger",
+                "primaryemail": "bettye.stehr@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 102,
-                        "useremail": "iugx85@gmail.com"
+                        "useremail": "grej06@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 103,
-                "username": "august.mante",
-                "primaryemail": "isidro.daniel@hotmail.com",
+                "username": "tracie.murazik",
+                "primaryemail": "libby.tillman@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 104,
-                        "useremail": "hnpq15@gmail.com"
+                        "useremail": "pzug31@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 105,
-                "username": "lyndsey.ledner",
-                "primaryemail": "dominga.stoltenberg@yahoo.com",
+                "username": "melvin.white",
+                "primaryemail": "micheal.damore@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 106,
-                        "useremail": "nwjb49@gmail.com"
+                        "useremail": "tnwg50@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 107,
-                "username": "napoleon.farrell",
-                "primaryemail": "ashly.prosacco@gmail.com",
+                "username": "josh.jacobson",
+                "primaryemail": "sarina.krajcik@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 108,
-                        "useremail": "wrzk27@gmail.com"
+                        "useremail": "ytrt21@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 109,
-                "username": "rigoberto.douglas",
-                "primaryemail": "emilio.rath@gmail.com",
+                "username": "bryan.johnston",
+                "primaryemail": "gerardo.buckridge@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 110,
-                        "useremail": "msxd77@gmail.com"
+                        "useremail": "dlpn23@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 111,
-                "username": "william.stehr",
-                "primaryemail": "saul.bradtke@hotmail.com",
+                "username": "tai.nikolaus",
+                "primaryemail": "kendrick.swift@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 112,
-                        "useremail": "qttt00@gmail.com"
+                        "useremail": "udmd59@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 113,
-                "username": "ann.kilback",
-                "primaryemail": "gidget.bernier@gmail.com",
+                "username": "julee.leuschke",
+                "primaryemail": "katherine.lesch@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 114,
-                        "useremail": "xfvn58@gmail.com"
+                        "useremail": "wjvs47@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 115,
-                "username": "vania.ortiz",
-                "primaryemail": "roscoe.cartwright@hotmail.com",
+                "username": "leslie.grady",
+                "primaryemail": "nan.price@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 116,
-                        "useremail": "wspo72@gmail.com"
+                        "useremail": "sgid92@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 117,
-                "username": "shauna.walter",
-                "primaryemail": "paris.parker@hotmail.com",
+                "username": "michale.streich",
+                "primaryemail": "murray.treutel@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 118,
-                        "useremail": "fgbc05@gmail.com"
+                        "useremail": "rxdk99@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 119,
-                "username": "rosamond.douglas",
-                "primaryemail": "lynwood.schuster@hotmail.com",
+                "username": "cole.champlin",
+                "primaryemail": "monique.okon@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 120,
-                        "useremail": "ekai96@gmail.com"
+                        "useremail": "xhpt15@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 121,
-                "username": "angela.wintheiser",
-                "primaryemail": "sylvie.anderson@yahoo.com",
+                "username": "kyle.nolan",
+                "primaryemail": "jean.thiel@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 122,
-                        "useremail": "ffkd22@gmail.com"
+                        "useremail": "zufz39@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 123,
-                "username": "dulce.koss",
-                "primaryemail": "noah.runolfsdottir@hotmail.com",
+                "username": "leonardo.mayert",
+                "primaryemail": "jamar.nikolaus@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 124,
-                        "useremail": "htfj65@gmail.com"
+                        "useremail": "chbn40@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 125,
-                "username": "christa.schmidt",
-                "primaryemail": "jordan.connelly@yahoo.com",
+                "username": "diego.wilderman",
+                "primaryemail": "columbus.dickens@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 126,
-                        "useremail": "gefm82@gmail.com"
+                        "useremail": "rwiu57@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 127,
-                "username": "migdalia.ondricka",
-                "primaryemail": "davida.hilll@gmail.com",
+                "username": "rebecka.marvin",
+                "primaryemail": "jeanene.toy@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 128,
-                        "useremail": "hije89@gmail.com"
+                        "useremail": "pvwh19@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 129,
-                "username": "blaine.kerluke",
-                "primaryemail": "easter.fisher@yahoo.com",
+                "username": "long.king",
+                "primaryemail": "shaneka.mohr@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 130,
-                        "useremail": "lkwm29@gmail.com"
+                        "useremail": "fsrl60@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 131,
-                "username": "williams.langosh",
-                "primaryemail": "vance.brown@yahoo.com",
+                "username": "jefferey.doyle",
+                "primaryemail": "brittany.medhurst@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 132,
-                        "useremail": "affl03@gmail.com"
+                        "useremail": "ianw78@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 133,
-                "username": "agripina.ruecker",
-                "primaryemail": "dominga.gorczany@gmail.com",
+                "username": "mindi.kuvalis",
+                "primaryemail": "rosemarie.considine@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 134,
-                        "useremail": "ydij67@gmail.com"
+                        "useremail": "ulhi69@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 135,
-                "username": "rosetta.mosciski",
-                "primaryemail": "jaclyn.williamson@gmail.com",
+                "username": "arnoldo.huels",
+                "primaryemail": "buck.luettgen@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 136,
-                        "useremail": "znpf34@gmail.com"
+                        "useremail": "deih16@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 137,
-                "username": "minh.pacocha",
-                "primaryemail": "dollie.bechtelar@yahoo.com",
+                "username": "jasper.stroman",
+                "primaryemail": "bari.oconner@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 138,
-                        "useremail": "ijlc86@gmail.com"
+                        "useremail": "gyqu90@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 139,
-                "username": "thu.vonrueden",
-                "primaryemail": "cherelle.hermiston@gmail.com",
+                "username": "deana.douglas",
+                "primaryemail": "vena.lebsack@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 140,
-                        "useremail": "xtks93@gmail.com"
+                        "useremail": "nfjf95@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 141,
-                "username": "ranee.glover",
-                "primaryemail": "daryl.brakus@yahoo.com",
+                "username": "ligia.funk",
+                "primaryemail": "irving.oconnell@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 142,
-                        "useremail": "qilq50@gmail.com"
+                        "useremail": "urmp38@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 143,
-                "username": "cody.green",
-                "primaryemail": "genna.schuster@gmail.com",
+                "username": "nicky.bartell",
+                "primaryemail": "rod.okeefe@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 144,
-                        "useremail": "olsh71@gmail.com"
+                        "useremail": "mrxn34@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 145,
-                "username": "dewitt.wehner",
-                "primaryemail": "treva.von@gmail.com",
+                "username": "carmelia.grant",
+                "primaryemail": "rita.mcclure@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 146,
-                        "useremail": "sgtd73@gmail.com"
+                        "useremail": "zuhe79@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 147,
-                "username": "santos.grant",
-                "primaryemail": "yi.hahn@gmail.com",
+                "username": "starla.russel",
+                "primaryemail": "johnny.homenick@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 148,
-                        "useremail": "wrjq40@gmail.com"
+                        "useremail": "hzsx15@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 149,
-                "username": "harris.ohara",
-                "primaryemail": "ricardo.dubuque@yahoo.com",
+                "username": "lawerence.collier",
+                "primaryemail": "walton.cole@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 150,
-                        "useremail": "dzpo34@gmail.com"
+                        "useremail": "nwya10@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 151,
-                "username": "eustolia.blanda",
-                "primaryemail": "scotty.bashirian@hotmail.com",
+                "username": "nu.labadie",
+                "primaryemail": "darius.satterfield@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 152,
-                        "useremail": "exyg13@gmail.com"
+                        "useremail": "ewxp13@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 153,
-                "username": "theodora.gulgowski",
-                "primaryemail": "alphonso.quigley@hotmail.com",
+                "username": "jamaal.feil",
+                "primaryemail": "lucius.mueller@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 154,
-                        "useremail": "klfs87@gmail.com"
+                        "useremail": "nwdw59@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 155,
-                "username": "terrell.heller",
-                "primaryemail": "milford.batz@hotmail.com",
+                "username": "prince.champlin",
+                "primaryemail": "willis.blanda@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 156,
-                        "useremail": "ugmd90@gmail.com"
+                        "useremail": "cmio28@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 157,
-                "username": "aleshia.kub",
-                "primaryemail": "augustine.krajcik@hotmail.com",
+                "username": "roscoe.stroman",
+                "primaryemail": "hilaria.stamm@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 158,
-                        "useremail": "pzat24@gmail.com"
+                        "useremail": "vosz66@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 159,
-                "username": "carlo.bruen",
-                "primaryemail": "ambrose.lockman@hotmail.com",
+                "username": "valentine.altenwerth",
+                "primaryemail": "danilo.crona@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 160,
-                        "useremail": "rwza71@gmail.com"
+                        "useremail": "niiy05@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 161,
-                "username": "eli.langworth",
-                "primaryemail": "king.bernhard@hotmail.com",
+                "username": "wally.fahey",
+                "primaryemail": "tamekia.dibbert@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 162,
-                        "useremail": "mmou49@gmail.com"
+                        "useremail": "vwxs01@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 163,
-                "username": "christian.schroeder",
-                "primaryemail": "santana.stoltenberg@yahoo.com",
+                "username": "ozzie.renner",
+                "primaryemail": "clarence.bashirian@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 164,
-                        "useremail": "wrwv26@gmail.com"
+                        "useremail": "cdtl75@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 165,
-                "username": "lowell.schoen",
-                "primaryemail": "evelyne.bechtelar@gmail.com",
+                "username": "layne.gibson",
+                "primaryemail": "coralie.morar@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 166,
-                        "useremail": "agxm74@gmail.com"
+                        "useremail": "uopv29@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 167,
-                "username": "marinda.hettinger",
-                "primaryemail": "rodrick.kirlin@gmail.com",
+                "username": "dominica.barrows",
+                "primaryemail": "carson.haley@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 168,
-                        "useremail": "kcrb38@gmail.com"
+                        "useremail": "slvh34@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 169,
-                "username": "gustavo.weber",
-                "primaryemail": "karine.luettgen@hotmail.com",
+                "username": "michale.quitzon",
+                "primaryemail": "zane.douglas@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 170,
-                        "useremail": "matj06@gmail.com"
+                        "useremail": "hkbq09@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 171,
-                "username": "rory.jakubowski",
-                "primaryemail": "laureen.walsh@hotmail.com",
+                "username": "nenita.jacobi",
+                "primaryemail": "adolfo.mosciski@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 172,
-                        "useremail": "ejgd15@gmail.com"
+                        "useremail": "tjbq79@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 173,
-                "username": "mitch.runte",
-                "primaryemail": "royal.schaden@hotmail.com",
+                "username": "elliott.wunsch",
+                "primaryemail": "pedro.hegmann@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 174,
-                        "useremail": "ddyh01@gmail.com"
+                        "useremail": "vune39@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 175,
-                "username": "elton.grady",
-                "primaryemail": "savanna.marks@yahoo.com",
+                "username": "karl.goyette",
+                "primaryemail": "leighann.dicki@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 176,
-                        "useremail": "rsxi82@gmail.com"
+                        "useremail": "afsy02@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 177,
-                "username": "cornell.deckow",
-                "primaryemail": "britt.hintz@yahoo.com",
+                "username": "brandon.lindgren",
+                "primaryemail": "conrad.mccullough@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 178,
-                        "useremail": "ezwt57@gmail.com"
+                        "useremail": "xnzf62@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 179,
-                "username": "carol.beier",
-                "primaryemail": "elsie.walsh@yahoo.com",
+                "username": "troy.okeefe",
+                "primaryemail": "glinda.gorczany@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 180,
-                        "useremail": "hjvv93@gmail.com"
+                        "useremail": "oabf43@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 181,
-                "username": "octavia.heaney",
-                "primaryemail": "belia.parker@hotmail.com",
+                "username": "arletta.schmidt",
+                "primaryemail": "myrtie.haley@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 182,
-                        "useremail": "xwrk46@gmail.com"
+                        "useremail": "pnet77@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 183,
-                "username": "kraig.hand",
-                "primaryemail": "syreeta.satterfield@hotmail.com",
+                "username": "gracie.runolfsson",
+                "primaryemail": "quintin.christiansen@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 184,
-                        "useremail": "ylnx08@gmail.com"
+                        "useremail": "pbjv90@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 185,
-                "username": "moses.hoppe",
-                "primaryemail": "brady.friesen@yahoo.com",
+                "username": "herbert.reichel",
+                "primaryemail": "victoria.rogahn@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 186,
-                        "useremail": "qeqm63@gmail.com"
+                        "useremail": "erah83@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 187,
-                "username": "ami.windler",
-                "primaryemail": "melvin.hudson@yahoo.com",
+                "username": "alvina.bartell",
+                "primaryemail": "shamika.dibbert@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 188,
-                        "useremail": "rset43@gmail.com"
+                        "useremail": "qvut28@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 189,
-                "username": "andrew.prosacco",
-                "primaryemail": "milan.kautzer@hotmail.com",
+                "username": "leisa.lowe",
+                "primaryemail": "philip.weber@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 190,
-                        "useremail": "icrz24@gmail.com"
+                        "useremail": "sfpg58@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 191,
-                "username": "audra.mills",
-                "primaryemail": "sarita.herzog@gmail.com",
+                "username": "julio.effertz",
+                "primaryemail": "irvin.mante@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 192,
-                        "useremail": "wmkh03@gmail.com"
+                        "useremail": "zesg59@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 193,
-                "username": "melony.von",
-                "primaryemail": "fern.kautzer@yahoo.com",
+                "username": "dominque.witting",
+                "primaryemail": "rene.cassin@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 194,
-                        "useremail": "hrjj76@gmail.com"
+                        "useremail": "gioy45@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 195,
-                "username": "renaldo.klocko",
-                "primaryemail": "giovanni.beahan@hotmail.com",
+                "username": "daryl.rau",
+                "primaryemail": "clotilde.feest@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 196,
-                        "useremail": "doev22@gmail.com"
+                        "useremail": "peom18@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 197,
-                "username": "leroy.oconner",
-                "primaryemail": "willodean.schmidt@gmail.com",
+                "username": "edwina.ryan",
+                "primaryemail": "nickolas.abshire@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 198,
-                        "useremail": "cnvx02@gmail.com"
+                        "useremail": "ioma44@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 199,
-                "username": "justin.cassin",
-                "primaryemail": "tommy.fisher@hotmail.com",
+                "username": "graham.connelly",
+                "primaryemail": "jacquline.kassulke@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 200,
-                        "useremail": "bvlt19@gmail.com"
+                        "useremail": "xmqi34@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 201,
-                "username": "earleen.braun",
-                "primaryemail": "genoveva.effertz@yahoo.com",
+                "username": "millard.stehr",
+                "primaryemail": "booker.hickle@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 202,
-                        "useremail": "tbhv64@gmail.com"
+                        "useremail": "kqzy04@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 203,
-                "username": "iraida.schuppe",
-                "primaryemail": "kacey.schaden@yahoo.com",
+                "username": "cordell.stark",
+                "primaryemail": "rutha.lesch@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 204,
-                        "useremail": "lmqv92@gmail.com"
+                        "useremail": "gxul40@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 205,
-                "username": "deshawn.ledner",
-                "primaryemail": "veola.king@gmail.com",
+                "username": "diego.bradtke",
+                "primaryemail": "aimee.windler@yahoo.com",
                 "useremails": [
                     {
                         "useremailid": 206,
-                        "useremail": "oaej42@gmail.com"
+                        "useremail": "ixxf48@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 207,
-                "username": "regenia.cormier",
-                "primaryemail": "zachery.hyatt@yahoo.com",
+                "username": "johnathon.fritsch",
+                "primaryemail": "thao.cassin@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 208,
-                        "useremail": "ahma01@gmail.com"
+                        "useremail": "xjeb51@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 209,
-                "username": "arletha.runte",
-                "primaryemail": "gerardo.torphy@gmail.com",
+                "username": "alfonzo.ondricka",
+                "primaryemail": "illa.grady@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 210,
-                        "useremail": "kwuk73@gmail.com"
+                        "useremail": "opcw98@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 211,
-                "username": "sterling.howe",
-                "primaryemail": "pete.spinka@gmail.com",
+                "username": "leslie.barrows",
+                "primaryemail": "sang.deckow@gmail.com",
                 "useremails": [
                     {
                         "useremailid": 212,
-                        "useremail": "hoyu63@gmail.com"
+                        "useremail": "wtwu00@gmail.com"
                     }
                 ]
             },
             {
                 "userid": 213,
-                "username": "maybell.murray",
-                "primaryemail": "brittani.kassulke@gmail.com",
+                "username": "jarred.hahn",
+                "primaryemail": "jarrod.langosh@hotmail.com",
                 "useremails": [
                     {
                         "useremailid": 214,
-                        "useremail": "gvsw20@gmail.com"
+                        "useremail": "kvjb04@gmail.com"
                     }
                 ]
             }
@@ -2975,6 +2991,10 @@ Status OK
             "primaryemail": "cinnamon@lambdaschool.local",
             "useremails": [
                 {
+                    "useremailid": 8,
+                    "useremail": "cinnamon@mymail.local"
+                },
+                {
                     "useremailid": 9,
                     "useremail": "favbun@hops.local"
                 },
@@ -3019,6 +3039,10 @@ Status OK
             "primaryemail": "cinnamon@lambdaschool.local",
             "useremails": [
                 {
+                    "useremailid": 8,
+                    "useremail": "cinnamon@mymail.local"
+                },
+                {
                     "useremailid": 9,
                     "useremail": "favbun@hops.local"
                 },
@@ -3048,12 +3072,25 @@ DATA
 OUTPUT
 
 ```TEXT
-Location Header: http://localhost:2019/roles/role/215
+No Data
 
+Location Header: http://localhost:2019/roles/role/216
 Status 201 Created
 ```
 
 </details>
+
+<details>
+<summary>DELETE Roles must wait. We can only delete from the main class, in our case User</summary>
+
+</details>
+
+<details>
+
+<summary>PUT / PATCH roles is a custom query added later</summary>
+</details>
+
+---
 
 <details>
 <summary>http://localhost:2019/users/users</summary>
@@ -3157,12 +3194,16 @@ Status 201 Created
     },
     {
         "userid": 15,
-        "username": "matilda.yundt",
-        "primaryemail": "curt.buckridge@yahoo.com",
+        "username": "sherwood.hoeger",
+        "primaryemail": "israel.conroy@gmail.com",
         "useremails": [
             {
                 "useremailid": 16,
-                "useremail": "qgmy80@gmail.com"
+                "useremail": "xskw18@gmail.com"
+            },
+            {
+                "useremailid": 215,
+                "useremail": "favbun@hops.local"
             }
         ],
         "roles": [
@@ -3174,12 +3215,12 @@ Status 201 Created
     },
     {
         "userid": 17,
-        "username": "dave.rodriguez",
-        "primaryemail": "brent.mitchell@gmail.com",
+        "username": "graciela.stokes",
+        "primaryemail": "rolando.hahn@gmail.com",
         "useremails": [
             {
                 "useremailid": 18,
-                "useremail": "xlif03@gmail.com"
+                "useremail": "peel65@gmail.com"
             }
         ],
         "roles": [
@@ -3191,12 +3232,12 @@ Status 201 Created
     },
     {
         "userid": 19,
-        "username": "denyse.crona",
-        "primaryemail": "shala.bahringer@gmail.com",
+        "username": "gilberto.stark",
+        "primaryemail": "carmina.franecki@hotmail.com",
         "useremails": [
             {
                 "useremailid": 20,
-                "useremail": "ntjd26@gmail.com"
+                "useremail": "jwsk46@gmail.com"
             }
         ],
         "roles": [
@@ -3208,12 +3249,12 @@ Status 201 Created
     },
     {
         "userid": 21,
-        "username": "denis.ritchie",
-        "primaryemail": "patience.maggio@yahoo.com",
+        "username": "ronnie.toy",
+        "primaryemail": "neal.pfannerstill@yahoo.com",
         "useremails": [
             {
                 "useremailid": 22,
-                "useremail": "exvp66@gmail.com"
+                "useremail": "lbja57@gmail.com"
             }
         ],
         "roles": [
@@ -3225,12 +3266,12 @@ Status 201 Created
     },
     {
         "userid": 23,
-        "username": "richard.rosenbaum",
-        "primaryemail": "humberto.dooley@yahoo.com",
+        "username": "booker.fritsch",
+        "primaryemail": "nelida.hilll@hotmail.com",
         "useremails": [
             {
                 "useremailid": 24,
-                "useremail": "rrfd13@gmail.com"
+                "useremail": "fqhs75@gmail.com"
             }
         ],
         "roles": [
@@ -3242,12 +3283,12 @@ Status 201 Created
     },
     {
         "userid": 25,
-        "username": "clarence.turner",
-        "primaryemail": "edwardo.bashirian@yahoo.com",
+        "username": "clemencia.reinger",
+        "primaryemail": "wilson.volkman@gmail.com",
         "useremails": [
             {
                 "useremailid": 26,
-                "useremail": "poov69@gmail.com"
+                "useremail": "pfpj36@gmail.com"
             }
         ],
         "roles": [
@@ -3259,12 +3300,12 @@ Status 201 Created
     },
     {
         "userid": 27,
-        "username": "leonel.gaylord",
-        "primaryemail": "samual.wisoky@hotmail.com",
+        "username": "isabel.satterfield",
+        "primaryemail": "michael.sporer@hotmail.com",
         "useremails": [
             {
                 "useremailid": 28,
-                "useremail": "mpig37@gmail.com"
+                "useremail": "oees90@gmail.com"
             }
         ],
         "roles": [
@@ -3276,12 +3317,12 @@ Status 201 Created
     },
     {
         "userid": 29,
-        "username": "wayne.turcotte",
-        "primaryemail": "earline.oreilly@yahoo.com",
+        "username": "peggy.schaden",
+        "primaryemail": "ignacio.heidenreich@yahoo.com",
         "useremails": [
             {
                 "useremailid": 30,
-                "useremail": "bysw47@gmail.com"
+                "useremail": "bqfh83@gmail.com"
             }
         ],
         "roles": [
@@ -3293,12 +3334,12 @@ Status 201 Created
     },
     {
         "userid": 31,
-        "username": "elizebeth.johnson",
-        "primaryemail": "saturnina.wintheiser@gmail.com",
+        "username": "ike.berge",
+        "primaryemail": "errol.lynch@yahoo.com",
         "useremails": [
             {
                 "useremailid": 32,
-                "useremail": "whkb12@gmail.com"
+                "useremail": "ayjg58@gmail.com"
             }
         ],
         "roles": [
@@ -3310,12 +3351,12 @@ Status 201 Created
     },
     {
         "userid": 33,
-        "username": "mavis.prohaska",
-        "primaryemail": "donovan.heller@yahoo.com",
+        "username": "wilfred.wolff",
+        "primaryemail": "kristofer.mosciski@hotmail.com",
         "useremails": [
             {
                 "useremailid": 34,
-                "useremail": "fqlz02@gmail.com"
+                "useremail": "uias57@gmail.com"
             }
         ],
         "roles": [
@@ -3327,12 +3368,12 @@ Status 201 Created
     },
     {
         "userid": 35,
-        "username": "josef.bode",
-        "primaryemail": "seymour.rempel@yahoo.com",
+        "username": "preston.langworth",
+        "primaryemail": "jesus.pfannerstill@hotmail.com",
         "useremails": [
             {
                 "useremailid": 36,
-                "useremail": "ukig45@gmail.com"
+                "useremail": "lhvu67@gmail.com"
             }
         ],
         "roles": [
@@ -3344,12 +3385,12 @@ Status 201 Created
     },
     {
         "userid": 37,
-        "username": "jacqui.grady",
-        "primaryemail": "mattie.bashirian@gmail.com",
+        "username": "candida.harris",
+        "primaryemail": "mendy.runolfsson@gmail.com",
         "useremails": [
             {
                 "useremailid": 38,
-                "useremail": "wxjz52@gmail.com"
+                "useremail": "suuh50@gmail.com"
             }
         ],
         "roles": [
@@ -3361,12 +3402,12 @@ Status 201 Created
     },
     {
         "userid": 39,
-        "username": "edwardo.mcdermott",
-        "primaryemail": "vicky.brown@yahoo.com",
+        "username": "douglas.kuhn",
+        "primaryemail": "gladis.boyle@gmail.com",
         "useremails": [
             {
                 "useremailid": 40,
-                "useremail": "bxko72@gmail.com"
+                "useremail": "cpte79@gmail.com"
             }
         ],
         "roles": [
@@ -3378,12 +3419,12 @@ Status 201 Created
     },
     {
         "userid": 41,
-        "username": "rigoberto.koelpin",
-        "primaryemail": "simon.heathcote@hotmail.com",
+        "username": "abbey.oreilly",
+        "primaryemail": "ina.zieme@yahoo.com",
         "useremails": [
             {
                 "useremailid": 42,
-                "useremail": "etfy55@gmail.com"
+                "useremail": "eebw20@gmail.com"
             }
         ],
         "roles": [
@@ -3395,12 +3436,12 @@ Status 201 Created
     },
     {
         "userid": 43,
-        "username": "celinda.spencer",
-        "primaryemail": "priscila.kirlin@yahoo.com",
+        "username": "eugene.prohaska",
+        "primaryemail": "lincoln.johns@gmail.com",
         "useremails": [
             {
                 "useremailid": 44,
-                "useremail": "ucph13@gmail.com"
+                "useremail": "yzzr06@gmail.com"
             }
         ],
         "roles": [
@@ -3412,12 +3453,12 @@ Status 201 Created
     },
     {
         "userid": 45,
-        "username": "nicolette.baumbach",
-        "primaryemail": "garland.ankunding@gmail.com",
+        "username": "thaddeus.hermann",
+        "primaryemail": "maile.hickle@gmail.com",
         "useremails": [
             {
                 "useremailid": 46,
-                "useremail": "dgtc18@gmail.com"
+                "useremail": "itah03@gmail.com"
             }
         ],
         "roles": [
@@ -3429,12 +3470,12 @@ Status 201 Created
     },
     {
         "userid": 47,
-        "username": "willis.rosenbaum",
-        "primaryemail": "leonie.kuhic@hotmail.com",
+        "username": "margarito.schultz",
+        "primaryemail": "marisha.schuster@hotmail.com",
         "useremails": [
             {
                 "useremailid": 48,
-                "useremail": "wrxx04@gmail.com"
+                "useremail": "luhs65@gmail.com"
             }
         ],
         "roles": [
@@ -3446,12 +3487,12 @@ Status 201 Created
     },
     {
         "userid": 49,
-        "username": "jonas.ondricka",
-        "primaryemail": "chris.braun@yahoo.com",
+        "username": "hubert.hettinger",
+        "primaryemail": "rafael.prosacco@yahoo.com",
         "useremails": [
             {
                 "useremailid": 50,
-                "useremail": "dojj12@gmail.com"
+                "useremail": "fvdv73@gmail.com"
             }
         ],
         "roles": [
@@ -3463,12 +3504,12 @@ Status 201 Created
     },
     {
         "userid": 51,
-        "username": "lanny.prosacco",
-        "primaryemail": "gerardo.okeefe@hotmail.com",
+        "username": "francis.osinski",
+        "primaryemail": "rolanda.kris@hotmail.com",
         "useremails": [
             {
                 "useremailid": 52,
-                "useremail": "bdub60@gmail.com"
+                "useremail": "dqpv88@gmail.com"
             }
         ],
         "roles": [
@@ -3480,12 +3521,12 @@ Status 201 Created
     },
     {
         "userid": 53,
-        "username": "lean.lang",
-        "primaryemail": "norene.mcglynn@yahoo.com",
+        "username": "korey.mckenzie",
+        "primaryemail": "linette.rau@yahoo.com",
         "useremails": [
             {
                 "useremailid": 54,
-                "useremail": "gkyt77@gmail.com"
+                "useremail": "ljxx97@gmail.com"
             }
         ],
         "roles": [
@@ -3497,12 +3538,12 @@ Status 201 Created
     },
     {
         "userid": 55,
-        "username": "caryn.vonrueden",
-        "primaryemail": "deena.casper@gmail.com",
+        "username": "kelvin.windler",
+        "primaryemail": "ian.tremblay@hotmail.com",
         "useremails": [
             {
                 "useremailid": 56,
-                "useremail": "itbs03@gmail.com"
+                "useremail": "aqso45@gmail.com"
             }
         ],
         "roles": [
@@ -3514,12 +3555,12 @@ Status 201 Created
     },
     {
         "userid": 57,
-        "username": "lavone.douglas",
-        "primaryemail": "gordon.pfannerstill@gmail.com",
+        "username": "shan.tremblay",
+        "primaryemail": "holley.schumm@gmail.com",
         "useremails": [
             {
                 "useremailid": 58,
-                "useremail": "xnpj32@gmail.com"
+                "useremail": "opee90@gmail.com"
             }
         ],
         "roles": [
@@ -3531,12 +3572,12 @@ Status 201 Created
     },
     {
         "userid": 59,
-        "username": "norbert.gislason",
-        "primaryemail": "gaynelle.hintz@hotmail.com",
+        "username": "michal.ortiz",
+        "primaryemail": "chance.okuneva@yahoo.com",
         "useremails": [
             {
                 "useremailid": 60,
-                "useremail": "qxdz57@gmail.com"
+                "useremail": "qmwa99@gmail.com"
             }
         ],
         "roles": [
@@ -3548,12 +3589,12 @@ Status 201 Created
     },
     {
         "userid": 61,
-        "username": "evon.gottlieb",
-        "primaryemail": "shera.botsford@gmail.com",
+        "username": "richie.hahn",
+        "primaryemail": "lana.kiehn@hotmail.com",
         "useremails": [
             {
                 "useremailid": 62,
-                "useremail": "rtqc42@gmail.com"
+                "useremail": "slvj39@gmail.com"
             }
         ],
         "roles": [
@@ -3565,12 +3606,12 @@ Status 201 Created
     },
     {
         "userid": 63,
-        "username": "deon.damore",
-        "primaryemail": "xiao.ratke@gmail.com",
+        "username": "hyo.kemmer",
+        "primaryemail": "monique.ziemann@gmail.com",
         "useremails": [
             {
                 "useremailid": 64,
-                "useremail": "msim50@gmail.com"
+                "useremail": "tbhv00@gmail.com"
             }
         ],
         "roles": [
@@ -3582,12 +3623,12 @@ Status 201 Created
     },
     {
         "userid": 65,
-        "username": "gaylord.kemmer",
-        "primaryemail": "bennie.fay@hotmail.com",
+        "username": "jeromy.blanda",
+        "primaryemail": "danyel.klein@gmail.com",
         "useremails": [
             {
                 "useremailid": 66,
-                "useremail": "mdum96@gmail.com"
+                "useremail": "ijic62@gmail.com"
             }
         ],
         "roles": [
@@ -3599,12 +3640,12 @@ Status 201 Created
     },
     {
         "userid": 67,
-        "username": "rick.donnelly",
-        "primaryemail": "jana.grimes@yahoo.com",
+        "username": "major.deckow",
+        "primaryemail": "lee.breitenberg@hotmail.com",
         "useremails": [
             {
                 "useremailid": 68,
-                "useremail": "npfn93@gmail.com"
+                "useremail": "cauz68@gmail.com"
             }
         ],
         "roles": [
@@ -3616,12 +3657,12 @@ Status 201 Created
     },
     {
         "userid": 69,
-        "username": "regenia.gislason",
-        "primaryemail": "kittie.kub@hotmail.com",
+        "username": "ileana.von",
+        "primaryemail": "pamela.cruickshank@yahoo.com",
         "useremails": [
             {
                 "useremailid": 70,
-                "useremail": "zwoa10@gmail.com"
+                "useremail": "pcrz93@gmail.com"
             }
         ],
         "roles": [
@@ -3633,12 +3674,12 @@ Status 201 Created
     },
     {
         "userid": 71,
-        "username": "keturah.hirthe",
-        "primaryemail": "madelyn.cummerata@yahoo.com",
+        "username": "liliana.schoen",
+        "primaryemail": "bessie.kertzmann@gmail.com",
         "useremails": [
             {
                 "useremailid": 72,
-                "useremail": "mgru08@gmail.com"
+                "useremail": "tkwi17@gmail.com"
             }
         ],
         "roles": [
@@ -3650,12 +3691,12 @@ Status 201 Created
     },
     {
         "userid": 73,
-        "username": "marylyn.schmitt",
-        "primaryemail": "wiley.shields@gmail.com",
+        "username": "kylee.koch",
+        "primaryemail": "jerrell.senger@gmail.com",
         "useremails": [
             {
                 "useremailid": 74,
-                "useremail": "afpj96@gmail.com"
+                "useremail": "syda00@gmail.com"
             }
         ],
         "roles": [
@@ -3667,12 +3708,12 @@ Status 201 Created
     },
     {
         "userid": 75,
-        "username": "dacia.cole",
-        "primaryemail": "gearldine.effertz@yahoo.com",
+        "username": "willian.lubowitz",
+        "primaryemail": "cesar.wolff@yahoo.com",
         "useremails": [
             {
                 "useremailid": 76,
-                "useremail": "oziz06@gmail.com"
+                "useremail": "rdcr08@gmail.com"
             }
         ],
         "roles": [
@@ -3684,12 +3725,12 @@ Status 201 Created
     },
     {
         "userid": 77,
-        "username": "sherita.powlowski",
-        "primaryemail": "dallas.quitzon@yahoo.com",
+        "username": "jolynn.leuschke",
+        "primaryemail": "hong.ritchie@hotmail.com",
         "useremails": [
             {
                 "useremailid": 78,
-                "useremail": "zchl69@gmail.com"
+                "useremail": "njjk01@gmail.com"
             }
         ],
         "roles": [
@@ -3701,12 +3742,12 @@ Status 201 Created
     },
     {
         "userid": 79,
-        "username": "iola.nitzsche",
-        "primaryemail": "adriene.heathcote@yahoo.com",
+        "username": "herbert.connelly",
+        "primaryemail": "russel.weimann@hotmail.com",
         "useremails": [
             {
                 "useremailid": 80,
-                "useremail": "omiz30@gmail.com"
+                "useremail": "xonh59@gmail.com"
             }
         ],
         "roles": [
@@ -3718,12 +3759,12 @@ Status 201 Created
     },
     {
         "userid": 81,
-        "username": "marcelo.shields",
-        "primaryemail": "verlie.macgyver@gmail.com",
+        "username": "alix.shields",
+        "primaryemail": "pedro.wyman@hotmail.com",
         "useremails": [
             {
                 "useremailid": 82,
-                "useremail": "xvcg63@gmail.com"
+                "useremail": "sylg17@gmail.com"
             }
         ],
         "roles": [
@@ -3735,12 +3776,12 @@ Status 201 Created
     },
     {
         "userid": 83,
-        "username": "dirk.jacobson",
-        "primaryemail": "gail.sauer@gmail.com",
+        "username": "maryetta.mcclure",
+        "primaryemail": "elden.wolf@gmail.com",
         "useremails": [
             {
                 "useremailid": 84,
-                "useremail": "yssh13@gmail.com"
+                "useremail": "vjsa32@gmail.com"
             }
         ],
         "roles": [
@@ -3752,12 +3793,12 @@ Status 201 Created
     },
     {
         "userid": 85,
-        "username": "glinda.bogisich",
-        "primaryemail": "susan.altenwerth@gmail.com",
+        "username": "deon.klocko",
+        "primaryemail": "monica.brown@hotmail.com",
         "useremails": [
             {
                 "useremailid": 86,
-                "useremail": "ppbf70@gmail.com"
+                "useremail": "nbdj44@gmail.com"
             }
         ],
         "roles": [
@@ -3769,12 +3810,12 @@ Status 201 Created
     },
     {
         "userid": 87,
-        "username": "marry.kling",
-        "primaryemail": "porter.pacocha@hotmail.com",
+        "username": "louie.harvey",
+        "primaryemail": "jordon.mertz@yahoo.com",
         "useremails": [
             {
                 "useremailid": 88,
-                "useremail": "qzhg91@gmail.com"
+                "useremail": "hlos69@gmail.com"
             }
         ],
         "roles": [
@@ -3786,12 +3827,12 @@ Status 201 Created
     },
     {
         "userid": 89,
-        "username": "socorro.connelly",
-        "primaryemail": "suzan.osinski@hotmail.com",
+        "username": "mohammed.west",
+        "primaryemail": "dotty.torphy@hotmail.com",
         "useremails": [
             {
                 "useremailid": 90,
-                "useremail": "olwn04@gmail.com"
+                "useremail": "nijw86@gmail.com"
             }
         ],
         "roles": [
@@ -3803,12 +3844,12 @@ Status 201 Created
     },
     {
         "userid": 91,
-        "username": "edith.greenholt",
-        "primaryemail": "alaina.mayert@gmail.com",
+        "username": "rey.kris",
+        "primaryemail": "delaine.effertz@yahoo.com",
         "useremails": [
             {
                 "useremailid": 92,
-                "useremail": "osvf94@gmail.com"
+                "useremail": "qcrt31@gmail.com"
             }
         ],
         "roles": [
@@ -3820,12 +3861,12 @@ Status 201 Created
     },
     {
         "userid": 93,
-        "username": "jacinto.moen",
-        "primaryemail": "boyce.jakubowski@gmail.com",
+        "username": "tameika.hammes",
+        "primaryemail": "shawn.wuckert@hotmail.com",
         "useremails": [
             {
                 "useremailid": 94,
-                "useremail": "jnbm21@gmail.com"
+                "useremail": "dxxt37@gmail.com"
             }
         ],
         "roles": [
@@ -3837,12 +3878,12 @@ Status 201 Created
     },
     {
         "userid": 95,
-        "username": "del.gibson",
-        "primaryemail": "ronnie.metz@hotmail.com",
+        "username": "jacqui.swift",
+        "primaryemail": "domenic.quitzon@yahoo.com",
         "useremails": [
             {
                 "useremailid": 96,
-                "useremail": "hcas79@gmail.com"
+                "useremail": "mkvp09@gmail.com"
             }
         ],
         "roles": [
@@ -3854,12 +3895,12 @@ Status 201 Created
     },
     {
         "userid": 97,
-        "username": "melvin.braun",
-        "primaryemail": "rory.jones@yahoo.com",
+        "username": "jeffie.lesch",
+        "primaryemail": "christian.baumbach@gmail.com",
         "useremails": [
             {
                 "useremailid": 98,
-                "useremail": "tuck65@gmail.com"
+                "useremail": "dtwi67@gmail.com"
             }
         ],
         "roles": [
@@ -3871,12 +3912,12 @@ Status 201 Created
     },
     {
         "userid": 99,
-        "username": "tory.oreilly",
-        "primaryemail": "cody.watsica@hotmail.com",
+        "username": "cassi.kessler",
+        "primaryemail": "val.grimes@hotmail.com",
         "useremails": [
             {
                 "useremailid": 100,
-                "useremail": "jzvg60@gmail.com"
+                "useremail": "mrxa63@gmail.com"
             }
         ],
         "roles": [
@@ -3888,12 +3929,12 @@ Status 201 Created
     },
     {
         "userid": 101,
-        "username": "patria.walker",
-        "primaryemail": "claudette.zulauf@gmail.com",
+        "username": "nova.kreiger",
+        "primaryemail": "bettye.stehr@gmail.com",
         "useremails": [
             {
                 "useremailid": 102,
-                "useremail": "iugx85@gmail.com"
+                "useremail": "grej06@gmail.com"
             }
         ],
         "roles": [
@@ -3905,12 +3946,12 @@ Status 201 Created
     },
     {
         "userid": 103,
-        "username": "august.mante",
-        "primaryemail": "isidro.daniel@hotmail.com",
+        "username": "tracie.murazik",
+        "primaryemail": "libby.tillman@gmail.com",
         "useremails": [
             {
                 "useremailid": 104,
-                "useremail": "hnpq15@gmail.com"
+                "useremail": "pzug31@gmail.com"
             }
         ],
         "roles": [
@@ -3922,12 +3963,12 @@ Status 201 Created
     },
     {
         "userid": 105,
-        "username": "lyndsey.ledner",
-        "primaryemail": "dominga.stoltenberg@yahoo.com",
+        "username": "melvin.white",
+        "primaryemail": "micheal.damore@gmail.com",
         "useremails": [
             {
                 "useremailid": 106,
-                "useremail": "nwjb49@gmail.com"
+                "useremail": "tnwg50@gmail.com"
             }
         ],
         "roles": [
@@ -3939,12 +3980,12 @@ Status 201 Created
     },
     {
         "userid": 107,
-        "username": "napoleon.farrell",
-        "primaryemail": "ashly.prosacco@gmail.com",
+        "username": "josh.jacobson",
+        "primaryemail": "sarina.krajcik@gmail.com",
         "useremails": [
             {
                 "useremailid": 108,
-                "useremail": "wrzk27@gmail.com"
+                "useremail": "ytrt21@gmail.com"
             }
         ],
         "roles": [
@@ -3956,12 +3997,12 @@ Status 201 Created
     },
     {
         "userid": 109,
-        "username": "rigoberto.douglas",
-        "primaryemail": "emilio.rath@gmail.com",
+        "username": "bryan.johnston",
+        "primaryemail": "gerardo.buckridge@gmail.com",
         "useremails": [
             {
                 "useremailid": 110,
-                "useremail": "msxd77@gmail.com"
+                "useremail": "dlpn23@gmail.com"
             }
         ],
         "roles": [
@@ -3973,12 +4014,12 @@ Status 201 Created
     },
     {
         "userid": 111,
-        "username": "william.stehr",
-        "primaryemail": "saul.bradtke@hotmail.com",
+        "username": "tai.nikolaus",
+        "primaryemail": "kendrick.swift@yahoo.com",
         "useremails": [
             {
                 "useremailid": 112,
-                "useremail": "qttt00@gmail.com"
+                "useremail": "udmd59@gmail.com"
             }
         ],
         "roles": [
@@ -3990,12 +4031,12 @@ Status 201 Created
     },
     {
         "userid": 113,
-        "username": "ann.kilback",
-        "primaryemail": "gidget.bernier@gmail.com",
+        "username": "julee.leuschke",
+        "primaryemail": "katherine.lesch@yahoo.com",
         "useremails": [
             {
                 "useremailid": 114,
-                "useremail": "xfvn58@gmail.com"
+                "useremail": "wjvs47@gmail.com"
             }
         ],
         "roles": [
@@ -4007,12 +4048,12 @@ Status 201 Created
     },
     {
         "userid": 115,
-        "username": "vania.ortiz",
-        "primaryemail": "roscoe.cartwright@hotmail.com",
+        "username": "leslie.grady",
+        "primaryemail": "nan.price@gmail.com",
         "useremails": [
             {
                 "useremailid": 116,
-                "useremail": "wspo72@gmail.com"
+                "useremail": "sgid92@gmail.com"
             }
         ],
         "roles": [
@@ -4024,12 +4065,12 @@ Status 201 Created
     },
     {
         "userid": 117,
-        "username": "shauna.walter",
-        "primaryemail": "paris.parker@hotmail.com",
+        "username": "michale.streich",
+        "primaryemail": "murray.treutel@yahoo.com",
         "useremails": [
             {
                 "useremailid": 118,
-                "useremail": "fgbc05@gmail.com"
+                "useremail": "rxdk99@gmail.com"
             }
         ],
         "roles": [
@@ -4041,12 +4082,12 @@ Status 201 Created
     },
     {
         "userid": 119,
-        "username": "rosamond.douglas",
-        "primaryemail": "lynwood.schuster@hotmail.com",
+        "username": "cole.champlin",
+        "primaryemail": "monique.okon@gmail.com",
         "useremails": [
             {
                 "useremailid": 120,
-                "useremail": "ekai96@gmail.com"
+                "useremail": "xhpt15@gmail.com"
             }
         ],
         "roles": [
@@ -4058,12 +4099,12 @@ Status 201 Created
     },
     {
         "userid": 121,
-        "username": "angela.wintheiser",
-        "primaryemail": "sylvie.anderson@yahoo.com",
+        "username": "kyle.nolan",
+        "primaryemail": "jean.thiel@hotmail.com",
         "useremails": [
             {
                 "useremailid": 122,
-                "useremail": "ffkd22@gmail.com"
+                "useremail": "zufz39@gmail.com"
             }
         ],
         "roles": [
@@ -4075,12 +4116,12 @@ Status 201 Created
     },
     {
         "userid": 123,
-        "username": "dulce.koss",
-        "primaryemail": "noah.runolfsdottir@hotmail.com",
+        "username": "leonardo.mayert",
+        "primaryemail": "jamar.nikolaus@hotmail.com",
         "useremails": [
             {
                 "useremailid": 124,
-                "useremail": "htfj65@gmail.com"
+                "useremail": "chbn40@gmail.com"
             }
         ],
         "roles": [
@@ -4092,12 +4133,12 @@ Status 201 Created
     },
     {
         "userid": 125,
-        "username": "christa.schmidt",
-        "primaryemail": "jordan.connelly@yahoo.com",
+        "username": "diego.wilderman",
+        "primaryemail": "columbus.dickens@gmail.com",
         "useremails": [
             {
                 "useremailid": 126,
-                "useremail": "gefm82@gmail.com"
+                "useremail": "rwiu57@gmail.com"
             }
         ],
         "roles": [
@@ -4109,12 +4150,12 @@ Status 201 Created
     },
     {
         "userid": 127,
-        "username": "migdalia.ondricka",
-        "primaryemail": "davida.hilll@gmail.com",
+        "username": "rebecka.marvin",
+        "primaryemail": "jeanene.toy@hotmail.com",
         "useremails": [
             {
                 "useremailid": 128,
-                "useremail": "hije89@gmail.com"
+                "useremail": "pvwh19@gmail.com"
             }
         ],
         "roles": [
@@ -4126,12 +4167,12 @@ Status 201 Created
     },
     {
         "userid": 129,
-        "username": "blaine.kerluke",
-        "primaryemail": "easter.fisher@yahoo.com",
+        "username": "long.king",
+        "primaryemail": "shaneka.mohr@hotmail.com",
         "useremails": [
             {
                 "useremailid": 130,
-                "useremail": "lkwm29@gmail.com"
+                "useremail": "fsrl60@gmail.com"
             }
         ],
         "roles": [
@@ -4143,12 +4184,12 @@ Status 201 Created
     },
     {
         "userid": 131,
-        "username": "williams.langosh",
-        "primaryemail": "vance.brown@yahoo.com",
+        "username": "jefferey.doyle",
+        "primaryemail": "brittany.medhurst@hotmail.com",
         "useremails": [
             {
                 "useremailid": 132,
-                "useremail": "affl03@gmail.com"
+                "useremail": "ianw78@gmail.com"
             }
         ],
         "roles": [
@@ -4160,12 +4201,12 @@ Status 201 Created
     },
     {
         "userid": 133,
-        "username": "agripina.ruecker",
-        "primaryemail": "dominga.gorczany@gmail.com",
+        "username": "mindi.kuvalis",
+        "primaryemail": "rosemarie.considine@gmail.com",
         "useremails": [
             {
                 "useremailid": 134,
-                "useremail": "ydij67@gmail.com"
+                "useremail": "ulhi69@gmail.com"
             }
         ],
         "roles": [
@@ -4177,12 +4218,12 @@ Status 201 Created
     },
     {
         "userid": 135,
-        "username": "rosetta.mosciski",
-        "primaryemail": "jaclyn.williamson@gmail.com",
+        "username": "arnoldo.huels",
+        "primaryemail": "buck.luettgen@hotmail.com",
         "useremails": [
             {
                 "useremailid": 136,
-                "useremail": "znpf34@gmail.com"
+                "useremail": "deih16@gmail.com"
             }
         ],
         "roles": [
@@ -4194,12 +4235,12 @@ Status 201 Created
     },
     {
         "userid": 137,
-        "username": "minh.pacocha",
-        "primaryemail": "dollie.bechtelar@yahoo.com",
+        "username": "jasper.stroman",
+        "primaryemail": "bari.oconner@yahoo.com",
         "useremails": [
             {
                 "useremailid": 138,
-                "useremail": "ijlc86@gmail.com"
+                "useremail": "gyqu90@gmail.com"
             }
         ],
         "roles": [
@@ -4211,12 +4252,12 @@ Status 201 Created
     },
     {
         "userid": 139,
-        "username": "thu.vonrueden",
-        "primaryemail": "cherelle.hermiston@gmail.com",
+        "username": "deana.douglas",
+        "primaryemail": "vena.lebsack@gmail.com",
         "useremails": [
             {
                 "useremailid": 140,
-                "useremail": "xtks93@gmail.com"
+                "useremail": "nfjf95@gmail.com"
             }
         ],
         "roles": [
@@ -4228,12 +4269,12 @@ Status 201 Created
     },
     {
         "userid": 141,
-        "username": "ranee.glover",
-        "primaryemail": "daryl.brakus@yahoo.com",
+        "username": "ligia.funk",
+        "primaryemail": "irving.oconnell@gmail.com",
         "useremails": [
             {
                 "useremailid": 142,
-                "useremail": "qilq50@gmail.com"
+                "useremail": "urmp38@gmail.com"
             }
         ],
         "roles": [
@@ -4245,12 +4286,12 @@ Status 201 Created
     },
     {
         "userid": 143,
-        "username": "cody.green",
-        "primaryemail": "genna.schuster@gmail.com",
+        "username": "nicky.bartell",
+        "primaryemail": "rod.okeefe@gmail.com",
         "useremails": [
             {
                 "useremailid": 144,
-                "useremail": "olsh71@gmail.com"
+                "useremail": "mrxn34@gmail.com"
             }
         ],
         "roles": [
@@ -4262,12 +4303,12 @@ Status 201 Created
     },
     {
         "userid": 145,
-        "username": "dewitt.wehner",
-        "primaryemail": "treva.von@gmail.com",
+        "username": "carmelia.grant",
+        "primaryemail": "rita.mcclure@hotmail.com",
         "useremails": [
             {
                 "useremailid": 146,
-                "useremail": "sgtd73@gmail.com"
+                "useremail": "zuhe79@gmail.com"
             }
         ],
         "roles": [
@@ -4279,12 +4320,12 @@ Status 201 Created
     },
     {
         "userid": 147,
-        "username": "santos.grant",
-        "primaryemail": "yi.hahn@gmail.com",
+        "username": "starla.russel",
+        "primaryemail": "johnny.homenick@yahoo.com",
         "useremails": [
             {
                 "useremailid": 148,
-                "useremail": "wrjq40@gmail.com"
+                "useremail": "hzsx15@gmail.com"
             }
         ],
         "roles": [
@@ -4296,12 +4337,12 @@ Status 201 Created
     },
     {
         "userid": 149,
-        "username": "harris.ohara",
-        "primaryemail": "ricardo.dubuque@yahoo.com",
+        "username": "lawerence.collier",
+        "primaryemail": "walton.cole@hotmail.com",
         "useremails": [
             {
                 "useremailid": 150,
-                "useremail": "dzpo34@gmail.com"
+                "useremail": "nwya10@gmail.com"
             }
         ],
         "roles": [
@@ -4313,12 +4354,12 @@ Status 201 Created
     },
     {
         "userid": 151,
-        "username": "eustolia.blanda",
-        "primaryemail": "scotty.bashirian@hotmail.com",
+        "username": "nu.labadie",
+        "primaryemail": "darius.satterfield@gmail.com",
         "useremails": [
             {
                 "useremailid": 152,
-                "useremail": "exyg13@gmail.com"
+                "useremail": "ewxp13@gmail.com"
             }
         ],
         "roles": [
@@ -4330,12 +4371,12 @@ Status 201 Created
     },
     {
         "userid": 153,
-        "username": "theodora.gulgowski",
-        "primaryemail": "alphonso.quigley@hotmail.com",
+        "username": "jamaal.feil",
+        "primaryemail": "lucius.mueller@gmail.com",
         "useremails": [
             {
                 "useremailid": 154,
-                "useremail": "klfs87@gmail.com"
+                "useremail": "nwdw59@gmail.com"
             }
         ],
         "roles": [
@@ -4347,12 +4388,12 @@ Status 201 Created
     },
     {
         "userid": 155,
-        "username": "terrell.heller",
-        "primaryemail": "milford.batz@hotmail.com",
+        "username": "prince.champlin",
+        "primaryemail": "willis.blanda@hotmail.com",
         "useremails": [
             {
                 "useremailid": 156,
-                "useremail": "ugmd90@gmail.com"
+                "useremail": "cmio28@gmail.com"
             }
         ],
         "roles": [
@@ -4364,12 +4405,12 @@ Status 201 Created
     },
     {
         "userid": 157,
-        "username": "aleshia.kub",
-        "primaryemail": "augustine.krajcik@hotmail.com",
+        "username": "roscoe.stroman",
+        "primaryemail": "hilaria.stamm@yahoo.com",
         "useremails": [
             {
                 "useremailid": 158,
-                "useremail": "pzat24@gmail.com"
+                "useremail": "vosz66@gmail.com"
             }
         ],
         "roles": [
@@ -4381,12 +4422,12 @@ Status 201 Created
     },
     {
         "userid": 159,
-        "username": "carlo.bruen",
-        "primaryemail": "ambrose.lockman@hotmail.com",
+        "username": "valentine.altenwerth",
+        "primaryemail": "danilo.crona@hotmail.com",
         "useremails": [
             {
                 "useremailid": 160,
-                "useremail": "rwza71@gmail.com"
+                "useremail": "niiy05@gmail.com"
             }
         ],
         "roles": [
@@ -4398,12 +4439,12 @@ Status 201 Created
     },
     {
         "userid": 161,
-        "username": "eli.langworth",
-        "primaryemail": "king.bernhard@hotmail.com",
+        "username": "wally.fahey",
+        "primaryemail": "tamekia.dibbert@yahoo.com",
         "useremails": [
             {
                 "useremailid": 162,
-                "useremail": "mmou49@gmail.com"
+                "useremail": "vwxs01@gmail.com"
             }
         ],
         "roles": [
@@ -4415,12 +4456,12 @@ Status 201 Created
     },
     {
         "userid": 163,
-        "username": "christian.schroeder",
-        "primaryemail": "santana.stoltenberg@yahoo.com",
+        "username": "ozzie.renner",
+        "primaryemail": "clarence.bashirian@hotmail.com",
         "useremails": [
             {
                 "useremailid": 164,
-                "useremail": "wrwv26@gmail.com"
+                "useremail": "cdtl75@gmail.com"
             }
         ],
         "roles": [
@@ -4432,12 +4473,12 @@ Status 201 Created
     },
     {
         "userid": 165,
-        "username": "lowell.schoen",
-        "primaryemail": "evelyne.bechtelar@gmail.com",
+        "username": "layne.gibson",
+        "primaryemail": "coralie.morar@yahoo.com",
         "useremails": [
             {
                 "useremailid": 166,
-                "useremail": "agxm74@gmail.com"
+                "useremail": "uopv29@gmail.com"
             }
         ],
         "roles": [
@@ -4449,12 +4490,12 @@ Status 201 Created
     },
     {
         "userid": 167,
-        "username": "marinda.hettinger",
-        "primaryemail": "rodrick.kirlin@gmail.com",
+        "username": "dominica.barrows",
+        "primaryemail": "carson.haley@yahoo.com",
         "useremails": [
             {
                 "useremailid": 168,
-                "useremail": "kcrb38@gmail.com"
+                "useremail": "slvh34@gmail.com"
             }
         ],
         "roles": [
@@ -4466,12 +4507,12 @@ Status 201 Created
     },
     {
         "userid": 169,
-        "username": "gustavo.weber",
-        "primaryemail": "karine.luettgen@hotmail.com",
+        "username": "michale.quitzon",
+        "primaryemail": "zane.douglas@hotmail.com",
         "useremails": [
             {
                 "useremailid": 170,
-                "useremail": "matj06@gmail.com"
+                "useremail": "hkbq09@gmail.com"
             }
         ],
         "roles": [
@@ -4483,12 +4524,12 @@ Status 201 Created
     },
     {
         "userid": 171,
-        "username": "rory.jakubowski",
-        "primaryemail": "laureen.walsh@hotmail.com",
+        "username": "nenita.jacobi",
+        "primaryemail": "adolfo.mosciski@hotmail.com",
         "useremails": [
             {
                 "useremailid": 172,
-                "useremail": "ejgd15@gmail.com"
+                "useremail": "tjbq79@gmail.com"
             }
         ],
         "roles": [
@@ -4500,12 +4541,12 @@ Status 201 Created
     },
     {
         "userid": 173,
-        "username": "mitch.runte",
-        "primaryemail": "royal.schaden@hotmail.com",
+        "username": "elliott.wunsch",
+        "primaryemail": "pedro.hegmann@yahoo.com",
         "useremails": [
             {
                 "useremailid": 174,
-                "useremail": "ddyh01@gmail.com"
+                "useremail": "vune39@gmail.com"
             }
         ],
         "roles": [
@@ -4517,12 +4558,12 @@ Status 201 Created
     },
     {
         "userid": 175,
-        "username": "elton.grady",
-        "primaryemail": "savanna.marks@yahoo.com",
+        "username": "karl.goyette",
+        "primaryemail": "leighann.dicki@hotmail.com",
         "useremails": [
             {
                 "useremailid": 176,
-                "useremail": "rsxi82@gmail.com"
+                "useremail": "afsy02@gmail.com"
             }
         ],
         "roles": [
@@ -4534,12 +4575,12 @@ Status 201 Created
     },
     {
         "userid": 177,
-        "username": "cornell.deckow",
-        "primaryemail": "britt.hintz@yahoo.com",
+        "username": "brandon.lindgren",
+        "primaryemail": "conrad.mccullough@hotmail.com",
         "useremails": [
             {
                 "useremailid": 178,
-                "useremail": "ezwt57@gmail.com"
+                "useremail": "xnzf62@gmail.com"
             }
         ],
         "roles": [
@@ -4551,12 +4592,12 @@ Status 201 Created
     },
     {
         "userid": 179,
-        "username": "carol.beier",
-        "primaryemail": "elsie.walsh@yahoo.com",
+        "username": "troy.okeefe",
+        "primaryemail": "glinda.gorczany@gmail.com",
         "useremails": [
             {
                 "useremailid": 180,
-                "useremail": "hjvv93@gmail.com"
+                "useremail": "oabf43@gmail.com"
             }
         ],
         "roles": [
@@ -4568,12 +4609,12 @@ Status 201 Created
     },
     {
         "userid": 181,
-        "username": "octavia.heaney",
-        "primaryemail": "belia.parker@hotmail.com",
+        "username": "arletta.schmidt",
+        "primaryemail": "myrtie.haley@yahoo.com",
         "useremails": [
             {
                 "useremailid": 182,
-                "useremail": "xwrk46@gmail.com"
+                "useremail": "pnet77@gmail.com"
             }
         ],
         "roles": [
@@ -4585,12 +4626,12 @@ Status 201 Created
     },
     {
         "userid": 183,
-        "username": "kraig.hand",
-        "primaryemail": "syreeta.satterfield@hotmail.com",
+        "username": "gracie.runolfsson",
+        "primaryemail": "quintin.christiansen@yahoo.com",
         "useremails": [
             {
                 "useremailid": 184,
-                "useremail": "ylnx08@gmail.com"
+                "useremail": "pbjv90@gmail.com"
             }
         ],
         "roles": [
@@ -4602,12 +4643,12 @@ Status 201 Created
     },
     {
         "userid": 185,
-        "username": "moses.hoppe",
-        "primaryemail": "brady.friesen@yahoo.com",
+        "username": "herbert.reichel",
+        "primaryemail": "victoria.rogahn@gmail.com",
         "useremails": [
             {
                 "useremailid": 186,
-                "useremail": "qeqm63@gmail.com"
+                "useremail": "erah83@gmail.com"
             }
         ],
         "roles": [
@@ -4619,12 +4660,12 @@ Status 201 Created
     },
     {
         "userid": 187,
-        "username": "ami.windler",
-        "primaryemail": "melvin.hudson@yahoo.com",
+        "username": "alvina.bartell",
+        "primaryemail": "shamika.dibbert@gmail.com",
         "useremails": [
             {
                 "useremailid": 188,
-                "useremail": "rset43@gmail.com"
+                "useremail": "qvut28@gmail.com"
             }
         ],
         "roles": [
@@ -4636,12 +4677,12 @@ Status 201 Created
     },
     {
         "userid": 189,
-        "username": "andrew.prosacco",
-        "primaryemail": "milan.kautzer@hotmail.com",
+        "username": "leisa.lowe",
+        "primaryemail": "philip.weber@yahoo.com",
         "useremails": [
             {
                 "useremailid": 190,
-                "useremail": "icrz24@gmail.com"
+                "useremail": "sfpg58@gmail.com"
             }
         ],
         "roles": [
@@ -4653,12 +4694,12 @@ Status 201 Created
     },
     {
         "userid": 191,
-        "username": "audra.mills",
-        "primaryemail": "sarita.herzog@gmail.com",
+        "username": "julio.effertz",
+        "primaryemail": "irvin.mante@yahoo.com",
         "useremails": [
             {
                 "useremailid": 192,
-                "useremail": "wmkh03@gmail.com"
+                "useremail": "zesg59@gmail.com"
             }
         ],
         "roles": [
@@ -4670,12 +4711,12 @@ Status 201 Created
     },
     {
         "userid": 193,
-        "username": "melony.von",
-        "primaryemail": "fern.kautzer@yahoo.com",
+        "username": "dominque.witting",
+        "primaryemail": "rene.cassin@hotmail.com",
         "useremails": [
             {
                 "useremailid": 194,
-                "useremail": "hrjj76@gmail.com"
+                "useremail": "gioy45@gmail.com"
             }
         ],
         "roles": [
@@ -4687,12 +4728,12 @@ Status 201 Created
     },
     {
         "userid": 195,
-        "username": "renaldo.klocko",
-        "primaryemail": "giovanni.beahan@hotmail.com",
+        "username": "daryl.rau",
+        "primaryemail": "clotilde.feest@hotmail.com",
         "useremails": [
             {
                 "useremailid": 196,
-                "useremail": "doev22@gmail.com"
+                "useremail": "peom18@gmail.com"
             }
         ],
         "roles": [
@@ -4704,12 +4745,12 @@ Status 201 Created
     },
     {
         "userid": 197,
-        "username": "leroy.oconner",
-        "primaryemail": "willodean.schmidt@gmail.com",
+        "username": "edwina.ryan",
+        "primaryemail": "nickolas.abshire@hotmail.com",
         "useremails": [
             {
                 "useremailid": 198,
-                "useremail": "cnvx02@gmail.com"
+                "useremail": "ioma44@gmail.com"
             }
         ],
         "roles": [
@@ -4721,12 +4762,12 @@ Status 201 Created
     },
     {
         "userid": 199,
-        "username": "justin.cassin",
-        "primaryemail": "tommy.fisher@hotmail.com",
+        "username": "graham.connelly",
+        "primaryemail": "jacquline.kassulke@yahoo.com",
         "useremails": [
             {
                 "useremailid": 200,
-                "useremail": "bvlt19@gmail.com"
+                "useremail": "xmqi34@gmail.com"
             }
         ],
         "roles": [
@@ -4738,12 +4779,12 @@ Status 201 Created
     },
     {
         "userid": 201,
-        "username": "earleen.braun",
-        "primaryemail": "genoveva.effertz@yahoo.com",
+        "username": "millard.stehr",
+        "primaryemail": "booker.hickle@gmail.com",
         "useremails": [
             {
                 "useremailid": 202,
-                "useremail": "tbhv64@gmail.com"
+                "useremail": "kqzy04@gmail.com"
             }
         ],
         "roles": [
@@ -4755,12 +4796,12 @@ Status 201 Created
     },
     {
         "userid": 203,
-        "username": "iraida.schuppe",
-        "primaryemail": "kacey.schaden@yahoo.com",
+        "username": "cordell.stark",
+        "primaryemail": "rutha.lesch@yahoo.com",
         "useremails": [
             {
                 "useremailid": 204,
-                "useremail": "lmqv92@gmail.com"
+                "useremail": "gxul40@gmail.com"
             }
         ],
         "roles": [
@@ -4772,12 +4813,12 @@ Status 201 Created
     },
     {
         "userid": 205,
-        "username": "deshawn.ledner",
-        "primaryemail": "veola.king@gmail.com",
+        "username": "diego.bradtke",
+        "primaryemail": "aimee.windler@yahoo.com",
         "useremails": [
             {
                 "useremailid": 206,
-                "useremail": "oaej42@gmail.com"
+                "useremail": "ixxf48@gmail.com"
             }
         ],
         "roles": [
@@ -4789,12 +4830,12 @@ Status 201 Created
     },
     {
         "userid": 207,
-        "username": "regenia.cormier",
-        "primaryemail": "zachery.hyatt@yahoo.com",
+        "username": "johnathon.fritsch",
+        "primaryemail": "thao.cassin@gmail.com",
         "useremails": [
             {
                 "useremailid": 208,
-                "useremail": "ahma01@gmail.com"
+                "useremail": "xjeb51@gmail.com"
             }
         ],
         "roles": [
@@ -4806,12 +4847,12 @@ Status 201 Created
     },
     {
         "userid": 209,
-        "username": "arletha.runte",
-        "primaryemail": "gerardo.torphy@gmail.com",
+        "username": "alfonzo.ondricka",
+        "primaryemail": "illa.grady@gmail.com",
         "useremails": [
             {
                 "useremailid": 210,
-                "useremail": "kwuk73@gmail.com"
+                "useremail": "opcw98@gmail.com"
             }
         ],
         "roles": [
@@ -4823,12 +4864,12 @@ Status 201 Created
     },
     {
         "userid": 211,
-        "username": "sterling.howe",
-        "primaryemail": "pete.spinka@gmail.com",
+        "username": "leslie.barrows",
+        "primaryemail": "sang.deckow@gmail.com",
         "useremails": [
             {
                 "useremailid": 212,
-                "useremail": "hoyu63@gmail.com"
+                "useremail": "wtwu00@gmail.com"
             }
         ],
         "roles": [
@@ -4840,12 +4881,12 @@ Status 201 Created
     },
     {
         "userid": 213,
-        "username": "maybell.murray",
-        "primaryemail": "brittani.kassulke@gmail.com",
+        "username": "jarred.hahn",
+        "primaryemail": "jarrod.langosh@hotmail.com",
         "useremails": [
             {
                 "useremailid": 214,
-                "useremail": "gvsw20@gmail.com"
+                "useremail": "kvjb04@gmail.com"
             }
         ],
         "roles": [
@@ -4932,13 +4973,13 @@ Status 201 Created
 ```JSON
 [
     {
-        "userid": 15,
-        "username": "matilda.yundt",
-        "primaryemail": "curt.buckridge@yahoo.com",
+        "userid": 37,
+        "username": "candida.harris",
+        "primaryemail": "mendy.runolfsson@gmail.com",
         "useremails": [
             {
-                "useremailid": 16,
-                "useremail": "qgmy80@gmail.com"
+                "useremailid": 38,
+                "useremail": "suuh50@gmail.com"
             }
         ],
         "roles": [
@@ -4949,13 +4990,13 @@ Status 201 Created
         ]
     },
     {
-        "userid": 17,
-        "username": "dave.rodriguez",
-        "primaryemail": "brent.mitchell@gmail.com",
+        "userid": 65,
+        "username": "jeromy.blanda",
+        "primaryemail": "danyel.klein@gmail.com",
         "useremails": [
             {
-                "useremailid": 18,
-                "useremail": "xlif03@gmail.com"
+                "useremailid": 66,
+                "useremail": "ijic62@gmail.com"
             }
         ],
         "roles": [
@@ -4966,132 +5007,13 @@ Status 201 Created
         ]
     },
     {
-        "userid": 43,
-        "username": "celinda.spencer",
-        "primaryemail": "priscila.kirlin@yahoo.com",
+        "userid": 195,
+        "username": "daryl.rau",
+        "primaryemail": "clotilde.feest@hotmail.com",
         "useremails": [
             {
-                "useremailid": 44,
-                "useremail": "ucph13@gmail.com"
-            }
-        ],
-        "roles": [
-            {
-                "roleid": 2,
-                "name": "USER"
-            }
-        ]
-    },
-    {
-        "userid": 63,
-        "username": "deon.damore",
-        "primaryemail": "xiao.ratke@gmail.com",
-        "useremails": [
-            {
-                "useremailid": 64,
-                "useremail": "msim50@gmail.com"
-            }
-        ],
-        "roles": [
-            {
-                "roleid": 2,
-                "name": "USER"
-            }
-        ]
-    },
-    {
-        "userid": 75,
-        "username": "dacia.cole",
-        "primaryemail": "gearldine.effertz@yahoo.com",
-        "useremails": [
-            {
-                "useremailid": 76,
-                "useremail": "oziz06@gmail.com"
-            }
-        ],
-        "roles": [
-            {
-                "roleid": 2,
-                "name": "USER"
-            }
-        ]
-    },
-    {
-        "userid": 85,
-        "username": "glinda.bogisich",
-        "primaryemail": "susan.altenwerth@gmail.com",
-        "useremails": [
-            {
-                "useremailid": 86,
-                "useremail": "ppbf70@gmail.com"
-            }
-        ],
-        "roles": [
-            {
-                "roleid": 2,
-                "name": "USER"
-            }
-        ]
-    },
-    {
-        "userid": 127,
-        "username": "migdalia.ondricka",
-        "primaryemail": "davida.hilll@gmail.com",
-        "useremails": [
-            {
-                "useremailid": 128,
-                "useremail": "hije89@gmail.com"
-            }
-        ],
-        "roles": [
-            {
-                "roleid": 2,
-                "name": "USER"
-            }
-        ]
-    },
-    {
-        "userid": 151,
-        "username": "eustolia.blanda",
-        "primaryemail": "scotty.bashirian@hotmail.com",
-        "useremails": [
-            {
-                "useremailid": 152,
-                "useremail": "exyg13@gmail.com"
-            }
-        ],
-        "roles": [
-            {
-                "roleid": 2,
-                "name": "USER"
-            }
-        ]
-    },
-    {
-        "userid": 167,
-        "username": "marinda.hettinger",
-        "primaryemail": "rodrick.kirlin@gmail.com",
-        "useremails": [
-            {
-                "useremailid": 168,
-                "useremail": "kcrb38@gmail.com"
-            }
-        ],
-        "roles": [
-            {
-                "roleid": 2,
-                "name": "USER"
-            }
-        ]
-    },
-    {
-        "userid": 203,
-        "username": "iraida.schuppe",
-        "primaryemail": "kacey.schaden@yahoo.com",
-        "useremails": [
-            {
-                "useremailid": 204,
-                "useremail": "lmqv92@gmail.com"
+                "useremailid": 196,
+                "useremail": "peom18@gmail.com"
             }
         ],
         "roles": [
@@ -5138,8 +5060,9 @@ DATA
 OUTPUT
 
 ```TEXT
-Location Header http://localhost:2019/users/user/216
+No Body Data
 
+Location Header: http://localhost:2019/users/user/217
 Status 201 Created
 ```
 
@@ -5162,14 +5085,6 @@ DATA
         {
             "useremail": "stubs@email.local"
         }
-        ],
-    "roles": [
-        {
-           "roleid": 1
-        },
-        {
-           "roleid": 2
-        }
         ]
 }
 ```
@@ -5179,7 +5094,7 @@ OUTPUT
 ```TEXT
 No Body Data
 
-Status of OK
+Status OK
 ```
 
 </details>
@@ -5210,7 +5125,18 @@ DATA
 OUTPUT
 
 ```TEXT
-No Body
+No Body Data
+
+Status OK
+```
+
+</details>
+
+<details>
+<summary>DELETE http://localhost:2019/users/user/14</summary>
+
+```TEXT
+No Body Data
 
 Status OK
 ```

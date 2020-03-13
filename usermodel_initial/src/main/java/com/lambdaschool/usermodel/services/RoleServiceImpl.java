@@ -1,16 +1,19 @@
 package com.lambdaschool.usermodel.services;
 
 import com.lambdaschool.usermodel.models.Role;
+import com.lambdaschool.usermodel.models.User;
 import com.lambdaschool.usermodel.repository.RoleRepository;
 import com.lambdaschool.usermodel.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Transactional
 @Service(value = "roleService")
 public class RoleServiceImpl implements RoleService
 {
@@ -66,6 +69,12 @@ public class RoleServiceImpl implements RoleService
     @Override
     public Role save(Role role)
     {
+        if (role.getUsers()
+            .size() > 0)
+        {
+            throw new EntityExistsException("User Roles are not updated through Role.");
+        }
+
         return rolerepos.save(role);
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,6 @@ import java.util.List;
 @Service(value = "userService")
 public class UserServiceImpl implements UserService
 {
-
     /**
      * Connects this service to the User table.
      */
@@ -28,6 +28,12 @@ public class UserServiceImpl implements UserService
      */
     @Autowired
     private RoleService roleService;
+
+
+
+
+
+
 
     public User findUserById(long id) throws EntityNotFoundException
     {
@@ -84,8 +90,7 @@ public class UserServiceImpl implements UserService
         if (user.getUserid() != 0)
         {
             userrepos.findById(user.getUserid())
-                .orElseThrow(() -> new EntityNotFoundException("User " + user.getUserid() + " Not Found"));
-
+                .orElseThrow(() -> new EntityNotFoundException("User id " + user.getUserid() + " not found!"));
             newUser.setUserid(user.getUserid());
         }
 
@@ -95,19 +100,32 @@ public class UserServiceImpl implements UserService
         newUser.setPrimaryemail(user.getPrimaryemail()
             .toLowerCase());
 
+        if (user.getUserid() == 0)
+        {
+            newUser.getRoles()
+                .clear();
+            for (Role r : user.getRoles())
+            {
+                Role newRole = roleService.findRoleById(r.getRoleid());
+
+                newUser.addRole(newRole);
+            }
+        } else
+        {
+            if (user.getRoles()
+                .size() > 0)
+            {
+                throw new EntityExistsException("User Roles are not updated through users. See endpoint POST: users/user/{userid}/role/{roleid}");
+            }
+        }
+
+        newUser.getUseremails()
+            .clear();
         for (Useremail ue : user.getUseremails())
         {
             newUser.getUseremails()
                 .add(new Useremail(newUser,
                     ue.getUseremail()));
-        }
-
-        // role must already exist
-        for (Role r : user.getRoles())
-        {
-            Role newRole = roleService.findRoleById(r.getRoleid());
-
-            newUser.addRole(newRole);
         }
 
         return userrepos.save(newUser);
@@ -119,7 +137,6 @@ public class UserServiceImpl implements UserService
         User user,
         long id)
     {
-
         User currentUser = findUserById(id);
 
         if (user.getUsername() != null)
@@ -139,22 +156,17 @@ public class UserServiceImpl implements UserService
                 .toLowerCase());
         }
 
-        // just adds new Roles. Roles must already exist. Delete Roles is a different method
         if (user.getRoles()
             .size() > 0)
         {
-            for (Role r : user.getRoles())
-            {
-                Role newRole = roleService.findRoleById(r.getRoleid());
-
-                currentUser.addRole(newRole);
-            }
+            throw new EntityExistsException("User Roles are not updated through users. See endpoint POST: users/user/{userid}/role/{roleid}");
         }
 
-        // Just adds new emails. Deleting emails is a different method
         if (user.getUseremails()
             .size() > 0)
         {
+            currentUser.getUseremails()
+                .clear();
             for (Useremail ue : user.getUseremails())
             {
                 currentUser.getUseremails()

@@ -4,34 +4,43 @@ import com.lambdaschool.usermodel.models.Role;
 import com.lambdaschool.usermodel.models.User;
 import com.lambdaschool.usermodel.models.UserRoles;
 import com.lambdaschool.usermodel.models.Useremail;
-import com.lambdaschool.usermodel.repository.RoleRepository;
 import com.lambdaschool.usermodel.repository.UserRepository;
-import com.lambdaschool.usermodel.view.UserNameCountEmails;
+import com.lambdaschool.usermodel.views.UserNameCountEmails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Transactional
 @Service(value = "userService")
 public class UserServiceImpl implements UserService
 {
-
+    /**
+     * Connects this service to the User table.
+     */
     @Autowired
     private UserRepository userrepos;
 
+    /**
+     * Connects this service to the Role table
+     */
     @Autowired
-    private RoleRepository rolerepos;
+    private RoleService roleService;
 
+    /**
+     * Connects this service to the auditing service in order to get current user name
+     */
     @Autowired
     private UserAuditing userAuditing;
 
     public User findUserById(long id) throws EntityNotFoundException
     {
         return userrepos.findById(id)
-                        .orElseThrow(() -> new EntityNotFoundException("User id " + id + " not found!"));
+            .orElseThrow(() -> new EntityNotFoundException("User id " + id + " not found!"));
     }
 
     @Override
@@ -44,9 +53,13 @@ public class UserServiceImpl implements UserService
     public List<User> findAll()
     {
         List<User> list = new ArrayList<>();
+        /*
+         * findAll returns an iterator set.
+         * iterate over the iterator set and add each element to an array list.
+         */
         userrepos.findAll()
-                 .iterator()
-                 .forEachRemaining(list::add);
+            .iterator()
+            .forEachRemaining(list::add);
         return list;
     }
 
@@ -55,7 +68,7 @@ public class UserServiceImpl implements UserService
     public void delete(long id)
     {
         userrepos.findById(id)
-                 .orElseThrow(() -> new EntityNotFoundException("User id " + id + " not found!"));
+            .orElseThrow(() -> new EntityNotFoundException("User id " + id + " not found!"));
         userrepos.deleteById(id);
     }
 
@@ -74,36 +87,50 @@ public class UserServiceImpl implements UserService
     @Override
     public User save(User user)
     {
-        if (userrepos.findByUsername(user.getUsername()
-                                         .toLowerCase()) != null)
+        User newUser = new User();
+
+        if (user.getUserid() != 0)
         {
-            throw new EntityNotFoundException(user.getUsername() + " is already taken!");
+            userrepos.findById(user.getUserid())
+                .orElseThrow(() -> new EntityNotFoundException("User id " + user.getUserid() + " not found!"));
+            newUser.setUserid(user.getUserid());
         }
 
-        User newUser = new User();
         newUser.setUsername(user.getUsername()
-                                .toLowerCase());
+            .toLowerCase());
         newUser.setPassword(user.getPassword());
         newUser.setPrimaryemail(user.getPrimaryemail()
-                                    .toLowerCase());
+            .toLowerCase());
 
-        ArrayList<UserRoles> newRoles = new ArrayList<>();
-        for (UserRoles ur : user.getUserroles())
+        if (user.getUserid() == 0)
         {
-            long id = ur.getRole()
-                        .getRoleid();
-            Role role = rolerepos.findById(id)
-                                 .orElseThrow(() -> new EntityNotFoundException("Role id " + id + " not found!"));
-            newRoles.add(new UserRoles(newUser,
-                                       role));
+            newUser.getRoles()
+                .clear();
+            for (UserRoles ur : user.getRoles())
+            {
+                long thisid = ur.getRole()
+                    .getRoleid();
+                Role role = roleService.findRoleById(thisid);
+                newUser.getRoles()
+                    .add(new UserRoles(newUser,
+                        role));
+            }
+        } else
+        {
+            if (user.getRoles()
+                .size() > 0)
+            {
+                throw new EntityExistsException("User Roles are not updated through users. See endpoint POST: users/user/{userid}/role/{roleid}");
+            }
         }
-        newUser.setUserroles(newRoles);
 
+        newUser.getUseremails()
+            .clear();
         for (Useremail ue : user.getUseremails())
         {
             newUser.getUseremails()
-                   .add(new Useremail(newUser,
-                                      ue.getUseremail()));
+                .add(new Useremail(newUser,
+                    ue.getUseremail()));
         }
 
         return userrepos.save(newUser);
@@ -111,16 +138,16 @@ public class UserServiceImpl implements UserService
 
     @Transactional
     @Override
-    public User update(User user,
-                       long id)
+    public User update(
+        User user,
+        long id)
     {
-
         User currentUser = findUserById(id);
 
         if (user.getUsername() != null)
         {
             currentUser.setUsername(user.getUsername()
-                                        .toLowerCase());
+                .toLowerCase());
         }
 
         if (user.getPassword() != null)
@@ -131,45 +158,53 @@ public class UserServiceImpl implements UserService
         if (user.getPrimaryemail() != null)
         {
             currentUser.setPrimaryemail(user.getPrimaryemail()
-                                            .toLowerCase());
+                .toLowerCase());
         }
 
-        if (user.getUserroles()
-                .size() > 0)
+        if (user.getRoles()
+            .size() > 0)
         {
-            throw new EntityNotFoundException("User Roles are not updated through User. See endpoint POST: users/user/{userid}/role/{roleid}");
+            throw new EntityExistsException("User Roles are not updated through users. See endpoint POST: users/user/{userid}/role/{roleid}");
         }
 
         if (user.getUseremails()
-                .size() > 0)
+            .size() > 0)
         {
+            currentUser.getUseremails()
+                .clear();
             for (Useremail ue : user.getUseremails())
             {
                 currentUser.getUseremails()
-                           .add(new Useremail(currentUser,
-                                              ue.getUseremail()));
+                    .add(new Useremail(currentUser,
+                        ue.getUseremail()));
             }
         }
 
         return userrepos.save(currentUser);
     }
 
+    @Override
+    public List<UserNameCountEmails> getCountUserEmails()
+    {
+        return userrepos.getCountUserEmails();
+    }
+
     @Transactional
     @Override
-    public void deleteUserRole(long userid,
-                               long roleid)
+    public void deleteUserRole(
+        long userid,
+        long roleid)
     {
         userrepos.findById(userid)
-                 .orElseThrow(() -> new EntityNotFoundException("User id " + userid + " not found!"));
-        rolerepos.findById(roleid)
-                 .orElseThrow(() -> new EntityNotFoundException("Role id " + roleid + " not found!"));
+            .orElseThrow(() -> new EntityNotFoundException("User id " + userid + " not found!"));
+        roleService.findRoleById(roleid);
 
-        if (rolerepos.checkUserRolesCombo(userid,
-                                          roleid)
-                     .getCount() > 0)
+        if (userrepos.checkUserRolesCombo(userid,
+            roleid)
+            .getCount() > 0)
         {
-            rolerepos.deleteUserRoles(userid,
-                                      roleid);
+            userrepos.deleteUserRoles(userid,
+                roleid);
         } else
         {
             throw new EntityNotFoundException("Role and User Combination Does Not Exists");
@@ -178,30 +213,25 @@ public class UserServiceImpl implements UserService
 
     @Transactional
     @Override
-    public void addUserRole(long userid,
-                            long roleid)
+    public void addUserRole(
+        long userid,
+        long roleid)
     {
         userrepos.findById(userid)
-                 .orElseThrow(() -> new EntityNotFoundException("User id " + userid + " not found!"));
-        rolerepos.findById(roleid)
-                 .orElseThrow(() -> new EntityNotFoundException("Role id " + roleid + " not found!"));
+            .orElseThrow(() -> new EntityNotFoundException("User id " + userid + " not found!"));
+        roleService.findRoleById(roleid);
 
-        if (rolerepos.checkUserRolesCombo(userid,
-                                          roleid)
-                     .getCount() <= 0)
+        if (userrepos.checkUserRolesCombo(userid,
+            roleid)
+            .getCount() <= 0)
         {
-            rolerepos.insertUserRoles(userAuditing.getCurrentAuditor().get(),
-                                      userid,
-                                      roleid);
+            userrepos.insertUserRoles(userAuditing.getCurrentAuditor()
+                    .get(),
+                userid,
+                roleid);
         } else
         {
             throw new EntityNotFoundException("Role and User Combination Already Exists");
         }
-    }
-
-    @Override
-    public List<UserNameCountEmails> getCountUserEmails()
-    {
-        return userrepos.getCountUserEmails();
     }
 }

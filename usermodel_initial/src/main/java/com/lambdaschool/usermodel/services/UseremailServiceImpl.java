@@ -1,14 +1,17 @@
 package com.lambdaschool.usermodel.services;
 
+import com.lambdaschool.usermodel.models.User;
 import com.lambdaschool.usermodel.models.Useremail;
 import com.lambdaschool.usermodel.repository.UseremailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Transactional
 @Service(value = "useremailService")
 public class UseremailServiceImpl implements UseremailService
 {
@@ -17,6 +20,12 @@ public class UseremailServiceImpl implements UseremailService
      */
     @Autowired
     private UseremailRepository useremailrepos;
+
+    /**
+     * Connects this servive to the User Service
+     */
+    @Autowired
+    private UserService userService;
 
     @Override
     public List<Useremail> findAll()
@@ -39,6 +48,7 @@ public class UseremailServiceImpl implements UseremailService
             .orElseThrow(() -> new EntityNotFoundException("Useremail with id " + id + " Not Found!"));
     }
 
+    @Transactional
     @Override
     public void delete(long id)
     {
@@ -52,6 +62,7 @@ public class UseremailServiceImpl implements UseremailService
         }
     }
 
+    @Transactional
     @Override
     public Useremail update(
         long useremailid,
@@ -67,5 +78,18 @@ public class UseremailServiceImpl implements UseremailService
         {
             throw new EntityNotFoundException("Useremail with id " + useremailid + " Not Found!");
         }
+    }
+
+    @Transactional
+    @Override
+    public Useremail save(
+        long userid,
+        String emailaddress)
+    {
+        User currentUser = userService.findUserById(userid);
+
+        Useremail newUserEmail = new Useremail(currentUser,
+            emailaddress);
+        return useremailrepos.save(newUserEmail);
     }
 }

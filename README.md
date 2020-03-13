@@ -2,11 +2,11 @@
 
 A student that completes this project shows that they can:
 
-Add additional fields to a Many to Many Join Table
-Add standard auditing fields to each table
-Use SQL, JPA and Hibernate to perform custom query operations on a RDBMS through a Spring Application
-Use SQL, JPA and Hibernate to perform custom data manipulation operations on a RDBMS through a Spring Application
-Implement default Swagger documentation
+- Add additional fields to a Many to Many Join Table
+- Add standard auditing fields to each table
+- Use SQL, JPA and Hibernate to perform custom query operations on a RDBMS through a Spring Application
+- Use SQL, JPA and Hibernate to perform custom data manipulation operations on a RDBMS through a Spring Application
+- Implement default Swagger documentation
 
 ## Introduction
 
@@ -14,13 +14,21 @@ This is a basic database scheme with users, user emails, and user roles. This Ja
 
 ### Database layout
 
-The table layouts are as follows
+The table layout are as follows
 
 * User is the driving table.
 * Useremails have a Many-To-One relationship with User. Each User has many user email combinations. Each user email combination has only one User.
 * Roles have a Many-To-Many relationship with Users.
 
 ![Image of Database Layout](usersdb.png)
+
+Notice that this database layout is similar to the layout for the java-crudyrestaurants application.
+
+| Type          | Crudy Restaurants        | Usermodel |
+|---------------|--------------------------|-----------|
+| Driving Table | Restaurants              | Users     |
+| One to Many   | Restaurants -> Menus     | Users -> Useremails |
+| Many to Many  | Restaurants <-> Payments | Users <-> Roles |
 
 Two different applications exist
 

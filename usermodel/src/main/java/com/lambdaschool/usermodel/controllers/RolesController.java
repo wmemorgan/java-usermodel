@@ -11,106 +11,175 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.List;
 
+/**
+ * The entry point for clients to access role data
+ * <p>
+ * Note: we cannot update a role
+ * we cannot update a role
+ * working with the "non-owner" object in a many to many relationship is messy
+ * we will be fixing that!
+ */
 @RestController
 @RequestMapping("/roles")
 public class RolesController
 {
+    /**
+     * Using the Role service to process Role data
+     */
     @Autowired
     RoleService roleService;
 
-    // http://localhost:2019/roles/roles
+    /**
+     * List of all roles
+     * <br>Example: <a href="http://localhost:2019/roles/roles">http://localhost:2019/roles/roles</a>
+     *
+     * @return JSON List of all the roles and their associated users
+     * @see RoleService#findAll() RoleService.findAll()
+     */
     @GetMapping(value = "/roles",
-                produces = {"application/json"})
+        produces = {"application/json"})
     public ResponseEntity<?> listRoles()
     {
         List<Role> allRoles = roleService.findAll();
         return new ResponseEntity<>(allRoles,
-                                    HttpStatus.OK);
+            HttpStatus.OK);
     }
 
-    // http://localhost:2019/roles/role/3
+    /**
+     * The Role referenced by the given primary key
+     * <br>Example: <a href="http://localhost:2019/roles/role/3">http://localhost:2019/roles/role/3</a>
+     *
+     * @param roleId The primary key (long) of the role you seek
+     * @return JSON object of the role you seek
+     * @see RoleService#findRoleById(long) RoleService.findRoleById(long)
+     */
     @GetMapping(value = "/role/{roleId}",
-                produces = {"application/json"})
+        produces = {"application/json"})
     public ResponseEntity<?> getRoleById(
-            @PathVariable
-                    Long roleId)
+        @PathVariable
+            Long roleId)
     {
         Role r = roleService.findRoleById(roleId);
         return new ResponseEntity<>(r,
-                                    HttpStatus.OK);
+            HttpStatus.OK);
     }
 
-    // http://localhost:2019/roles/role/name/data
+    /**
+     * The Role with the given name
+     * <br>Example: <a href="http://localhost:2019/roles/role/name/data">http://localhost:2019/roles/role/name/data</a>
+     *
+     * @param roleName The name of the role you seek
+     * @return JSON object of the role you seek
+     * @see RoleService#findByName(String) RoleService.findByName(String)
+     */
     @GetMapping(value = "/role/name/{roleName}",
-                produces = {"application/json"})
+        produces = {"application/json"})
     public ResponseEntity<?> getRoleByName(
-            @PathVariable
-                    String roleName)
+        @PathVariable
+            String roleName)
     {
         Role r = roleService.findByName(roleName);
         return new ResponseEntity<>(r,
-                                    HttpStatus.OK);
+            HttpStatus.OK);
     }
 
-    // http://localhost:2019/roles/role
-    /*
-        {
-            "name" : "ANewRole"
-        }
-    */
+    /**
+     * Given a complete Role object, create a new Role record
+     * <br>Example: <a href="http://localhost:2019/roles/role">http://localhost:2019/roles/role</a>
+     *
+     * @param newRole A complete new Role object
+     * @return A location header with the URI to the newly created role and a status of CREATED
+     * @see RoleService#save(Role) RoleService.save(Role)
+     */
     @PostMapping(value = "/role",
-                 consumes = {"application/json"})
-    public ResponseEntity<?> addNewRole(@Valid
-                                        @RequestBody
-                                                Role newRole) throws URISyntaxException
+        consumes = {"application/json"})
+    public ResponseEntity<?> addNewRole(
+        @Valid
+        @RequestBody
+            Role newRole)
     {
+        // ids are not recognized by the Post method
+        newRole.setRoleid(0);
         newRole = roleService.save(newRole);
 
         // set the location header for the newly created resource
         HttpHeaders responseHeaders = new HttpHeaders();
         URI newRoleURI = ServletUriComponentsBuilder.fromCurrentRequest()
-                                                    .path("/{roleid}")
-                                                    .buildAndExpand(newRole.getRoleid())
-                                                    .toUri();
+            .path("/{roleid}")
+            .buildAndExpand(newRole.getRoleid())
+            .toUri();
         responseHeaders.setLocation(newRoleURI);
 
         return new ResponseEntity<>(null,
-                                    responseHeaders,
-                                    HttpStatus.CREATED);
+            responseHeaders,
+            HttpStatus.CREATED);
     }
 
-
-    // http://localhost:2019/roles/role/3
     /*
-        {
-            "name" : "ANewRole"
-        }
+     *
+     * The following routes are new from initial
+     *
      */
-    @PutMapping(value = "/role/{roleid}",
-                consumes = {"application/json"})
-    public ResponseEntity<?> addNewRole(
-            @PathVariable
-                    long roleid,
-            @Valid
-            @RequestBody
-                    Role newRole) throws URISyntaxException
-    {
-        newRole = roleService.update(roleid,
-                                     newRole);
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
 
-
-    // localhost:2019/roles/role/3
+    /**
+     * Deletes the role from the database. This also deletes all user role combinations associated with this role
+     * <br>Example: <a href="http://localhost:2019/roles/role/3">http://localhost:2019/roles/role/3</a>
+     *
+     * @param id The primary key (long) of the role you wish to delete
+     * @return Status of OK
+     */
     @DeleteMapping(value = "/role/{id}")
     public ResponseEntity<?> deleteRoleById(
-            @PathVariable
-                    long id)
+        @PathVariable
+            long id)
     {
         roleService.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    /**
+     * The process allows you to update a role name only!
+     * <br>Example: <a href="http://localhost:2019/roles/role/3">http://localhost:2019/roles/role/3</a>
+     *
+     * @param roleid  The primary key (long) of the role you wish to update
+     * @param newRole The new name (String) for the role
+     * @return Status of OK
+     */
+    @PutMapping(value = "/role/{roleid}",
+        consumes = {"application/json"})
+    public ResponseEntity<?> putUpdateRole(
+        @PathVariable
+            long roleid,
+        @Valid
+        @RequestBody
+            Role newRole)
+    {
+        newRole = roleService.update(roleid,
+            newRole);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    /**
+     * The process allows you to update a role name only!
+     * <br>Example: <a href="http://localhost:2019/roles/role/3">http://localhost:2019/roles/role/3</a>
+     *
+     * @param roleid  The primary key (long) of the role you wish to update
+     * @param newRole The new name (String) for the role
+     * @return Status of OK
+     */
+    @PatchMapping(value = "/role/{roleid}",
+        consumes = {"application/json"})
+    public ResponseEntity<?> patchUpdateRole(
+        @PathVariable
+            long roleid,
+        @Valid
+        @RequestBody
+            Role newRole)
+    {
+        newRole = roleService.update(roleid,
+            newRole);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

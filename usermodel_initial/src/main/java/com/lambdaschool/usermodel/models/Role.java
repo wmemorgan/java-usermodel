@@ -33,7 +33,8 @@ public class Role
      * Contains a List of Users Objects using this Role.
      */
     @ManyToMany(mappedBy = "roles")
-    @JsonIgnoreProperties(value = "roles", allowSetters = true)
+    @JsonIgnoreProperties(value = "roles",
+        allowSetters = true)
     private List<User> users = new ArrayList<>();
 
     /**

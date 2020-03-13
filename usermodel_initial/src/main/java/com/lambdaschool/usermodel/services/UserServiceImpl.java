@@ -30,11 +30,6 @@ public class UserServiceImpl implements UserService
     private RoleService roleService;
 
 
-
-
-
-
-
     public User findUserById(long id) throws EntityNotFoundException
     {
         return userrepos.findById(id)

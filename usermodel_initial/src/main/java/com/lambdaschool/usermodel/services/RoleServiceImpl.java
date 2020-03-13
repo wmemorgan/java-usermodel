@@ -1,7 +1,6 @@
 package com.lambdaschool.usermodel.services;
 
 import com.lambdaschool.usermodel.models.Role;
-import com.lambdaschool.usermodel.models.User;
 import com.lambdaschool.usermodel.repository.RoleRepository;
 import com.lambdaschool.usermodel.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

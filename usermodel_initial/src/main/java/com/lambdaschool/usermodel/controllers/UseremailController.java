@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.servlet.http.HttpServletRequest;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -101,7 +100,7 @@ public class UseremailController
     /**
      * Adds a new user email combination
      *
-     * @param userid the user id of the new user email combination
+     * @param userid       the user id of the new user email combination
      * @param emailaddress the email address of the new user eamil combination
      * @return A location header with the URI to the newly created user email combination and a status of CREATED
      * @throws URISyntaxException Exception if something does not work in creating the location header

@@ -63,7 +63,8 @@ public class User
     @JoinTable(name = "userroles",
         joinColumns = @JoinColumn(name = "userid"),
         inverseJoinColumns = @JoinColumn(name = "roleid"))
-    @JsonIgnoreProperties(value = "users", allowSetters = true)
+    @JsonIgnoreProperties(value = "users",
+        allowSetters = true)
     private List<Role> roles = new ArrayList<>();
 
     /**

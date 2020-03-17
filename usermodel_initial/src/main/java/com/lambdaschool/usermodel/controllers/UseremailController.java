@@ -98,7 +98,7 @@ public class UseremailController
     /**
      * Adds a new user email combination
      *
-     * @param userid       the user id of the new user email combination
+     * @param userid the user id of the new user email combination
      * @param emailaddress the email address of the new user eamil combination
      * @return A location header with the URI to the newly created user email combination and a status of CREATED
      * @throws URISyntaxException Exception if something does not work in creating the location header

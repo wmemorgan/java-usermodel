@@ -16,10 +16,6 @@ import java.util.List;
 
 /**
  * The entry point for clients to access user data
- * <p>
- * Note: Emails are added through the add user process
- * Roles are added through the add user process
- * No way to delete an assigned role
  */
 @RestController
 @RequestMapping("/users")

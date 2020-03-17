@@ -11,8 +11,7 @@ import javax.validation.constraints.Email;
  * requires each combination of user and useremail to be unique. The same email cannot be assigned to the same user more than once.
  */
 @Entity
-@Table(name = "useremails",
-    uniqueConstraints = {@UniqueConstraint(columnNames = {"userid", "useremail"})})
+@Table(name = "useremails")
 public class Useremail extends Auditable
 {
     /**
@@ -23,7 +22,7 @@ public class Useremail extends Auditable
     private long useremailid;
 
     /**
-     * Email (String) for this user. Cannot be nullable. Must be unique for each given user
+     * Email (String) for this user. Cannot be nullable.
      * Must be in the format userid@domain.upperLevelDomain
      */
     @Column(nullable = false)

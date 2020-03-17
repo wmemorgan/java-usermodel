@@ -7,12 +7,9 @@ import javax.validation.constraints.Email;
 
 /**
  * The entity allowing interaction with the useremails table
- * <p>
- * requires each combination of user and useremail to be unique. The same email cannot be assigned to the same user more than once.
  */
 @Entity
-@Table(name = "useremails",
-    uniqueConstraints = {@UniqueConstraint(columnNames = {"userid", "useremail"})})
+@Table(name = "useremails")
 public class Useremail
 {
     /**
@@ -23,7 +20,7 @@ public class Useremail
     private long useremailid;
 
     /**
-     * Email (String) for this user. Cannot be nullable. Must be unique for each given user
+     * Email (String) for this user. Cannot be nullable.
      * Must be in the format userid@domain.upperLevelDomain
      */
     @Column(nullable = false)

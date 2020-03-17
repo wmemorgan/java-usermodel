@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -105,26 +104,16 @@ public class UserServiceImpl implements UserService
         newUser.setPrimaryemail(user.getPrimaryemail()
             .toLowerCase());
 
-        if (user.getUserid() == 0)
+        newUser.getRoles()
+            .clear();
+        for (UserRoles ur : user.getRoles())
         {
+            long thisid = ur.getRole()
+                .getRoleid();
+            Role role = roleService.findRoleById(thisid);
             newUser.getRoles()
-                .clear();
-            for (UserRoles ur : user.getRoles())
-            {
-                long thisid = ur.getRole()
-                    .getRoleid();
-                Role role = roleService.findRoleById(thisid);
-                newUser.getRoles()
-                    .add(new UserRoles(newUser,
-                        role));
-            }
-        } else
-        {
-            if (user.getRoles()
-                .size() > 0)
-            {
-                throw new EntityExistsException("User Roles are not updated through users. See endpoint POST: users/user/{userid}/role/{roleid}");
-            }
+                .add(new UserRoles(newUser,
+                    role));
         }
 
         newUser.getUseremails()
@@ -167,7 +156,17 @@ public class UserServiceImpl implements UserService
         if (user.getRoles()
             .size() > 0)
         {
-            throw new EntityExistsException("User Roles are not updated through users. See endpoint POST: users/user/{userid}/role/{roleid}");
+            currentUser.getRoles()
+                .clear();
+            for (UserRoles ur : user.getRoles())
+            {
+                long thisid = ur.getRole()
+                    .getRoleid();
+                Role role = roleService.findRoleById(thisid);
+                currentUser.getRoles()
+                    .add(new UserRoles(currentUser,
+                        role));
+            }
         }
 
         if (user.getUseremails()
@@ -185,6 +184,12 @@ public class UserServiceImpl implements UserService
 
         return userrepos.save(currentUser);
     }
+
+    /*
+     *
+     * The following are new from initial
+     *
+     */
 
     @Override
     public List<UserNameCountEmails> getCountUserEmails()

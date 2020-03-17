@@ -98,8 +98,6 @@ public class UserServiceImpl implements UserService
         newUser.setPrimaryemail(user.getPrimaryemail()
             .toLowerCase());
 
-//        if (user.getUserid() == 0)
-//        {
             newUser.getRoles()
                 .clear();
             for (Role r : user.getRoles())
@@ -108,14 +106,6 @@ public class UserServiceImpl implements UserService
 
                 newUser.addRole(newRole);
             }
-//        } else
-//        {
-//            if (user.getRoles()
-//                .size() > 0)
-//            {
-//                throw new EntityExistsException("User Roles are not updated through users. See endpoint POST: users/user/{userid}/role/{roleid}");
-//            }
-//        }
 
         newUser.getUseremails()
             .clear();
@@ -157,7 +147,14 @@ public class UserServiceImpl implements UserService
         if (user.getRoles()
             .size() > 0)
         {
-            throw new EntityExistsException("User Roles are not updated through users. See endpoint POST: users/user/{userid}/role/{roleid}");
+            currentUser.getRoles()
+                .clear();
+            for (Role r : user.getRoles())
+            {
+                Role newRole = roleService.findRoleById(r.getRoleid());
+
+                currentUser.addRole(newRole);
+            }
         }
 
         if (user.getUseremails()

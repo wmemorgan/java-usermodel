@@ -11,6 +11,9 @@ import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implements the UseremailService Interface
+ */
 @Transactional
 @Service(value = "useremailService")
 public class UseremailServiceImpl implements UseremailService

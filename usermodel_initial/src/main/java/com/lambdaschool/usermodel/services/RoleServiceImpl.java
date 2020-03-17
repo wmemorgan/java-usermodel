@@ -12,6 +12,9 @@ import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implements the RoleService Interface
+ */
 @Transactional
 @Service(value = "roleService")
 public class RoleServiceImpl implements RoleService

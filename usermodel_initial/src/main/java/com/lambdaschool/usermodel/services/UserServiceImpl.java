@@ -13,6 +13,9 @@ import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implements UserService Interface
+ */
 @Transactional
 @Service(value = "userService")
 public class UserServiceImpl implements UserService
@@ -95,8 +98,8 @@ public class UserServiceImpl implements UserService
         newUser.setPrimaryemail(user.getPrimaryemail()
             .toLowerCase());
 
-        if (user.getUserid() == 0)
-        {
+//        if (user.getUserid() == 0)
+//        {
             newUser.getRoles()
                 .clear();
             for (Role r : user.getRoles())
@@ -105,14 +108,14 @@ public class UserServiceImpl implements UserService
 
                 newUser.addRole(newRole);
             }
-        } else
-        {
-            if (user.getRoles()
-                .size() > 0)
-            {
-                throw new EntityExistsException("User Roles are not updated through users. See endpoint POST: users/user/{userid}/role/{roleid}");
-            }
-        }
+//        } else
+//        {
+//            if (user.getRoles()
+//                .size() > 0)
+//            {
+//                throw new EntityExistsException("User Roles are not updated through users. See endpoint POST: users/user/{userid}/role/{roleid}");
+//            }
+//        }
 
         newUser.getUseremails()
             .clear();

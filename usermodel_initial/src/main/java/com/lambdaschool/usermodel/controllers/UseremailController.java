@@ -15,8 +15,6 @@ import java.util.List;
 
 /**
  * The entry point for client to access user, email combinations
- * <p>
- * Note: Emails are added through the user process
  */
 @RestController
 @RequestMapping("/useremails")

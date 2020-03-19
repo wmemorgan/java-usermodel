@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -98,14 +97,14 @@ public class UserServiceImpl implements UserService
         newUser.setPrimaryemail(user.getPrimaryemail()
             .toLowerCase());
 
-            newUser.getRoles()
-                .clear();
-            for (Role r : user.getRoles())
-            {
-                Role newRole = roleService.findRoleById(r.getRoleid());
+        newUser.getRoles()
+            .clear();
+        for (Role r : user.getRoles())
+        {
+            Role newRole = roleService.findRoleById(r.getRoleid());
 
-                newUser.addRole(newRole);
-            }
+            newUser.addRole(newRole);
+        }
 
         newUser.getUseremails()
             .clear();

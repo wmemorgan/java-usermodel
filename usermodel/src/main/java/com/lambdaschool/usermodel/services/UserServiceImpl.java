@@ -93,8 +93,14 @@ public class UserServiceImpl implements UserService
 
         if (user.getUserid() != 0)
         {
-            userrepos.findById(user.getUserid())
+            User oldUser = userrepos.findById(user.getUserid())
                 .orElseThrow(() -> new EntityNotFoundException("User id " + user.getUserid() + " not found!"));
+
+            // delete the roles for the old user we are replacing
+            for (UserRoles ur : oldUser.getRoles())
+            {
+                deleteUserRole(ur.getUser().getUserid(), ur.getRole().getRoleid());
+            }
             newUser.setUserid(user.getUserid());
         }
 
@@ -106,14 +112,22 @@ public class UserServiceImpl implements UserService
 
         newUser.getRoles()
             .clear();
-        for (UserRoles ur : user.getRoles())
+        if (user.getUserid() == 0)
         {
-            long thisid = ur.getRole()
-                .getRoleid();
-            Role role = roleService.findRoleById(thisid);
-            newUser.getRoles()
-                .add(new UserRoles(newUser,
-                    role));
+            for (UserRoles ur : user.getRoles())
+            {
+                Role newRole = roleService.findRoleById(ur.getRole()
+                    .getRoleid());
+
+                newUser.addRole(newRole);
+            }
+        } else
+        {
+            // add the new roles for the user we are replacing
+            for (UserRoles ur : user.getRoles())
+            {
+                addUserRole(newUser.getUserid(), ur.getRole().getRoleid());
+            }
         }
 
         newUser.getUseremails()
@@ -156,16 +170,16 @@ public class UserServiceImpl implements UserService
         if (user.getRoles()
             .size() > 0)
         {
-            currentUser.getRoles()
-                .clear();
+            // delete the roles for the old user we are replacing
+            for (UserRoles ur : currentUser.getRoles())
+            {
+                deleteUserRole(ur.getUser().getUserid(), ur.getRole().getRoleid());
+            }
+
+            // add the new roles for the user we are replacing
             for (UserRoles ur : user.getRoles())
             {
-                long thisid = ur.getRole()
-                    .getRoleid();
-                Role role = roleService.findRoleById(thisid);
-                currentUser.getRoles()
-                    .add(new UserRoles(currentUser,
-                        role));
+                addUserRole(currentUser.getUserid(), ur.getRole().getRoleid());
             }
         }
 

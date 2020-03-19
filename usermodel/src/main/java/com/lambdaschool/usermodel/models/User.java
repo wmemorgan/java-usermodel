@@ -229,4 +229,16 @@ public class User extends Auditable
     {
         this.roles = roles;
     }
+
+    /**
+     * Add one role to this user
+     *
+     * @param role the new role (Role) to add
+     */
+    public void addRole(Role role)
+    {
+        roles.add(new UserRoles(this,
+            role));
+    }
+
 }

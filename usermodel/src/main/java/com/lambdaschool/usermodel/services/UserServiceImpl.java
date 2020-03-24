@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -253,7 +254,7 @@ public class UserServiceImpl implements UserService
                 roleid);
         } else
         {
-            throw new EntityNotFoundException("Role and User Combination Already Exists");
+            throw new EntityExistsException("Role and User Combination Already Exists");
         }
     }
 }

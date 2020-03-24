@@ -222,7 +222,15 @@ public class UserController
             HttpStatus.OK);
     }
 
-    // http://localhost:2019/users/user/7/role/2
+    /**
+     * Deletes the given user, user role combination
+     * <br>Example: <a href="http://localhost:2019/users/user/7/role/2">http://localhost:2019/users/user/7/role/2</a>
+     *
+     * @param userid the user id of the user user role combination
+     * @param roleid the role id of the user user role combination
+     *
+     * @return Status OK
+     */
     @DeleteMapping(value = "/user/{userid}/role/{roleid}")
     public ResponseEntity<?> deleteUserRoleByIds(
         @PathVariable
@@ -236,7 +244,15 @@ public class UserController
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    // http://localhost:2019/users/user/15/role/2
+    /**
+     * Adds the given user, user role combination
+     * <br>Example: <a href="http://localhost:2019/users/user/7/role/2">http://localhost:2019/users/user/7/role/2</a>
+     *
+     * @param userid the user id of the user user role combination
+     * @param roleid the role id of the user user role combination
+     *
+     * @return Status OK
+     */
     @PostMapping(value = "/user/{userid}/role/{roleid}")
     public ResponseEntity<?> postUserRoleByIds(
         @PathVariable

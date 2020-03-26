@@ -15,11 +15,6 @@ import java.util.List;
 
 /**
  * The entry point for clients to access role data
- * <p>
- * Note: we cannot update a role
- * we cannot update a role
- * working with the "non-owner" object in a many to many relationship is messy
- * we will be fixing that!
  */
 @RestController
 @RequestMapping("/roles")

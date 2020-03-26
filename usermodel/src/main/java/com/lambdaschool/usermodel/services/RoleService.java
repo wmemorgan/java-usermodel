@@ -6,8 +6,6 @@ import java.util.List;
 
 /**
  * The service that works with the Role Model.
- * <p>
- * Note: no method update Role name
  */
 public interface RoleService
 {

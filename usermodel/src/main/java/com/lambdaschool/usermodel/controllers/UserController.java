@@ -45,7 +45,7 @@ public class UserController
 
     /**
      * Returns a single user based off a user id number
-     * <br>Example: http://localhost:2019/users/user/7
+     * <br>Example: <a href="http://localhost:2019/users/user/7">http://localhost:2019/users/user/7</a>
      *
      * @param userId The primary key of the user you seek
      * @return JSON object of the user you seek
@@ -137,8 +137,7 @@ public class UserController
     /**
      * Given a complete User Object
      * Given the user id, primary key, is in the User table,
-     * replace the User record and Useremail records.
-     * Roles are handled through different endpoints
+     * replace the User record , user role combinations and Useremail records.
      * <br> Example: <a href="http://localhost:2019/users/user/15">http://localhost:2019/users/user/15</a>
      *
      * @param updateUser A complete User including all emails and roles to be used to
@@ -164,8 +163,7 @@ public class UserController
 
     /**
      * Updates the user record associated with the given id with the provided data. Only the provided fields are affected.
-     * Roles are handled through different endpoints
-     * If an email list is given, it replaces the original emai list.
+     * If an email list or user role combination list is given, it replaces the list.
      * <br> Example: <a href="http://localhost:2019/users/user/7">http://localhost:2019/users/user/7</a>
      *
      * @param updateUser An object containing values for just the fields that are being updated. All other fields are left NULL.
@@ -226,9 +224,8 @@ public class UserController
      * Deletes the given user, user role combination
      * <br>Example: <a href="http://localhost:2019/users/user/7/role/2">http://localhost:2019/users/user/7/role/2</a>
      *
-     * @param userid the user id of the user user role combination
-     * @param roleid the role id of the user user role combination
-     *
+     * @param userid the user id of the user of the user role combination
+     * @param roleid the role id of the user of the user user role combination
      * @return Status OK
      */
     @DeleteMapping(value = "/user/{userid}/role/{roleid}")
@@ -250,7 +247,6 @@ public class UserController
      *
      * @param userid the user id of the user user role combination
      * @param roleid the role id of the user user role combination
-     *
      * @return Status OK
      */
     @PostMapping(value = "/user/{userid}/role/{roleid}")

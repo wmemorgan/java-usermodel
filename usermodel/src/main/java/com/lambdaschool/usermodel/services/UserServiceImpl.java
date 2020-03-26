@@ -100,7 +100,10 @@ public class UserServiceImpl implements UserService
             // delete the roles for the old user we are replacing
             for (UserRoles ur : oldUser.getRoles())
             {
-                deleteUserRole(ur.getUser().getUserid(), ur.getRole().getRoleid());
+                deleteUserRole(ur.getUser()
+                        .getUserid(),
+                    ur.getRole()
+                        .getRoleid());
             }
             newUser.setUserid(user.getUserid());
         }
@@ -127,7 +130,9 @@ public class UserServiceImpl implements UserService
             // add the new roles for the user we are replacing
             for (UserRoles ur : user.getRoles())
             {
-                addUserRole(newUser.getUserid(), ur.getRole().getRoleid());
+                addUserRole(newUser.getUserid(),
+                    ur.getRole()
+                        .getRoleid());
             }
         }
 
@@ -174,13 +179,18 @@ public class UserServiceImpl implements UserService
             // delete the roles for the old user we are replacing
             for (UserRoles ur : currentUser.getRoles())
             {
-                deleteUserRole(ur.getUser().getUserid(), ur.getRole().getRoleid());
+                deleteUserRole(ur.getUser()
+                        .getUserid(),
+                    ur.getRole()
+                        .getRoleid());
             }
 
             // add the new roles for the user we are replacing
             for (UserRoles ur : user.getRoles())
             {
-                addUserRole(currentUser.getUserid(), ur.getRole().getRoleid());
+                addUserRole(currentUser.getUserid(),
+                    ur.getRole()
+                        .getRoleid());
             }
         }
 

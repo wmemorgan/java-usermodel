@@ -11,10 +11,18 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * Configures the default Swagger Documentation
+ */
 @Configuration
 @EnableSwagger2
 public class Swagger2Config
 {
+    /**
+     * Configures what to document using Swagger
+     *
+     * @return A Docket which is the primary interface for Swagger configuration
+     */
     @Bean
     public Docket api()
     {
@@ -27,6 +35,11 @@ public class Swagger2Config
             .apiInfo(apiEndPointsInfo());
     }
 
+    /**
+     * Configures some information related to the Application for Swagger
+     *
+     * @return ApiInfo a Swagger object containing identification information for this application
+     */
     private ApiInfo apiEndPointsInfo()
     {
         return new ApiInfoBuilder().title("User Model Example")

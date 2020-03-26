@@ -44,10 +44,6 @@ public class User extends Auditable
     @Email
     private String primaryemail;
 
-    /**
-     * List of emails associated with this user. Does not get saved in the database directly.
-     * Forms a one to many relationship with useremail. One user to many useremails.
-     */
     @OneToMany(mappedBy = "user",
         cascade = CascadeType.ALL,
         orphanRemoval = true)

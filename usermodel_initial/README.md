@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This is a basic database scheme with users, user emails, and user roles. This Java Spring REST API application will provide endpoints for clients to read various data sets contained in the applications data. This application will also form the basis of a user authentication application developed elsewhere in the course
+This is a basic database scheme with users, user emails, and user roles. This Java Spring REST API application will provide endpoints for clients to read various data sets contained in the application's data. This application will also form the basis of a user authentication application developed elsewhere in the course
 
 ### Database layout
 
-The table layout are as follows
+The table layout is as follows
 
 * User is the driving table.
 * Useremails have a Many-To-One relationship with User. Each User has many user email combinations. Each user email combination has only one User.
@@ -22,7 +22,7 @@ Notice that this database layout is similar to the layout for the java-crudyrest
 | One to Many   | Restaurants -> Menus     | Users -> Useremails |
 | Many to Many  | Restaurants <-> Payments | Users <-> Roles |
 
-Same layout, same functions, different data! This is a common feature among backend API systems. They all work basically the same but with their own data!
+Same layout, same functions, different data! This is a common feature among backend API systems. They are all very similar but with their own data!
 
 Using the provided seed data, expand each endpoint below to see the output it generates. This is for the initial version of the application and thus will mirror what is happening in the crudy restaurant application!
 

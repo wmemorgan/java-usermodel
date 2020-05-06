@@ -3,7 +3,14 @@ package com.lambdaschool.usermodel.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +51,9 @@ public class User extends Auditable
     @Email
     private String primaryemail;
 
+    /**
+     * A list of emails for this user
+     */
     @OneToMany(mappedBy = "user",
         cascade = CascadeType.ALL,
         orphanRemoval = true)

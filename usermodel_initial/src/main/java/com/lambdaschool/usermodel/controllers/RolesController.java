@@ -44,7 +44,7 @@ public class RolesController
      * @see RoleService#findAll() RoleService.findAll()
      */
     @GetMapping(value = "/roles",
-            produces = {"application/json"})
+            produces = "application/json")
     public ResponseEntity<?> listRoles()
     {
         List<Role> allRoles = roleService.findAll();
@@ -61,7 +61,7 @@ public class RolesController
      * @see RoleService#findRoleById(long) RoleService.findRoleById(long)
      */
     @GetMapping(value = "/role/{roleId}",
-            produces = {"application/json"})
+            produces = "application/json")
     public ResponseEntity<?> getRoleById(
             @PathVariable
                     Long roleId)
@@ -80,7 +80,7 @@ public class RolesController
      * @see RoleService#findByName(String) RoleService.findByName(String)
      */
     @GetMapping(value = "/role/name/{roleName}",
-            produces = {"application/json"})
+            produces = "application/json")
     public ResponseEntity<?> getRoleByName(
             @PathVariable
                     String roleName)
@@ -99,7 +99,7 @@ public class RolesController
      * @see RoleService#save(Role) RoleService.save(Role)
      */
     @PostMapping(value = "/role",
-            consumes = {"application/json"})
+            consumes = "application/json")
     public ResponseEntity<?> addNewRole(
             @Valid
             @RequestBody

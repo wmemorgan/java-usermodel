@@ -74,4 +74,6 @@ public interface UserService
     User update(
             User user,
             long id);
+
+    public void deleteAll();
 }

@@ -53,6 +53,8 @@ public class SeedData
     public void run(String[] args) throws
             Exception
     {
+        userService.deleteAll();
+        roleService.deleteAll();
         Role r1 = new Role("admin");
         Role r2 = new Role("user");
         Role r3 = new Role("data");

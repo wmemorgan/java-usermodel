@@ -39,7 +39,7 @@ public class UseremailController
      * @return JSON list of all users emails
      */
     @GetMapping(value = "/useremails",
-            produces = {"application/json"})
+            produces = "application/json")
     public ResponseEntity<?> listAllUseremails()
     {
         List<Useremail> allUserEmails = useremailService.findAll();
@@ -55,7 +55,7 @@ public class UseremailController
      * @return JSON object of the user email combination you seek with a status of OK
      */
     @GetMapping(value = "/useremail/{useremailId}",
-            produces = {"application/json"})
+            produces = "application/json")
     public ResponseEntity<?> getUserEmailById(
             @PathVariable
                     Long useremailId)

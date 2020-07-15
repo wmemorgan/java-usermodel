@@ -175,4 +175,11 @@ public class UserServiceImpl
 
         return userrepos.save(currentUser);
     }
+
+    @Transactional
+    @Override
+    public void deleteAll()
+    {
+        userrepos.deleteAll();
+    }
 }

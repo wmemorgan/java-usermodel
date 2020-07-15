@@ -80,4 +80,11 @@ public class RoleServiceImpl
 
         return rolerepos.save(role);
     }
+
+    @Transactional
+    @Override
+    public void deleteAll()
+    {
+        rolerepos.deleteAll();
+    }
 }

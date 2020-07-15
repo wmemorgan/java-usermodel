@@ -43,7 +43,7 @@ public class UserController
      * @see UserService#findAll() UserService.findAll()
      */
     @GetMapping(value = "/users",
-            produces = {"application/json"})
+            produces = "application/json")
     public ResponseEntity<?> listAllUsers()
     {
         List<User> myUsers = userService.findAll();
@@ -60,7 +60,7 @@ public class UserController
      * @see UserService#findUserById(long) UserService.findUserById(long)
      */
     @GetMapping(value = "/user/{userId}",
-            produces = {"application/json"})
+            produces = "application/json")
     public ResponseEntity<?> getUserById(
             @PathVariable
                     Long userId)
@@ -79,7 +79,7 @@ public class UserController
      * @see UserService#findByName(String) UserService.findByName(String)
      */
     @GetMapping(value = "/user/name/{userName}",
-            produces = {"application/json"})
+            produces = "application/json")
     public ResponseEntity<?> getUserByName(
             @PathVariable
                     String userName)
@@ -98,7 +98,7 @@ public class UserController
      * @see UserService#findByNameContaining(String) UserService.findByNameContaining(String)
      */
     @GetMapping(value = "/user/name/like/{userName}",
-            produces = {"application/json"})
+            produces = "application/json")
     public ResponseEntity<?> getUserLikeName(
             @PathVariable
                     String userName)
@@ -120,7 +120,7 @@ public class UserController
      * @see UserService#save(User) UserService.save(User)
      */
     @PostMapping(value = "/user",
-            consumes = {"application/json"})
+            consumes = "application/json")
     public ResponseEntity<?> addNewUser(
             @Valid
             @RequestBody
@@ -157,7 +157,7 @@ public class UserController
      * @see UserService#save(User) UserService.save(User)
      */
     @PutMapping(value = "/user/{userid}",
-            consumes = {"application/json"})
+            consumes = "application/json")
     public ResponseEntity<?> updateFullUser(
             @Valid
             @RequestBody
@@ -183,7 +183,7 @@ public class UserController
      * @see UserService#update(User, long) UserService.update(User, long)
      */
     @PatchMapping(value = "/user/{id}",
-            consumes = {"application/json"})
+            consumes = "application/json")
     public ResponseEntity<?> updateUser(
             @RequestBody
                     User updateUser,

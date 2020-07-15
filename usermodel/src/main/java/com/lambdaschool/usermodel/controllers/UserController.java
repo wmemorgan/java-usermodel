@@ -219,46 +219,4 @@ public class UserController
         return new ResponseEntity<>(userService.getCountUserEmails(),
             HttpStatus.OK);
     }
-
-    /**
-     * Deletes the given user, user role combination
-     * <br>Example: <a href="http://localhost:2019/users/user/7/role/2">http://localhost:2019/users/user/7/role/2</a>
-     *
-     * @param userid the user id of the user of the user role combination
-     * @param roleid the role id of the user of the user user role combination
-     * @return Status OK
-     */
-    @DeleteMapping(value = "/user/{userid}/role/{roleid}")
-    public ResponseEntity<?> deleteUserRoleByIds(
-        @PathVariable
-            long userid,
-        @PathVariable
-            long roleid)
-    {
-        userService.deleteUserRole(userid,
-            roleid);
-
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
-    /**
-     * Adds the given user, user role combination
-     * <br>Example: <a href="http://localhost:2019/users/user/7/role/2">http://localhost:2019/users/user/7/role/2</a>
-     *
-     * @param userid the user id of the user user role combination
-     * @param roleid the role id of the user user role combination
-     * @return Status OK
-     */
-    @PostMapping(value = "/user/{userid}/role/{roleid}")
-    public ResponseEntity<?> postUserRoleByIds(
-        @PathVariable
-            long userid,
-        @PathVariable
-            long roleid)
-    {
-        userService.addUserRole(userid,
-            roleid);
-
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
 }

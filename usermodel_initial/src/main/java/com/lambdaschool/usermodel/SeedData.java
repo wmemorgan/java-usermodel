@@ -23,7 +23,8 @@ import java.util.Locale;
  */
 @Transactional
 @Component
-public class SeedData implements CommandLineRunner
+public class SeedData
+        implements CommandLineRunner
 {
     /**
      * Connects the Role Service to this process
@@ -49,7 +50,8 @@ public class SeedData implements CommandLineRunner
      */
     @Transactional
     @Override
-    public void run(String[] args) throws Exception
+    public void run(String[] args) throws
+            Exception
     {
         Role r1 = new Role("admin");
         Role r2 = new Role("user");
@@ -61,80 +63,91 @@ public class SeedData implements CommandLineRunner
 
         // admin, data, user
         User u1 = new User("admin",
-            "password",
-            "admin@lambdaschool.local");
+                           "password",
+                           "admin@lambdaschool.local");
         u1.getUseremails()
-            .add(new Useremail(u1,
-                "admin@email.local"));
+                .add(new Useremail(u1,
+                                   "admin@email.local"));
         u1.getUseremails()
-            .add(new Useremail(u1,
-                "admin@mymail.local"));
-        u1.addRole(r1);
-        u1.addRole(r2);
-        u1.addRole(r3);
+                .add(new Useremail(u1,
+                                   "admin@mymail.local"));
+        u1.getRoles()
+                .add(r1);
+        u1.getRoles()
+                .add(r2);
+        u1.getRoles()
+                .add(r3);
         userService.save(u1);
 
         // data, user
         User u2 = new User("cinnamon",
-            "1234567",
-            "cinnamon@lambdaschool.local");
+                           "1234567",
+                           "cinnamon@lambdaschool.local");
         u2.getUseremails()
-            .add(new Useremail(u2,
-                "cinnamon@mymail.local"));
+                .add(new Useremail(u2,
+                                   "cinnamon@mymail.local"));
         u2.getUseremails()
-            .add(new Useremail(u2,
-                "hops@mymail.local"));
+                .add(new Useremail(u2,
+                                   "hops@mymail.local"));
         u2.getUseremails()
-            .add(new Useremail(u2,
-                "bunny@email.local"));
-        u2.addRole(r2);
-        u2.addRole(r3);
+                .add(new Useremail(u2,
+                                   "bunny@email.local"));
+        u2.getRoles()
+                .add(r2);
+        u2.getRoles()
+                .add(r3);
         userService.save(u2);
 
         User u3 = new User("barnbarn",
-            "ILuvM4th!",
-            "barnbarn@lambdaschool.local");
+                           "ILuvM4th!",
+                           "barnbarn@lambdaschool.local");
         u3.getUseremails()
-            .add(new Useremail(u3,
-                "barnbarn@email.local"));
-        u3.addRole(r2);
+                .add(new Useremail(u3,
+                                   "barnbarn@email.local"));
+        u3.getRoles()
+                .add(r2);
         userService.save(u3);
 
         User u4 = new User("puttat",
-            "password",
-            "puttat@school.lambda");
-        u4.addRole(r2);
+                           "password",
+                           "puttat@school.lambda");
+        u4.getRoles()
+                .add(r2);
         userService.save(u4);
 
         User u5 = new User("misskitty",
-            "password",
-            "misskitty@school.lambda");
-        u5.addRole(r2);
+                           "password",
+                           "misskitty@school.lambda");
+        u5.getRoles()
+                .add(r2);
         userService.save(u5);
 
-        // using JavaFaker create a bunch of regular users
-
-        FakeValuesService fakeValuesService = new FakeValuesService(new Locale("en-US"),
-            new RandomService());
-        Faker nameFaker = new Faker(new Locale("en-US"));
-
-        for (int i = 0; i < 25; i++)
+        if (false)
         {
-            new User();
-            User fakeUser;
+            // using JavaFaker create a bunch of regular users
+            FakeValuesService fakeValuesService = new FakeValuesService(new Locale("en-US"),
+                                                                        new RandomService());
+            Faker nameFaker = new Faker(new Locale("en-US"));
 
-            fakeUser = new User(nameFaker.name()
-                .username(),
-                "password",
-                nameFaker.internet()
-                    .emailAddress());
+            for (int i = 0; i < 25; i++)
+            {
+                new User();
+                User fakeUser;
 
-            // generating random gmail email acounts
-            fakeUser.getUseremails()
-                .add(new Useremail(fakeUser,
-                    fakeValuesService.bothify("????##@gmail.com")));
-            fakeUser.addRole(r2);
-            userService.save(fakeUser);
+                fakeUser = new User(nameFaker.name()
+                                            .username(),
+                                    "password",
+                                    nameFaker.internet()
+                                            .emailAddress());
+
+                // generating random gmail email acounts
+                fakeUser.getUseremails()
+                        .add(new Useremail(fakeUser,
+                                           fakeValuesService.bothify("????##@gmail.com")));
+                fakeUser.getRoles()
+                        .add(r2);
+                userService.save(fakeUser);
+            }
         }
     }
 }

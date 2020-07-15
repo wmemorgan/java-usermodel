@@ -20,7 +20,8 @@ import java.util.List;
  */
 @Transactional
 @Service(value = "userService")
-public class UserServiceImpl implements UserService
+public class UserServiceImpl
+        implements UserService
 {
     /**
      * Connects this service to the User table.
@@ -40,10 +41,11 @@ public class UserServiceImpl implements UserService
     @Autowired
     private UserAuditing userAuditing;
 
-    public User findUserById(long id) throws EntityNotFoundException
+    public User findUserById(long id) throws
+            EntityNotFoundException
     {
         return userrepos.findById(id)
-            .orElseThrow(() -> new EntityNotFoundException("User id " + id + " not found!"));
+                .orElseThrow(() -> new EntityNotFoundException("User id " + id + " not found!"));
     }
 
     @Override
@@ -61,8 +63,8 @@ public class UserServiceImpl implements UserService
          * iterate over the iterator set and add each element to an array list.
          */
         userrepos.findAll()
-            .iterator()
-            .forEachRemaining(list::add);
+                .iterator()
+                .forEachRemaining(list::add);
         return list;
     }
 
@@ -71,7 +73,7 @@ public class UserServiceImpl implements UserService
     public void delete(long id)
     {
         userrepos.findById(id)
-            .orElseThrow(() -> new EntityNotFoundException("User id " + id + " not found!"));
+                .orElseThrow(() -> new EntityNotFoundException("User id " + id + " not found!"));
         userrepos.deleteById(id);
     }
 
@@ -94,55 +96,36 @@ public class UserServiceImpl implements UserService
 
         if (user.getUserid() != 0)
         {
-            User oldUser = userrepos.findById(user.getUserid())
-                .orElseThrow(() -> new EntityNotFoundException("User id " + user.getUserid() + " not found!"));
+            userrepos.findById(user.getUserid())
+                    .orElseThrow(() -> new EntityNotFoundException("User id " + user.getUserid() + " not found!"));
 
-            // delete the roles for the old user we are replacing
-            for (UserRoles ur : oldUser.getRoles())
-            {
-                deleteUserRole(ur.getUser()
-                        .getUserid(),
-                    ur.getRole()
-                        .getRoleid());
-            }
             newUser.setUserid(user.getUserid());
         }
 
         newUser.setUsername(user.getUsername()
-            .toLowerCase());
+                                    .toLowerCase());
         newUser.setPassword(user.getPassword());
         newUser.setPrimaryemail(user.getPrimaryemail()
-            .toLowerCase());
+                                        .toLowerCase());
 
         newUser.getRoles()
-            .clear();
-        if (user.getUserid() == 0)
+                .clear();
+        for (UserRoles ur : user.getRoles())
         {
-            for (UserRoles ur : user.getRoles())
-            {
-                Role newRole = roleService.findRoleById(ur.getRole()
-                    .getRoleid());
+            Role addRole = roleService.findRoleById(ur.getRole()
+                                             .getRoleid());
 
-                newUser.addRole(newRole);
-            }
-        } else
-        {
-            // add the new roles for the user we are replacing
-            for (UserRoles ur : user.getRoles())
-            {
-                addUserRole(newUser.getUserid(),
-                    ur.getRole()
-                        .getRoleid());
-            }
+            newUser.getRoles()
+                    .add(new UserRoles(newUser, addRole));
         }
 
         newUser.getUseremails()
-            .clear();
+                .clear();
         for (Useremail ue : user.getUseremails())
         {
             newUser.getUseremails()
-                .add(new Useremail(newUser,
-                    ue.getUseremail()));
+                    .add(new Useremail(newUser,
+                                       ue.getUseremail()));
         }
 
         return userrepos.save(newUser);
@@ -151,15 +134,15 @@ public class UserServiceImpl implements UserService
     @Transactional
     @Override
     public User update(
-        User user,
-        long id)
+            User user,
+            long id)
     {
         User currentUser = findUserById(id);
 
         if (user.getUsername() != null)
         {
             currentUser.setUsername(user.getUsername()
-                .toLowerCase());
+                                            .toLowerCase());
         }
 
         if (user.getPassword() != null)
@@ -170,40 +153,34 @@ public class UserServiceImpl implements UserService
         if (user.getPrimaryemail() != null)
         {
             currentUser.setPrimaryemail(user.getPrimaryemail()
-                .toLowerCase());
+                                                .toLowerCase());
         }
 
         if (user.getRoles()
-            .size() > 0)
+                .size() > 0)
         {
-            // delete the roles for the old user we are replacing
-            for (UserRoles ur : currentUser.getRoles())
-            {
-                deleteUserRole(ur.getUser()
-                        .getUserid(),
-                    ur.getRole()
-                        .getRoleid());
-            }
-
-            // add the new roles for the user we are replacing
+            currentUser.getRoles()
+                    .clear();
             for (UserRoles ur : user.getRoles())
             {
-                addUserRole(currentUser.getUserid(),
-                    ur.getRole()
-                        .getRoleid());
+                Role addRole = roleService.findRoleById(ur.getRole()
+                                                 .getRoleid());
+
+                currentUser.getRoles()
+                        .add(new UserRoles(currentUser, addRole));
             }
         }
 
         if (user.getUseremails()
-            .size() > 0)
+                .size() > 0)
         {
             currentUser.getUseremails()
-                .clear();
+                    .clear();
             for (Useremail ue : user.getUseremails())
             {
                 currentUser.getUseremails()
-                    .add(new Useremail(currentUser,
-                        ue.getUseremail()));
+                        .add(new Useremail(currentUser,
+                                           ue.getUseremail()));
             }
         }
 
@@ -220,51 +197,5 @@ public class UserServiceImpl implements UserService
     public List<UserNameCountEmails> getCountUserEmails()
     {
         return userrepos.getCountUserEmails();
-    }
-
-    @Transactional
-    @Override
-    public void deleteUserRole(
-        long userid,
-        long roleid)
-    {
-        userrepos.findById(userid)
-            .orElseThrow(() -> new EntityNotFoundException("User id " + userid + " not found!"));
-        roleService.findRoleById(roleid);
-
-        if (userrepos.checkUserRolesCombo(userid,
-            roleid)
-            .getCount() > 0)
-        {
-            userrepos.deleteUserRoles(userid,
-                roleid);
-        } else
-        {
-            throw new EntityNotFoundException("Role and User Combination Does Not Exists");
-        }
-    }
-
-    @Transactional
-    @Override
-    public void addUserRole(
-        long userid,
-        long roleid)
-    {
-        userrepos.findById(userid)
-            .orElseThrow(() -> new EntityNotFoundException("User id " + userid + " not found!"));
-        roleService.findRoleById(roleid);
-
-        if (userrepos.checkUserRolesCombo(userid,
-            roleid)
-            .getCount() <= 0)
-        {
-            userrepos.insertUserRoles(userAuditing.getCurrentAuditor()
-                    .get(),
-                userid,
-                roleid);
-        } else
-        {
-            throw new EntityExistsException("Role and User Combination Already Exists");
-        }
     }
 }

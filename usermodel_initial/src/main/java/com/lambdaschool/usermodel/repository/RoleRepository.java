@@ -6,7 +6,8 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * The CRUD Repository connecting Role to the rest of the application
  */
-public interface RoleRepository extends CrudRepository<Role, Long>
+public interface RoleRepository
+        extends CrudRepository<Role, Long>
 {
     /**
      * JPA Query to find a role by name case insensitive search

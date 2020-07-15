@@ -2,7 +2,11 @@ package com.lambdaschool.usermodel.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -17,8 +21,7 @@ import java.util.Objects;
  * When you implement Serializable you must implement equals and hash code
  */
 @Entity
-@Table(name = "userroles",
-    uniqueConstraints = {@UniqueConstraint(columnNames = {"userid", "roleid"})})
+@Table(name = "userroles")
 public class UserRoles extends Auditable implements Serializable
 {
     /**
@@ -28,8 +31,7 @@ public class UserRoles extends Auditable implements Serializable
     @Id
     @ManyToOne
     @JoinColumn(name = "userid")
-    @JsonIgnoreProperties(value = "roles",
-        allowSetters = true)
+    @JsonIgnoreProperties(value = "roles")
     private User user;
 
     /**
@@ -39,8 +41,7 @@ public class UserRoles extends Auditable implements Serializable
     @Id
     @ManyToOne
     @JoinColumn(name = "roleid")
-    @JsonIgnoreProperties(value = "users",
-        allowSetters = true)
+    @JsonIgnoreProperties(value = "users")
     private Role role;
 
     /**
@@ -111,19 +112,19 @@ public class UserRoles extends Auditable implements Serializable
         {
             return true;
         }
-        if (o == null || getClass() != o.getClass())
+//        if (o == null || getClass() != o.getClass())
+        if (!(o instanceof UserRoles))
         {
             return false;
         }
-        UserRoles userRoles = (UserRoles) o;
-        return getUser().equals(userRoles.getUser()) &&
-            getRole().equals(userRoles.getRole());
+        UserRoles that = (UserRoles) o;
+        return user.getUserid() == that.user.getUserid() &&
+                role.getRoleid() == that.role.getRoleid();
     }
 
     @Override
     public int hashCode()
     {
-        return Objects.hash(getUser(),
-            getRole());
+        return Objects.hash(user.getUserid(), role.getRoleid());
     }
 }

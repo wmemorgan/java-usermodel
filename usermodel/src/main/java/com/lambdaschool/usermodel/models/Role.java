@@ -1,7 +1,6 @@
 package com.lambdaschool.usermodel.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.scheduling.concurrent.ScheduledExecutorTask;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,9 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -44,7 +41,7 @@ public class Role extends Auditable
      */
     @OneToMany(mappedBy = "role",
         cascade = CascadeType.ALL)
-    @JsonIgnoreProperties(value = "role")
+    @JsonIgnoreProperties(value = "role", allowSetters = true)
     private Set<UserRoles> users = new HashSet<>();
 
     /**

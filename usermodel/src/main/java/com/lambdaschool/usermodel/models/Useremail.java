@@ -46,7 +46,7 @@ public class Useremail extends Auditable
     @ManyToOne
     @JoinColumn(name = "userid",
         nullable = false)
-    @JsonIgnoreProperties(value = "useremails")
+    @JsonIgnoreProperties(value = "useremails", allowSetters = true)
     private User user;
 
     /**

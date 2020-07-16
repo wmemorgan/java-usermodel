@@ -5,18 +5,16 @@ import com.lambdaschool.usermodel.models.User;
 import com.lambdaschool.usermodel.models.UserRoles;
 import com.lambdaschool.usermodel.models.Useremail;
 import com.lambdaschool.usermodel.repository.UserRepository;
-import com.lambdaschool.usermodel.views.UserNameCountEmails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Implements the Userservice Interface
+ * Implements UserService Interface
  */
 @Transactional
 @Service(value = "userService")
@@ -35,11 +33,6 @@ public class UserServiceImpl
     @Autowired
     private RoleService roleService;
 
-    /**
-     * Connects this service to the auditing service in order to get current user name
-     */
-    @Autowired
-    private UserAuditing userAuditing;
 
     public User findUserById(long id) throws
             EntityNotFoundException
@@ -98,7 +91,6 @@ public class UserServiceImpl
         {
             userrepos.findById(user.getUserid())
                     .orElseThrow(() -> new EntityNotFoundException("User id " + user.getUserid() + " not found!"));
-
             newUser.setUserid(user.getUserid());
         }
 
@@ -113,7 +105,7 @@ public class UserServiceImpl
         for (UserRoles ur : user.getRoles())
         {
             Role addRole = roleService.findRoleById(ur.getRole()
-                                             .getRoleid());
+                                                            .getRoleid());
 
             newUser.getRoles()
                     .add(new UserRoles(newUser, addRole));
@@ -164,7 +156,7 @@ public class UserServiceImpl
             for (UserRoles ur : user.getRoles())
             {
                 Role addRole = roleService.findRoleById(ur.getRole()
-                                                 .getRoleid());
+                                                                .getRoleid());
 
                 currentUser.getRoles()
                         .add(new UserRoles(currentUser, addRole));
@@ -187,15 +179,10 @@ public class UserServiceImpl
         return userrepos.save(currentUser);
     }
 
-    /*
-     *
-     * The following are new from initial
-     *
-     */
-
+    @Transactional
     @Override
-    public List<UserNameCountEmails> getCountUserEmails()
+    public void deleteAll()
     {
-        return userrepos.getCountUserEmails();
+        userrepos.deleteAll();
     }
 }

@@ -59,7 +59,7 @@ public class User extends Auditable
     @OneToMany(mappedBy = "user",
         cascade = CascadeType.ALL,
         orphanRemoval = true)
-    @JsonIgnoreProperties(value = "user")
+    @JsonIgnoreProperties(value = "user", allowSetters = true)
     private List<Useremail> useremails = new ArrayList<>();
 
     /**
@@ -68,7 +68,7 @@ public class User extends Auditable
      */
     @OneToMany(mappedBy = "user",
         cascade = CascadeType.ALL)
-    @JsonIgnoreProperties(value = "user")
+    @JsonIgnoreProperties(value = "user", allowSetters = true)
     private Set<UserRoles> roles = new HashSet<>();
 
     /**

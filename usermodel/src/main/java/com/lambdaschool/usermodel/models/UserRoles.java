@@ -22,7 +22,9 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "userroles")
-public class UserRoles extends Auditable implements Serializable
+public class UserRoles
+        extends Auditable
+        implements Serializable
 {
     /**
      * 1/2 of the primary key (long) for userroles.
@@ -31,7 +33,7 @@ public class UserRoles extends Auditable implements Serializable
     @Id
     @ManyToOne
     @JoinColumn(name = "userid")
-    @JsonIgnoreProperties(value = "roles")
+    @JsonIgnoreProperties(value = "roles", allowSetters = true)
     private User user;
 
     /**
@@ -41,7 +43,7 @@ public class UserRoles extends Auditable implements Serializable
     @Id
     @ManyToOne
     @JoinColumn(name = "roleid")
-    @JsonIgnoreProperties(value = "users")
+    @JsonIgnoreProperties(value = "users", allowSetters = true)
     private Role role;
 
     /**
@@ -112,19 +114,19 @@ public class UserRoles extends Auditable implements Serializable
         {
             return true;
         }
-//        if (o == null || getClass() != o.getClass())
         if (!(o instanceof UserRoles))
         {
             return false;
         }
         UserRoles that = (UserRoles) o;
-        return user.getUserid() == that.user.getUserid() &&
-                role.getRoleid() == that.role.getRoleid();
+        return ((user == null) ? 0 : user.getUserid()) == ((that.user == null) ? 0 : that.user.getUserid()) &&
+               ((role == null) ? 0 : role.getRoleid()) == ((that.role == null) ? 0 : that.role.getRoleid());
     }
 
     @Override
     public int hashCode()
     {
-        return Objects.hash(user.getUserid(), role.getRoleid());
+        // return Objects.hash(user.getUserid(), role.getRoleid());
+        return 37;
     }
 }

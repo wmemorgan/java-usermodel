@@ -45,4 +45,6 @@ public interface RoleService
      * @return The Role object matching the given name
      */
     Role findByName(String name);
+
+    public void deleteAll();
 }

@@ -3,10 +3,22 @@ package com.lambdaschool.usermodel.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * The entity allowing interaction with the users table
@@ -26,7 +38,7 @@ public class User
      * The username (String). Cannot be null and must be unique
      */
     @Column(nullable = false,
-        unique = true)
+            unique = true)
     private String username;
 
     /**
@@ -40,7 +52,7 @@ public class User
      * Primary email account of user. Could be used as the userid. Cannot be null and must be unique.
      */
     @Column(nullable = false,
-        unique = true)
+            unique = true)
     @Email
     private String primaryemail;
 
@@ -49,10 +61,9 @@ public class User
      * Forms a one to many relationship with useremail. One user to many useremails.
      */
     @OneToMany(mappedBy = "user",
-        cascade = CascadeType.ALL,
-        orphanRemoval = true)
-    @JsonIgnoreProperties(value = "user",
-        allowSetters = true)
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    @JsonIgnoreProperties(value = "user")
     private List<Useremail> useremails = new ArrayList<>();
 
     /**
@@ -61,11 +72,10 @@ public class User
      */
     @ManyToMany()
     @JoinTable(name = "userroles",
-        joinColumns = @JoinColumn(name = "userid"),
-        inverseJoinColumns = @JoinColumn(name = "roleid"))
-    @JsonIgnoreProperties(value = "users",
-        allowSetters = true)
-    private List<Role> roles = new ArrayList<>();
+            joinColumns = @JoinColumn(name = "userid"),
+            inverseJoinColumns = @JoinColumn(name = "roleid"))
+    @JsonIgnoreProperties(value = "users")
+    private Set<Role> roles = new HashSet<>();
 
     /**
      * Default constructor used primarily by the JPA.
@@ -84,9 +94,9 @@ public class User
      * @param primaryemail THe primary email (String) of the user
      */
     public User(
-        String username,
-        String password,
-        String primaryemail)
+            String username,
+            String password,
+            String primaryemail)
     {
         setUsername(username);
         setPassword(password);
@@ -120,13 +130,7 @@ public class User
      */
     public String getUsername()
     {
-        if (username == null) // this is possible when updating a user
-        {
-            return null;
-        } else
-        {
-            return username.toLowerCase();
-        }
+        return username;
     }
 
     /**
@@ -146,13 +150,7 @@ public class User
      */
     public String getPrimaryemail()
     {
-        if (primaryemail == null) // this is possible when updating a user
-        {
-            return null;
-        } else
-        {
-            return primaryemail.toLowerCase();
-        }
+        return primaryemail;
     }
 
     /**
@@ -210,7 +208,7 @@ public class User
      *
      * @return A list of the Role objects assigned to this user
      */
-    public List<Role> getRoles()
+    public Set<Role> getRoles()
     {
         return roles;
     }
@@ -220,32 +218,8 @@ public class User
      *
      * @param roles Replaces the current list of roles assigned to this user with this one
      */
-    public void setRoles(List<Role> roles)
+    public void setRoles(Set<Role> roles)
     {
         this.roles = roles;
-    }
-
-    /**
-     * Add one role to this user
-     *
-     * @param role the new role (Role) to add
-     */
-    public void addRole(Role role)
-    {
-        roles.add(role);
-        role.getUsers()
-            .add(this);
-    }
-
-    /**
-     * Remove one role from this user
-     *
-     * @param role the role (Role) to remove
-     */
-    public void removeRole(Role role)
-    {
-        roles.remove(role);
-        role.getUsers()
-            .remove(this);
     }
 }

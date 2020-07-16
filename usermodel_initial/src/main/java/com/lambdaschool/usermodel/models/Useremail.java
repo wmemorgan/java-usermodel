@@ -2,7 +2,14 @@ package com.lambdaschool.usermodel.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 
 /**
@@ -35,10 +42,9 @@ public class Useremail
      * A user can have many emails.
      */
     @ManyToOne
-    @JoinColumn(name = "userid",
-        nullable = false)
+    @JoinColumn(name = "userid")
     @JsonIgnoreProperties(value = "useremails",
-        allowSetters = true)
+            allowSetters = true)
     private User user;
 
     /**
@@ -55,8 +61,8 @@ public class Useremail
      * @param useremail useremail (String) for the given user
      */
     public Useremail(
-        User user,
-        String useremail)
+            User user,
+            String useremail)
     {
         this.useremail = useremail;
         this.user = user;
@@ -89,13 +95,7 @@ public class Useremail
      */
     public String getUseremail()
     {
-        if (useremail == null) // this is possible when updating a user
-        {
-            return null;
-        } else
-        {
-            return useremail.toLowerCase();
-        }
+        return useremail;
     }
 
     /**

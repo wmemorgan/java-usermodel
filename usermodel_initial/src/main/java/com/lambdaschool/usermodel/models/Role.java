@@ -2,9 +2,15 @@ package com.lambdaschool.usermodel.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The entity allowing interaction with the roles table.
@@ -24,7 +30,7 @@ public class Role
      * The name (String) of the role. Cannot be null and must be unique.
      */
     @Column(nullable = false,
-        unique = true)
+            unique = true)
     private String name;
 
 
@@ -33,9 +39,8 @@ public class Role
      * Contains a List of Users Objects using this Role.
      */
     @ManyToMany(mappedBy = "roles")
-    @JsonIgnoreProperties(value = "roles",
-        allowSetters = true)
-    private List<User> users = new ArrayList<>();
+    @JsonIgnoreProperties(value = "roles")
+    private Set<User> users = new HashSet<>();
 
     /**
      * Default Constructor used primarily by the JPA.
@@ -81,13 +86,7 @@ public class Role
      */
     public String getName()
     {
-        if (name == null)
-        {
-            return null;
-        } else
-        {
-            return name.toUpperCase();
-        }
+        return name;
     }
 
     /**
@@ -105,7 +104,7 @@ public class Role
      *
      * @return a list of User objects assigned to this role
      */
-    public List<User> getUsers()
+    public Set<User> getUsers()
     {
         return users;
     }
@@ -115,7 +114,7 @@ public class Role
      *
      * @param users a new list of User objects to assign to this role
      */
-    public void setUsers(List<User> users)
+    public void setUsers(Set<User> users)
     {
         this.users = users;
     }

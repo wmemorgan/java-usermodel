@@ -17,7 +17,8 @@ import java.util.List;
  */
 @Transactional
 @Service(value = "roleService")
-public class RoleServiceImpl implements RoleService
+public class RoleServiceImpl
+        implements RoleService
 {
     /**
      * Connects this service to the Role Model
@@ -40,8 +41,8 @@ public class RoleServiceImpl implements RoleService
          * iterate over the iterator set and add each element to an array list.
          */
         rolerepos.findAll()
-            .iterator()
-            .forEachRemaining(list::add);
+                .iterator()
+                .forEachRemaining(list::add);
         return list;
     }
 
@@ -50,7 +51,7 @@ public class RoleServiceImpl implements RoleService
     public Role findRoleById(long id)
     {
         return rolerepos.findById(id)
-            .orElseThrow(() -> new EntityNotFoundException("Role id " + id + " not found!"));
+                .orElseThrow(() -> new EntityNotFoundException("Role id " + id + " not found!"));
     }
 
     @Override
@@ -72,11 +73,18 @@ public class RoleServiceImpl implements RoleService
     public Role save(Role role)
     {
         if (role.getUsers()
-            .size() > 0)
+                .size() > 0)
         {
             throw new EntityExistsException("User Roles are not updated through Role.");
         }
 
         return rolerepos.save(role);
+    }
+
+    @Transactional
+    @Override
+    public void deleteAll()
+    {
+        rolerepos.deleteAll();
     }
 }

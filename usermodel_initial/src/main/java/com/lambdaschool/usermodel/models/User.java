@@ -9,9 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
@@ -25,7 +22,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "users")
-public class User
+public class User extends Auditable
 {
     /**
      * The primary key (long) of the users table.
@@ -52,30 +49,28 @@ public class User
      * Primary email account of user. Could be used as the userid. Cannot be null and must be unique.
      */
     @Column(nullable = false,
-            unique = true)
+        unique = true)
     @Email
     private String primaryemail;
 
     /**
-     * List of emails associated with this user. Does not get saved in the database directly.
-     * Forms a one to many relationship with useremail. One user to many useremails.
+     * A list of emails for this user
      */
     @OneToMany(mappedBy = "user",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    @JsonIgnoreProperties(value = "user")
+        cascade = CascadeType.ALL,
+        orphanRemoval = true)
+    @JsonIgnoreProperties(value = "user", allowSetters = true)
     private List<Useremail> useremails = new ArrayList<>();
 
     /**
-     * Creates a join table joining Users and Roles in a Many-To-Many relations.
-     * Contains a List of Role Objects used by this user.
+     * Part of the join relationship between user and role
+     * connects users to the user role combination
      */
-    @ManyToMany()
-    @JoinTable(name = "userroles",
-            joinColumns = @JoinColumn(name = "userid"),
-            inverseJoinColumns = @JoinColumn(name = "roleid"))
-    @JsonIgnoreProperties(value = "users")
-    private Set<Role> roles = new HashSet<>();
+    @OneToMany(mappedBy = "user",
+        cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "user", allowSetters = true)
+    private Set<UserRoles> roles = new HashSet<>();
+
 
     /**
      * Default constructor used primarily by the JPA.
@@ -91,7 +86,7 @@ public class User
      *
      * @param username     The username (String) of the user
      * @param password     The password (String) of the user
-     * @param primaryemail THe primary email (String) of the user
+     * @param primaryemail The primary email (String) of the user
      */
     public User(
             String username,
@@ -204,21 +199,21 @@ public class User
     }
 
     /**
-     * Getter for Roles
+     * Getter for user role combinations
      *
-     * @return A list of the Role objects assigned to this user
+     * @return A list of user role combinations associated with this user
      */
-    public Set<Role> getRoles()
+    public Set<UserRoles> getRoles()
     {
         return roles;
     }
 
     /**
-     * Setter for Roles
+     * Setter for user role combinations
      *
-     * @param roles Replaces the current list of roles assigned to this user with this one
+     * @param roles Change the list of user role combinations associated with this user to this one
      */
-    public void setRoles(Set<Role> roles)
+    public void setRoles(Set<UserRoles> roles)
     {
         this.roles = roles;
     }

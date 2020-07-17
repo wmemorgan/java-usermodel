@@ -47,4 +47,15 @@ public interface RoleService
     Role findByName(String name);
 
     public void deleteAll();
+
+    /**
+     * Updates the name of the given role
+     *
+     * @param id   The primary key (long) of the role you wish to update
+     * @param role The role object containing the new name - only roles name can be updated through this process
+     * @return The complete role with the new name
+     */
+    Role update(
+            long id,
+            Role role);
 }

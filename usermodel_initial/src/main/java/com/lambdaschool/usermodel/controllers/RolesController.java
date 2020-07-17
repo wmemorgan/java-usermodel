@@ -6,12 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
@@ -120,5 +115,27 @@ public class RolesController
         return new ResponseEntity<>(null,
                                     responseHeaders,
                                     HttpStatus.CREATED);
+    }
+
+    /**
+     * The process allows you to update a role name only!
+     * <br>Example: <a href="http://localhost:2019/roles/role/3">http://localhost:2019/roles/role/3</a>
+     *
+     * @param roleid  The primary key (long) of the role you wish to update
+     * @param newRole The new name (String) for the role
+     * @return Status of OK
+     */
+    @PutMapping(value = "/role/{roleid}",
+            consumes = {"application/json"})
+    public ResponseEntity<?> putUpdateRole(
+            @PathVariable
+                    long roleid,
+            @Valid
+            @RequestBody
+                    Role newRole)
+    {
+        newRole = roleService.update(roleid,
+                                     newRole);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

@@ -14,10 +14,12 @@ import javax.validation.constraints.Email;
 
 /**
  * The entity allowing interaction with the useremails table
+ * <p>
+ * requires each combination of user and useremail to be unique. The same email cannot be assigned to the same user more than once.
  */
 @Entity
 @Table(name = "useremails")
-public class Useremail
+public class Useremail extends Auditable
 {
     /**
      * The primary key (long) of the useremails table
@@ -42,9 +44,9 @@ public class Useremail
      * A user can have many emails.
      */
     @ManyToOne
-    @JoinColumn(name = "userid")
-    @JsonIgnoreProperties(value = "useremails",
-            allowSetters = true)
+    @JoinColumn(name = "userid",
+        nullable = false)
+    @JsonIgnoreProperties(value = "useremails", allowSetters = true)
     private User user;
 
     /**
